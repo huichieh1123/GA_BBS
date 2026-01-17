@@ -1,0 +1,17 @@
+*.csv
+
+*.exe
+
+solver
+generator
+*.out
+
+*.o
+*.obj
+
+.vscode/
+.idea/
+*.swp
+
+.DS_Store
+Thumbs.db
