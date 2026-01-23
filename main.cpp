@@ -15,9 +15,9 @@
 
 // --- Parameter Settings ---
 const int POPULATION_SIZE = 50;
-const int MAX_GENERATIONS = 100;
+const int MAX_GENERATIONS = 30;
 const double MUTATION_RATE = 0.2;
-const int BEAM_WIDTH = 5; // change to smaller value if runtime is too long
+const int BEAM_WIDTH = 1; // change to smaller value if runtime is too long
 
 // --- Output Format Definition ---
 struct MissionLog {
@@ -414,6 +414,11 @@ public:
             
             if (gen % 10 == 0 || gen == MAX_GENERATIONS - 1) {
                 std::cout << "Gen " << std::setw(3) << gen << " | Best Cost: " << population[0].fitness << std::endl;
+                std::cout << " | Seq: [ ";
+                for (size_t i = 0; i < population[0].sequence.size(); ++i) {
+                    std::cout << population[0].sequence[i] << (i < population[0].sequence.size() - 1 ? ", " : "");
+                }
+                std::cout << " ]\n\n";
             }
             
             // Evolution
