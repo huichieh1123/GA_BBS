@@ -10,12 +10,11 @@ from libcpp.algorithm cimport sort
 from libcpp.cmath cimport abs
 from cython.parallel import prange
 from libc.math cimport fmax
-# [NEW] Import random for noise
 from libc.stdlib cimport rand, RAND_MAX, srand
 import time
 
 # ==========================================
-# 1. C++ Struct Definitions
+# 1. C++ Struct Definitions (Extern Block)
 # ==========================================
 cdef extern from *:
     """
@@ -61,6 +60,7 @@ cdef extern from *:
         int agv_id;
         int batch_id;
         int container_id;
+        int related_target_id;
         Coordinate src;
         Coordinate dst;
         int mission_priority;
@@ -165,83 +165,7 @@ cdef extern from *:
         }
     };
     """
-
-    # ==========================================
-    # [NEW] Tuning Hyperparameters
-    # ==========================================
-    # 1. Hard Penalty: Directly blocking a container that needs to be retrieved sooner.
-    #    Set to 2000, roughly equal to 30 reshuffle costs, forcing AGVs to avoid it.
-    cdef double W_PENALTY_BLOCKING = 2000.0 
-
-    # 2. Soft Penalty (Look-ahead): Blocking a container that is retrieved later but relatively soon.
-    #    Set to 500. If diff=2 (urgent), penalty is 250 (approx 4 reshuffles).
-    #    If diff=50 (not urgent), penalty is 10 (negligible).
-    cdef double W_PENALTY_LOOKAHEAD = 500.0
-
-    # [MODIFIED] Helper to get the sequence index of a box
-    # If the box is not in the sequence (e.g., static blocker), return a large value indicating safety.
-    cdef int getSeqIndex(int boxId, vector[int]& seq) noexcept nogil:
-        for k in range(seq.size()):
-            if seq[k] == boxId:
-                return k
-        return 999999 # Not in sequence (static block), very safe to stack on
-
-    # [MODIFIED] RIL-based Penalty Calculation
-    # Args:
-    #   yard: Current yard state
-    #   r, b: Target column coordinates
-    #   seq: Job sequence
-    #   currentSeqIdx: Current progress index
-    #   movingBoxId: ID of the blocking box being moved
-    cdef double calculateRILPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx, int movingBoxId) noexcept nogil:
-        cdef int currentTop = yard.tops[r][b]
-        if currentTop == 0:
-            return 0.0 # Empty column is usually a good choice, zero penalty
-
-        cdef int topBoxId = yard.grid[r][b][currentTop - 1]
-        cdef int movingBoxRank = getSeqIndex(movingBoxId, seq)
-        cdef int topBoxRank = getSeqIndex(topBoxId, seq)
-        
-        cdef int t, boxId, rank
-        cdef int blockingCount = 0
-        
-        # 1. RI (Reshuffle Index) Calculation
-        # Count how many boxes in this column are retrieved 'earlier' than the moving box (Rank < movingBoxRank)
-        # These represent potential future reshuffle costs.
-        for t in range(currentTop):
-            boxId = yard.grid[r][b][t]
-            rank = getSeqIndex(boxId, seq)
-            if rank < movingBoxRank:
-                blockingCount += 1
-                
-        # 2. RIL (Tie-breaking with Look-ahead)
-        # Calculate base penalty
-        cdef double penalty = 0.0
-
-        # Primary Penalty: If it causes future reshuffles (RI > 0)
-        if blockingCount > 0:
-            # The more blocks, the heavier the penalty.
-            penalty += W_PENALTY_BLOCKING * blockingCount 
-        else:
-            # RI = 0 (Safe column), enter RIL comparison
-            # We prefer topBoxRank to be as large as possible (retrieved far in the future).
-            
-            # Logic: Penalty should be inversely proportional to topBoxRank.
-            if topBoxRank > movingBoxRank:
-                # Normal stacking (Late retrieval at bottom, Early retrieval on top).
-                # No penalty as this is ideal.
-                penalty += 0.0 
-            else:
-                # General case: Stacking on top of another box.
-                # We want the denominator (topBoxRank) to be large.
-                if topBoxRank > currentSeqIdx: # Ensure it is a future task
-                    penalty += W_PENALTY_LOOKAHEAD / <double>(topBoxRank - currentSeqIdx)
-                else:
-                    # Should be caught by RI, but just in case.
-                    penalty += 0.0
-
-        return penalty
-        
+    # 這裡只宣告 C++ 的類別和結構，不要放變數定義
     cdef cppclass Coordinate:
         int row
         int bay
@@ -260,6 +184,7 @@ cdef extern from *:
         int agv_id
         int batch_id
         int container_id
+        int related_target_id
         Coordinate src
         Coordinate dst
         int mission_priority
@@ -299,8 +224,13 @@ cdef extern from *:
     void printf(const char *format, ...) nogil
 
 # ==========================================
-# 2. Global Config
+# 2. Global Variables (Implementation)
 # ==========================================
+# [FIX] 這些變數必須放在 extern 區塊之外，作為全域變數
+cdef double W_PENALTY_BLOCKING = 2000.0 
+cdef double W_PENALTY_LOOKAHEAD = 500.0
+
+# Global Config
 cdef double TIME_TRAVEL_UNIT = 5.0
 cdef double TIME_HANDLE = 30.0
 cdef double TIME_PROCESS = 10.0
@@ -316,8 +246,47 @@ def set_config(double t_travel, double t_handle, double t_process, int agv_cnt, 
     BEAM_WIDTH = beam_w
 
 # ==========================================
-# 3. Logic Implementation
+# 3. Helper Functions
 # ==========================================
+
+cdef int getSeqIndex(int boxId, vector[int]& seq) noexcept nogil:
+    for k in range(seq.size()):
+        if seq[k] == boxId:
+            return k
+    return 999999 
+
+cdef double calculateRILPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx, int movingBoxId) noexcept nogil:
+    cdef int currentTop = yard.tops[r][b]
+    if currentTop == 0:
+        return 0.0 
+
+    cdef int topBoxId = yard.grid[r][b][currentTop - 1]
+    cdef int movingBoxRank = getSeqIndex(movingBoxId, seq)
+    cdef int topBoxRank = getSeqIndex(topBoxId, seq)
+    
+    cdef int t, boxId, rank
+    cdef int blockingCount = 0
+    
+    for t in range(currentTop):
+        boxId = yard.grid[r][b][t]
+        rank = getSeqIndex(boxId, seq)
+        if rank < movingBoxRank:
+            blockingCount += 1
+            
+    cdef double penalty = 0.0
+
+    if blockingCount > 0:
+        penalty += W_PENALTY_BLOCKING * blockingCount 
+    else:
+        if topBoxRank > movingBoxRank:
+            penalty += 0.0 
+        else:
+            if topBoxRank > currentSeqIdx: 
+                penalty += W_PENALTY_LOOKAHEAD / <double>(topBoxRank - currentSeqIdx)
+            else:
+                penalty += 0.0
+
+    return penalty
 
 cdef double getTravelTime(Coordinate src, Coordinate dst) nogil:
     cdef int r1 = 0 if src.row == -1 else src.row
@@ -380,7 +349,6 @@ cdef int calculateReturnPenalty(YardSystem& yard, int r, int b, vector[int]& seq
 # 4. BBS Solver
 # ==========================================
 cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq, unordered_map[int, Coordinate]& dests) noexcept nogil:
-    # Seed randomness for diversity
     srand(12345)
     
     cdef SearchNode root
@@ -412,13 +380,13 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
     cdef vector[SearchNode] nextBeam
     
     cdef SearchNode node, newNode
-    cdef Coordinate targetPos, src, dst, check
+    cdef Coordinate targetPos, src, dst
     cdef int r, b, bestAGV, blockerId
     cdef double bestFinishTime, bestStartTime, travel, start, travelToDest, finish, pickupDoneTime, maxAGV, travelToWS, travelToYard, colReady, pickupTime, penalty, noise
     cdef bint isTop
     cdef vector[int] blockers
     cdef MissionLog log
-    cdef int movingBoxId # Variable to store current moving box ID
+    cdef int movingBoxId 
 
     for seqIdx in range(seq.size()):
         targetId = seq[seqIdx]
@@ -477,11 +445,9 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             for i in range(AGV_COUNT):
                                 maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
                             newNode.g = maxAGV
-                            # [UPDATED] f value calculation includes RIL Penalty
                             newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx + 1, dests, True)
                             noise = (<double>rand() / <double>RAND_MAX) * 0.01
                             
-                            # Penalty weight can be tuned, set to 1.0 as RIL internally scales it
                             newNode.f = newNode.g + newNode.h + penalty + noise
                             
                             log.mission_no = newNode.history.size() + 1
@@ -489,6 +455,7 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             log.type_code = 2 
                             log.batch_id = 20260117
                             log.container_id = targetId
+                            log.related_target_id = targetId
                             log.src = realDest
                             log.dst = dst
                             log.start_time_epoch = <long long>bestStartTime + 1705363200
@@ -533,7 +500,6 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                         maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
                     newNode.g = maxAGV
                     newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, dests, False)
-                    # [FIX] Add Noise
                     noise = (<double>rand() / <double>RAND_MAX) * 0.01
                     newNode.f = newNode.g + newNode.h + noise
 
@@ -542,6 +508,7 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                     log.type_code = 0
                     log.batch_id = 20260117
                     log.container_id = targetId
+                    log.related_target_id = targetId
                     log.src = src
                     log.dst = realDest
                     log.start_time_epoch = <long long>bestStartTime + 1705363200
@@ -567,7 +534,6 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             
                             dst = make_coord(r, b, node.yard.tops[r][b])
                             
-                            # [NEW] Calculate Penalty using RIL
                             penalty = calculateRILPenalty(node.yard, r, b, seq, seqIdx, movingBoxId)
 
                             bestAGV = -1
@@ -598,7 +564,6 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                                 maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
                             newNode.g = maxAGV
                             newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, dests, False)
-                            # [FIX] Add Noise
                             noise = (<double>rand() / <double>RAND_MAX) * 0.01
                             newNode.f = newNode.g + newNode.h + penalty + noise
 
@@ -607,6 +572,7 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             log.type_code = 1 
                             log.batch_id = 20260117
                             log.container_id = blockerId
+                            log.related_target_id = targetId
                             log.src = src
                             log.dst = dst
                             log.start_time_epoch = <long long>bestStartTime + 1705363200
@@ -617,10 +583,6 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
 
                             newNode.history.push_back(log)
                             nextBeam.push_back(newNode)
-
-            # [DEBUG] Print Beam Size and Top Scores to Verify Diversity
-            #if not nextBeam.empty():
-            #    printf("Target %d | Depth %d | Nodes Generated: %lu | Best f: %.2f\n", targetId, expansion_limit, nextBeam.size(), nextBeam[0].f)
 
             if nextBeam.empty(): break
             sort(nextBeam.begin(), nextBeam.end())
@@ -649,6 +611,7 @@ cdef class PyMissionLog:
     cdef public int agv_id
     cdef public str mission_type
     cdef public int container_id
+    cdef public int related_target_id
     cdef public tuple src
     cdef public tuple dst
     cdef public long long start_time
@@ -689,6 +652,7 @@ def run_fixed_solver(dict config, list boxes, list commands, list fixed_seq_ids)
         pl.mission_no = log.mission_no
         pl.agv_id = log.agv_id
         pl.container_id = log.container_id
+        pl.related_target_id = log.related_target_id
         
         if log.type_code == 0: pl.mission_type = "target"
         elif log.type_code == 1: pl.mission_type = "reshuffle"
