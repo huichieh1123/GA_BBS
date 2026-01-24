@@ -51,11 +51,11 @@ def load_csv_data():
 
 # 1. Fixed Sequence provided by user
 job_sequence = [
-    375, 312, 308, 376, 155, 263, 363, 260, 18, 162, 
-    227, 249, 335, 144, 212, 307, 361, 329, 11, 60, 
-    71, 182, 271, 49, 356, 373, 47, 24, 384, 396, 
-    170, 32, 183, 193, 197, 165, 291, 328, 298, 281, 
-    304, 399, 94, 16, 148, 258, 348, 164, 226, 282
+    398, 61, 262, 185, 373, 3, 133, 387, 4, 328, 
+    361, 103, 62, 240, 126, 340, 122, 32, 226, 271, 
+    190, 98, 202, 309, 1, 167, 233, 110, 281, 246, 
+    339, 395, 311, 250, 104, 332, 346, 356, 143, 350, 
+    135, 151, 221, 375, 219, 193, 389, 50, 266, 268
 ]
 
 def main():
@@ -89,7 +89,7 @@ def main():
     # 5. Output
     with open('output_missions_python.csv', 'w', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(["mission_no", "agv_id", "mission_type", "container_id", "src_pos", "dst_pos", "start_time", "end_time", "makespan"])
+        writer.writerow(["mission_no", "agv_id", "mission_type", "container_id", "related_target_id", "src_pos", "dst_pos", "start_time", "end_time", "makespan"])
         
         for log in logs:
             if log.src[0] == -1:
@@ -107,6 +107,7 @@ def main():
                 log.agv_id,
                 log.mission_type,
                 log.container_id,
+                log.related_target_id,
                 s_str,
                 d_str,
                 log.start_time,

@@ -15,6 +15,11 @@ struct BoxData {
     int level;
 };
 
+// Define default time constants
+const double DEFAULT_TIME_TRAVEL_UNIT = 5.0; // Seconds per grid unit
+const double DEFAULT_TIME_HANDLE = 30.0;     // Seconds for pickup/dropoff
+const double DEFAULT_TIME_PROCESS = 10.0;    // Seconds for workstation processing
+
 int main(int argc, char* argv[]) {
     // 1. Set default parameters
     int max_row = 6;
@@ -58,16 +63,21 @@ int main(int argc, char* argv[]) {
 
     // Display current configuration
     std::cout << "--- Generator Configuration ---" << std::endl;
-    std::cout << "Grid Size    : " << max_row << " x " << max_bay << " x " << max_level << std::endl;
-    std::cout << "Capacity     : " << capacity << " slots" << std::endl;
-    std::cout << "Total Boxes  : " << total_boxes << " (" << (float)total_boxes/capacity*100.0 << "% full)" << std::endl;
-    std::cout << "Missions     : " << mission_count << std::endl;
+    std::cout << "Grid Size     : " << max_row << " x " << max_bay << " x " << max_level << std::endl;
+    std::cout << "Capacity      : " << capacity << " slots" << std::endl;
+    std::cout << "Total Boxes   : " << total_boxes << " (" << (float)total_boxes/capacity*100.0 << "% full)" << std::endl;
+    std::cout << "Missions      : " << mission_count << std::endl;
+    std::cout << "Time Config   : Travel=" << DEFAULT_TIME_TRAVEL_UNIT 
+              << "s, Handle=" << DEFAULT_TIME_HANDLE 
+              << "s, Process=" << DEFAULT_TIME_PROCESS << "s" << std::endl;
     std::cout << "-------------------------------" << std::endl;
 
     // 4. Initialize random number generator and variables
     std::mt19937 rng(static_cast<unsigned int>(std::time(nullptr)));
     std::uniform_int_distribution<int> distRow(0, max_row - 1);
     std::uniform_int_distribution<int> distBay(0, max_bay - 1);
+    
+    // [MODIFIED] Removed distPort because we now use dynamic assignment (-1)
 
     std::vector<int> heights(max_row * max_bay, 0);
     std::vector<BoxData> allBoxes;
@@ -139,13 +149,15 @@ int main(int argc, char* argv[]) {
 
     for (int i = 0; i < mission_count; ++i) {
         const auto& box = candidates[i];
+        
+        // [MODIFIED] Destination is now unified to (-1, -1, -1) for Dynamic Port Selection
         cmdFile << serialNo << ","                  // cmd_no
                 << "20260117,"                      // batch_id
                 << "target,"                        // cmd_type
                 << serialNo << ","                  // cmd_priority
                 << box.id << ","                    // parent_carrier_id
                 << box.row << "," << box.bay << "," << box.level << "," 
-                << "-1,-1,-1,"                      // dest
+                << "-1,-1,-1,"                      // [CHANGED] dest is now generic (-1)
                 << (baseTime + serialNo * 60)       // create_time
                 << "\n";
         serialNo++;
@@ -153,20 +165,24 @@ int main(int argc, char* argv[]) {
     cmdFile.close();
 
     // 8. Output File C: Configuration (yard_config.csv)
+    // Modified to include time parameters
     std::ofstream configFile("yard_config.csv");
     // Write Header
-    configFile << "max_row,max_bay,max_level,total_boxes\n";
+    configFile << "max_row,max_bay,max_level,total_boxes,time_travel_unit,time_handle,time_process\n";
     // Write Data
     configFile << max_row << "," 
                << max_bay << "," 
                << max_level << "," 
-               << total_boxes << "\n";
+               << total_boxes << ","
+               << DEFAULT_TIME_TRAVEL_UNIT << ","
+               << DEFAULT_TIME_HANDLE << ","
+               << DEFAULT_TIME_PROCESS << "\n";
     configFile.close();
 
     std::cout << "Success! Generated files:\n"
               << "1. mock_yard.csv (Layout)\n"
-              << "2. mock_commands.csv (Missions)\n"
-              << "3. yard_config.csv (Dimensions)" << std::endl;
+              << "2. mock_commands.csv (Missions with Dynamic Port Destination -1)\n"
+              << "3. yard_config.csv (Dimensions & Time Params)" << std::endl;
 
     return 0;
 }

@@ -9,12 +9,12 @@ from libcpp.unordered_map cimport unordered_map
 from libcpp.algorithm cimport sort
 from libcpp.cmath cimport abs
 from cython.parallel import prange
-from libc.math cimport fmax
+from libc.math cimport fmax, fmin
 from libc.stdlib cimport rand, RAND_MAX, srand
 import time
 
 # ==========================================
-# 1. C++ Struct Definitions (Extern Block)
+# 1. C++ Struct Definitions
 # ==========================================
 cdef extern from *:
     """
@@ -98,6 +98,28 @@ cdef extern from *:
             if (t + 1 > tops[r][b]) tops[r][b] = t + 1;
         }
 
+        void moveToPort(int id, int port_id) {
+            if (id >= boxLocations.size()) return;
+            Coordinate pos = boxLocations[id];
+            if (pos.row != -1) {
+                grid[pos.row][pos.bay][pos.tier] = 0;
+                tops[pos.row][pos.bay]--;
+                boxLocations[id] = Coordinate(-1, -1, port_id);
+            }
+        }
+        
+        void returnFromPort(int id, int r, int b) {
+            if (id >= boxLocations.size()) return;
+            if (r < 0 || r >= MAX_ROWS || b < 0 || b >= MAX_BAYS) return;
+            
+            int t = tops[r][b];
+            if (t >= MAX_TIERS) return;
+
+            grid[r][b][t] = id;
+            tops[r][b]++;
+            boxLocations[id] = Coordinate(r, b, t);
+        }
+
         void removeBox(int id) {
             if (id >= boxLocations.size()) return;
             Coordinate pos = boxLocations[id];
@@ -156,7 +178,9 @@ cdef extern from *:
         double h;
         double f;
         std::vector<std::vector<double>> gridBusyTime;
-        double workstationBusyTime;
+        
+        std::vector<double> portsBusyTime; 
+
         bool isCurrentTargetRetrieved;
         std::vector<MissionLog> history;
         
@@ -165,7 +189,7 @@ cdef extern from *:
         }
     };
     """
-    # 這裡只宣告 C++ 的類別和結構，不要放變數定義
+    
     cdef cppclass Coordinate:
         int row
         int bay
@@ -203,6 +227,8 @@ cdef extern from *:
         void init(int r, int b, int t, int total) nogil
         void initBox(int id, int r, int b, int t) nogil
         void removeBox(int id) nogil
+        void moveToPort(int id, int port_id) nogil 
+        void returnFromPort(int id, int r, int b) nogil 
         void moveBox(int r1, int b1, int r2, int b2) nogil
         Coordinate getBoxPosition(int id) nogil
         bint isTop(int id) nogil
@@ -216,7 +242,7 @@ cdef extern from *:
         double h
         double f
         vector[vector[double]] gridBusyTime
-        double workstationBusyTime
+        vector[double] portsBusyTime
         bint isCurrentTargetRetrieved
         vector[MissionLog] history
         bint operator<(const SearchNode&) const
@@ -224,18 +250,17 @@ cdef extern from *:
     void printf(const char *format, ...) nogil
 
 # ==========================================
-# 2. Global Variables (Implementation)
+# 2. Global Variables
 # ==========================================
-# [FIX] 這些變數必須放在 extern 區塊之外，作為全域變數
 cdef double W_PENALTY_BLOCKING = 2000.0 
 cdef double W_PENALTY_LOOKAHEAD = 500.0
 
-# Global Config
 cdef double TIME_TRAVEL_UNIT = 5.0
 cdef double TIME_HANDLE = 30.0
 cdef double TIME_PROCESS = 10.0
 cdef int AGV_COUNT = 3
 cdef int BEAM_WIDTH = 100
+cdef int PORT_COUNT = 5
 
 def set_config(double t_travel, double t_handle, double t_process, int agv_cnt, int beam_w):
     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, AGV_COUNT, BEAM_WIDTH
@@ -296,19 +321,21 @@ cdef double getTravelTime(Coordinate src, Coordinate dst) nogil:
     cdef double dist = abs(r1 - r2) + abs(b1 - b2)
     return dist * TIME_TRAVEL_UNIT
 
-cdef double calculate_3D_UBALB(YardSystem& yard, vector[int]& remainingTargets, int currentSeqIdx, unordered_map[int, Coordinate]& targetDests, bint currentRetrievedStatus) noexcept nogil:
+cdef double calculate_3D_UBALB(YardSystem& yard, vector[int]& remainingTargets, int currentSeqIdx, bint currentRetrievedStatus) noexcept nogil:
     cdef double total_time = 0.0
     cdef size_t i
     cdef int targetId, topTier, l
-    cdef Coordinate targetPos, realDst
+    cdef Coordinate targetPos
     cdef double distToPort, returnDist, avgDist
+    cdef double minPortDist
+    cdef int p
 
     for i in range(currentSeqIdx, remainingTargets.size()):
         targetId = remainingTargets[i]
 
         if i == currentSeqIdx and currentRetrievedStatus:
-             avgDist = (yard.MAX_ROWS + yard.MAX_BAYS) / 2.0 * TIME_TRAVEL_UNIT
-             total_time += TIME_HANDLE + avgDist + TIME_HANDLE
+             # Already retrieved (at Port), maybe add some dummy time or skip
+             # Since it's done, we don't need to add costs for it
              continue
 
         targetPos = yard.getBoxPosition(targetId)
@@ -318,13 +345,13 @@ cdef double calculate_3D_UBALB(YardSystem& yard, vector[int]& remainingTargets, 
         for l in range(topTier, targetPos.tier, -1):
             total_time += TIME_HANDLE + TIME_TRAVEL_UNIT + TIME_HANDLE
         
-        if targetDests.count(targetId):
-            realDst = targetDests[targetId]
-        else:
-            realDst = make_coord(-1, -1, 1)
+        # Calculate distance to the Nearest Port (Optimistic Heuristic)
+        minPortDist = 1e9
+        for p in range(1, PORT_COUNT + 1):
+             # Assume Port location: (-1, -1, p)
+             minPortDist = fmin(minPortDist, getTravelTime(targetPos, make_coord(-1, -1, p)))
 
-        distToPort = getTravelTime(targetPos, realDst)
-        total_time += TIME_HANDLE + distToPort + TIME_HANDLE + TIME_PROCESS
+        total_time += TIME_HANDLE + minPortDist + TIME_HANDLE + TIME_PROCESS
         
         returnDist = (yard.MAX_ROWS + yard.MAX_BAYS) / 2.0 * TIME_TRAVEL_UNIT
         total_time += TIME_HANDLE + returnDist + TIME_HANDLE
@@ -348,7 +375,7 @@ cdef int calculateReturnPenalty(YardSystem& yard, int r, int b, vector[int]& seq
 # ==========================================
 # 4. BBS Solver
 # ==========================================
-cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq, unordered_map[int, Coordinate]& dests) noexcept nogil:
+cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq) noexcept nogil:
     srand(12345)
     
     cdef SearchNode root
@@ -356,10 +383,10 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
     root.g = 0
     root.h = 0
     root.f = 0
-    root.workstationBusyTime = 0.0
     root.isCurrentTargetRetrieved = False
     
     root.gridBusyTime.resize(initialYard.MAX_ROWS, vector[double](initialYard.MAX_BAYS, 0.0))
+    root.portsBusyTime.resize(PORT_COUNT + 1, 0.0)
     
     cdef int i
     cdef Agent agv
@@ -376,28 +403,25 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
     cdef size_t seqIdx
     cdef int targetId, expansion_limit
     cdef bint targetCycleDone
-    cdef Coordinate realDest
     cdef vector[SearchNode] nextBeam
     
     cdef SearchNode node, newNode
-    cdef Coordinate targetPos, src, dst
-    cdef int r, b, bestAGV, blockerId
-    cdef double bestFinishTime, bestStartTime, travel, start, travelToDest, finish, pickupDoneTime, maxAGV, travelToWS, travelToYard, colReady, pickupTime, penalty, noise
+    cdef Coordinate targetPos, src, dst, selectedPortCoord
+    cdef int r, b, bestAGV, blockerId, selectedPort
+    cdef double bestFinishTime, bestStartTime, travel, start, travelToDest, finish, pickupDoneTime, maxAGV, pickupTime, penalty, noise
+    cdef double arrivalAtPort, portReadyTime, agvArrivalAtPort, processStart
+    cdef double minPortFinishTime, dropOffTime, agvFreeTime # [NEW]
+    cdef double portFinishTime
     cdef bint isTop
     cdef vector[int] blockers
     cdef MissionLog log
-    cdef int movingBoxId 
+    cdef int movingBoxId, p, port_idx
 
     for seqIdx in range(seq.size()):
         targetId = seq[seqIdx]
         targetCycleDone = False
         expansion_limit = 0
         
-        if dests.count(targetId):
-            realDest = dests[targetId]
-        else:
-            realDest = make_coord(-1, -1, 1)
-
         while not targetCycleDone and expansion_limit < 40:
             expansion_limit += 1
             nextBeam.clear()
@@ -405,14 +429,17 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
             for node in currentBeam:
                 targetPos = node.yard.getBoxPosition(targetId)
 
-                # A: Done
+                # Case A: DONE
                 if targetPos.row != -1 and node.isCurrentTargetRetrieved:
                     nextBeam.push_back(node)
                     targetCycleDone = True
                     continue
                 
-                # B: Return
+                # Case B: RETURN (Port -> Yard)
                 if targetPos.row == -1:
+                    selectedPort = targetPos.tier 
+                    src = make_coord(-1, -1, selectedPort)
+                    
                     for r in range(node.yard.MAX_ROWS):
                         for b in range(node.yard.MAX_BAYS):
                             if not node.yard.canReceiveBox(r, b): continue
@@ -423,20 +450,22 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             bestAGV = -1
                             bestFinishTime = 1e9
                             bestStartTime = 0
-
+                            
                             for i in range(AGV_COUNT):
-                                travelToWS = getTravelTime(node.agvs[i].currentPos, realDest)
-                                start = fmax(node.agvs[i].availableTime, node.workstationBusyTime)
-                                travelToYard = getTravelTime(realDest, dst)
-                                finish = start + travelToWS + TIME_HANDLE + travelToYard + TIME_HANDLE
+                                travel = getTravelTime(node.agvs[i].currentPos, src)
+                                # Start time: AGV must be free AND Port must be done processing
+                                start = fmax(node.agvs[i].availableTime, node.portsBusyTime[selectedPort])
+                                travelToDest = getTravelTime(src, dst)
+                                finish = start + travel + TIME_HANDLE + travelToDest + TIME_HANDLE
+                                
                                 if finish < bestFinishTime:
                                     bestFinishTime = finish
                                     bestAGV = i
                                     bestStartTime = start
                             
                             newNode = node
-                            newNode.yard.initBox(targetId, dst.row, dst.bay, dst.tier)
-                            newNode.isCurrentTargetRetrieved = True
+                            newNode.yard.returnFromPort(targetId, dst.row, dst.bay)
+                            newNode.isCurrentTargetRetrieved = True 
                             newNode.agvs[bestAGV].currentPos = dst
                             newNode.agvs[bestAGV].availableTime = bestFinishTime
                             newNode.gridBusyTime[dst.row][dst.bay] = bestFinishTime
@@ -445,9 +474,8 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             for i in range(AGV_COUNT):
                                 maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
                             newNode.g = maxAGV
-                            newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx + 1, dests, True)
+                            newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx + 1, False) 
                             noise = (<double>rand() / <double>RAND_MAX) * 0.01
-                            
                             newNode.f = newNode.g + newNode.h + penalty + noise
                             
                             log.mission_no = newNode.history.size() + 1
@@ -456,42 +484,85 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             log.batch_id = 20260117
                             log.container_id = targetId
                             log.related_target_id = targetId
-                            log.src = realDest
+                            log.src = src
                             log.dst = dst
                             log.start_time_epoch = <long long>bestStartTime + 1705363200
                             log.end_time_epoch = <long long>bestFinishTime + 1705363200
                             log.makespan_snapshot = newNode.g
-                            log.mission_status = 0
                             log.mission_priority = 0
-
+                            log.mission_status = 0
+                            
                             newNode.history.push_back(log)
                             nextBeam.push_back(newNode)
-                    continue
+                    continue 
 
-                # C: Retrieve
+                # Case C: RETRIEVE (Yard -> Port)
                 isTop = node.yard.isTop(targetId)
                 if isTop:
                     src = node.yard.getBoxPosition(targetId)
                     bestAGV = -1
                     bestFinishTime = 1e9
+                    bestAGVFreeTime = 1e9 # [NEW] Track when AGV becomes free
                     bestStartTime = 0
-
+                    selectedPort = -1
+                    
                     for i in range(AGV_COUNT):
                         travel = getTravelTime(node.agvs[i].currentPos, src)
                         start = fmax(node.agvs[i].availableTime, node.gridBusyTime[src.row][src.bay])
-                        travelToDest = getTravelTime(src, realDest)
-                        finish = start + travel + TIME_HANDLE + travelToDest + TIME_HANDLE + TIME_PROCESS
-                        if finish < bestFinishTime:
-                            bestFinishTime = finish
+                        arrivalAtPort = start + travel + TIME_HANDLE + getTravelTime(src, make_coord(-1, -1, 1))
+                        
+                        p = -1
+                        for port_idx in range(1, PORT_COUNT + 1):
+                            if node.portsBusyTime[port_idx] <= arrivalAtPort:
+                                p = port_idx
+                                break
+                        if p == -1:
+                            minPortFinishTime = 1e9
+                            for port_idx in range(1, PORT_COUNT + 1):
+                                if node.portsBusyTime[port_idx] < minPortFinishTime:
+                                    minPortFinishTime = node.portsBusyTime[port_idx]
+                                    p = port_idx
+                        
+                        selectedPortCoord = make_coord(-1, -1, p)
+                        travelToDest = getTravelTime(src, selectedPortCoord)
+                        portReadyTime = node.portsBusyTime[p]
+                        
+                        agvArrivalAtPort = start + travel + TIME_HANDLE + travelToDest
+                        
+                        # Process starts when AGV arrives (Port ready time handled by constraint above or simple queueing)
+                        # Actually, strictly: Process Start = Max(AGV Arrival, Port Ready)
+                        processStart = fmax(agvArrivalAtPort, portReadyTime)
+                        
+                        # [KEY CHANGE] Decouple AGV and Port
+                        # AGV Free: After drop off (Handle time)
+                        agvFreeTime = processStart + TIME_HANDLE 
+                        
+                        # Port Free: After processing finishes
+                        portFinishTime = processStart + TIME_HANDLE + TIME_PROCESS
+                        
+                        # Metric: We still minimize Port Finish Time (to get job done), 
+                        # OR minimize AGV Free Time (to free up AGV)?
+                        # Let's minimize Port Finish Time to ensure system throughput.
+                        if portFinishTime < bestFinishTime:
+                            bestFinishTime = portFinishTime
+                            bestAGVFreeTime = agvFreeTime # Store this
                             bestAGV = i
                             bestStartTime = start
-                    
+                            selectedPort = p
+
                     newNode = node
-                    newNode.yard.removeBox(targetId)
-                    newNode.isCurrentTargetRetrieved = False
-                    newNode.agvs[bestAGV].currentPos = realDest
-                    newNode.agvs[bestAGV].availableTime = bestFinishTime
-                    newNode.workstationBusyTime = bestFinishTime
+                    newNode.yard.moveToPort(targetId, selectedPort)
+                    newNode.isCurrentTargetRetrieved = True 
+                    
+                    selectedPortCoord = make_coord(-1, -1, selectedPort)
+                    newNode.agvs[bestAGV].currentPos = selectedPortCoord
+                    
+                    # [KEY CHANGE] AGV is free earlier!
+                    newNode.agvs[bestAGV].availableTime = bestAGVFreeTime
+                    
+                    # Port is busy longer!
+                    newNode.portsBusyTime[selectedPort] = bestFinishTime
+                    
                     pickupDoneTime = bestStartTime + getTravelTime(node.agvs[bestAGV].currentPos, src) + TIME_HANDLE
                     newNode.gridBusyTime[src.row][src.bay] = pickupDoneTime
 
@@ -499,20 +570,22 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                     for i in range(AGV_COUNT):
                         maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
                     newNode.g = maxAGV
-                    newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, dests, False)
+                    newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, True) 
                     noise = (<double>rand() / <double>RAND_MAX) * 0.01
                     newNode.f = newNode.g + newNode.h + noise
 
                     log.mission_no = newNode.history.size() + 1
                     log.agv_id = bestAGV
-                    log.type_code = 0
+                    log.type_code = 0 
                     log.batch_id = 20260117
                     log.container_id = targetId
                     log.related_target_id = targetId
                     log.src = src
-                    log.dst = realDest
+                    log.dst = selectedPortCoord 
                     log.start_time_epoch = <long long>bestStartTime + 1705363200
-                    log.end_time_epoch = <long long>bestFinishTime + 1705363200
+                    # Log END time as AGV release time? Or Process Finish?
+                    # Usually "Mission End" is when AGV is done.
+                    log.end_time_epoch = <long long>bestAGVFreeTime + 1705363200
                     log.makespan_snapshot = newNode.g
                     log.mission_priority = 0
                     log.mission_status = 0
@@ -520,7 +593,7 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                     newNode.history.push_back(log)
                     nextBeam.push_back(newNode)
                 else:
-                    # Reshuffle
+                    # Case D: RESHUFFLE
                     blockers = node.yard.getBlockingBoxes(targetId)
                     if blockers.empty(): continue
                     blockerId = blockers.back()
@@ -563,7 +636,7 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             for i in range(AGV_COUNT):
                                 maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
                             newNode.g = maxAGV
-                            newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, dests, False)
+                            newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, False)
                             noise = (<double>rand() / <double>RAND_MAX) * 0.01
                             newNode.f = newNode.g + newNode.h + penalty + noise
 
@@ -627,14 +700,6 @@ def run_fixed_solver(dict config, list boxes, list commands, list fixed_seq_ids)
         initialYard.initBox(box['id'], box['row'], box['bay'], box['level'])
 
     cdef vector[int] sequence
-    cdef unordered_map[int, Coordinate] targetDests
-    cdef Coordinate destCoord
-
-    # Prepare Target Dests Map
-    for cmd in commands:
-        if cmd['type'] == 'target':
-            destCoord = make_coord(cmd['dest']['row'], cmd['dest']['bay'], cmd['dest']['level'])
-            targetDests[cmd['id']] = destCoord
     
     # Prepare Sequence Vector
     for pid in fixed_seq_ids:
@@ -643,7 +708,7 @@ def run_fixed_solver(dict config, list boxes, list commands, list fixed_seq_ids)
     print(f"Running Fixed Sequence Solver with {sequence.size()} targets...")
     
     # 2. Run Solver (Once)
-    cdef vector[MissionLog] finalLogs = solveAndRecord(initialYard, sequence, targetDests)
+    cdef vector[MissionLog] finalLogs = solveAndRecord(initialYard, sequence)
     
     # 3. Convert Results
     py_logs = []
