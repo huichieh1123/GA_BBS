@@ -1,11 +1,12 @@
 import csv
 import time
-import bs_solver  # 確保已經編譯好
-from gen_yard import generate_yard
-from gen_sequence import generate_sequence
+import bs_solver # Beam Search
+# import mcts_solver # Monte Carlo Tree Search
+import gen_yard
+import gen_sequence
 
 def load_csv_data():
-    """載入最新的地圖設定、貨櫃位置與任務清單"""
+    # 1. Load Config
     config = {}
     with open('yard_config.csv', 'r') as f:
         reader = csv.DictReader(f)
@@ -18,6 +19,7 @@ def load_csv_data():
         config['t_handle'] = float(row.get('time_handle', 30.0))
         config['t_process'] = float(row.get('time_process', 10.0))
 
+    # 2. Load Yard
     boxes = []
     with open('mock_yard.csv', 'r') as f:
         reader = csv.DictReader(f)
@@ -29,48 +31,72 @@ def load_csv_data():
                 'level': int(row['level'])
             })
 
+    # 3. Load Commands (Only for destination info now)
     commands = []
     with open('mock_commands.csv', 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
+            try:
+                dr = int(row['dest_row'])
+                db = int(row['dest_bay'])
+                dl = int(row['dest_level'])
+            except:
+                dr, db, dl = -1, -1, 1
+
             commands.append({
                 'id': int(row['parent_carrier_id']),
                 'type': row['cmd_type'],
-                'dest': {'row': int(row['dst_row']), 'bay': int(row['dst_bay']), 'level': int(row['dst_level'])}
+                'dest': {'row': dr, 'bay': db, 'level': dl}
             })
+            
     return config, boxes, commands
 
+# 1. Fixed Sequence provided by user
+# job_sequence = [
+#     398, 61, 262, 185, 373, 3, 133, 387, 4, 328, 
+#     361, 103, 62, 240, 126, 340, 122, 32, 226, 271, 
+#     190, 98, 202, 309, 1, 167, 233, 110, 281, 246, 
+#     339, 395, 311, 250, 104, 332, 346, 356, 143, 350, 
+#     135, 151, 221, 375, 219, 193, 389, 50, 266, 268
+# ]
+
 def main():
-    # --- 保留先前改過的自動同步內容 ---
-    generate_yard()
-    generate_sequence() 
+    gen_yard.generate_yard()
 
+    start_t = time.time()
+    job_sequence = gen_sequence.generate_sequence()
+    
+    # 2. Load Data
     config, boxes, commands = load_csv_data()
+    
+    # 3. Configure Solver (bs/mcts)
 
-    # 自動獲取剛產出的 Rule-based 序列
-    job_sequence = [cmd['id'] for cmd in commands if cmd['type'] == 'target']
+    bs_solver.set_config(
+        config['t_travel'], 
+        config['t_handle'], 
+        config['t_process'],
+        3,   # AGV Count
+        200  # Beam Width (Increased for single pass high quality)
+    )
 
-    print(f"size : {config['max_row']}x{config['max_bay']}x{config['max_level']}")
-    print(f"opt seq , mission : {len(job_sequence)}")
+    # mcts_solver.set_config(
+    #     config['t_travel'], 
+    #     config['t_handle'], 
+    #     config['t_process'],
+    #     3 # AGV Count
+    # )
 
-    start_cpu_time = time.time()
-    # 執行 C++ 核心運算
+    # 4. Run Solver with Fixed Sequence
+    print(f"Starting Solver with {len(job_sequence)} rule-based jobs...")
     logs = bs_solver.run_fixed_solver(config, boxes, commands, job_sequence)
-    end_cpu_time = time.time()
-
-    # --- Step 4: 修正後的 CSV 輸出 (恢復所有參數與格式) ---
-    output_file = 'output_missions_python.csv'
-    with open(output_file, 'w', newline='') as f:
+    # logs = mcts_solver.run_mcts_solver(config, boxes, commands, job_sequence, iterations=50000)
+    
+    # 5. Output
+    with open('output_missions_python.csv', 'w', newline='') as f:
         writer = csv.writer(f)
-        # 恢復完整欄位
-        writer.writerow([
-            "mission_no", "agv_id", "mission_type", "container_id", 
-            "related_target_id", "src_pos", "dst_pos", "start_time", "end_time", "makespan"
-        ])
+        writer.writerow(["mission_no", "agv_id", "mission_type", "container_id", "related_target_id", "src_pos", "dst_pos", "start_time", "end_time", "makespan"])
         
-        final_makespan = 0
         for log in logs:
-            # 恢復原始 Workstation Port 顯示邏輯
             if log.src[0] == -1:
                 s_str = f"work station (Port {log.src[2]})"
             else:
@@ -86,16 +112,18 @@ def main():
                 log.agv_id,
                 log.mission_type,
                 log.container_id,
-                log.related_target_id, 
+                log.related_target_id,
                 s_str,
                 d_str,
-                log.start_time,        
-                log.end_time,          
+                log.start_time,
+                log.end_time,
                 log.makespan
             ])
-            final_makespan = max(final_makespan, log.makespan)
 
-    print(f"save in : {output_file}")
+    end_t = time.time()
+    print(f"Total Time: {end_t - start_t:.2f}s")
+    if logs:
+        print(f"Final Makespan: {logs[-1].makespan:.2f}s")
 
 if __name__ == "__main__":
     main()
