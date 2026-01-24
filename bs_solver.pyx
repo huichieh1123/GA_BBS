@@ -640,7 +640,6 @@ def run_fixed_solver(dict config, list boxes, list commands, list fixed_seq_ids)
     for pid in fixed_seq_ids:
         sequence.push_back(pid)
     
-    print(f"Running Fixed Sequence Solver with {sequence.size()} targets...")
     
     # 2. Run Solver (Once)
     cdef vector[MissionLog] finalLogs = solveAndRecord(initialYard, sequence, targetDests)
