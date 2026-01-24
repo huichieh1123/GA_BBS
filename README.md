@@ -236,6 +236,8 @@ function expand_beam(current_beam):
 ```
 ## 8. 編譯指令
 ```
+pip install setuptools numpy cython pandas matplotlib
+
 python setup.py build_ext --inplace
 
 python main.py
