@@ -91,7 +91,7 @@ def main():
     logs = bs_solver.run_fixed_solver(config, boxes, commands, job_sequence)
     # logs = mcts_solver.run_mcts_solver(config, boxes, commands, job_sequence, iterations=50000)
     
-    # 5. Output
+# 5. Output
     with open('output_missions_python.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(["mission_no", "agv_id", "mission_type", "container_id", "related_target_id", "src_pos", "dst_pos", "start_time", "end_time", "makespan"])

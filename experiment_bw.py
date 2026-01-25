@@ -54,6 +54,10 @@ def run_experiment():
     # 1. 準備資料
     print("Loading data from local CSVs...")
     try:
+        # --- 確保地圖與序列已生成，並獲取 job_sequence ---
+        gen_yard.generate_yard()
+        job_sequence = gen_sequence.generate_sequence()
+        
         config, boxes, commands = load_csv_data()
         # [修改點]：自動從載入的 commands 提取 target 序號作為 job_sequence
         job_sequence = [cmd['id'] for cmd in commands if cmd['type'] == 'target']
@@ -74,7 +78,11 @@ def run_experiment():
 
     # 2. 迴圈測試不同的 Beam Width
     for bw in BW_LIST:
+<<<<<<< HEAD
         # 設定 C++ 內部參數
+=======
+        # [CRITICAL] 設定 C++ 內部參數
+>>>>>>> 4da6028 (merged)
         bs_solver.set_config(
             config['t_travel'], 
             config['t_handle'], 
@@ -84,13 +92,28 @@ def run_experiment():
         )
         
         start_time = time.time()
+<<<<<<< HEAD
         # 執行 Solver
+=======
+        
+        # 執行 Solver，使用剛剛生成的 job_sequence
+>>>>>>> 4da6028 (merged)
         logs = bs_solver.run_fixed_solver(config, boxes, commands, job_sequence)
         end_time = time.time()
         
         compute_time = end_time - start_time
         final_makespan = max(log.makespan for log in logs) if logs else -1.0
 
+<<<<<<< HEAD
+=======
+        # 計算 Final Makespan
+        if logs:
+            final_makespan = max(log.makespan for log in logs)
+        else:
+            final_makespan = -1.0  # 失敗
+
+        # 顯示即時結果
+>>>>>>> 4da6028 (merged)
         print(f"{bw:<10} | {final_makespan:<15.2f} | {compute_time:<20.4f}")
 
         results.append({
