@@ -1,7 +1,7 @@
 import csv
 import time
 import bs_solver # Beam Search
-import mcts_solver # Monte Carlo Tree Search
+# import mcts_solver # Monte Carlo Tree Search
 
 def load_csv_data():
     # 1. Load Config
