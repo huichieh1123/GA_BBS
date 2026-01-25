@@ -1,41 +1,28 @@
 import csv
 import random
-import re
 
-def get_config_from_cpp(file_path):
-    config = {}
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-        patterns = {
-            'max_row': r'int\s+max_row\s*=\s*(\d+);',
-            'max_bay': r'int\s+max_bay\s*=\s*(\d+);',
-            'max_level': r'int\s+max_level\s*=\s*(\d+);',
-            'total_boxes': r'int\s+total_boxes\s*=\s*(\d+);'
-        }
-        for key, pattern in patterns.items():
-            match = re.search(pattern, content)
-            if match:
-                config[key] = int(match.group(1))
-    return config
-
-def generate_yard():
-    # 1. 獲取參數
-    config = get_config_from_cpp('DataGenerator.cpp')
-    if not config:
-        print("無法讀取 DataGenerator.cpp 的參數，請確認檔案路徑。")
-        return
+def generate_yard_with_config(cfg):
+    # 1. 整理參數
+    config = {
+        'max_row': cfg['max_row'],
+        'max_bay': cfg['max_bay'],
+        'max_level': cfg['max_level'],
+        'total_boxes': cfg['total_boxes'],
+        'time_travel_unit': cfg['t_travel'],
+        'time_handle': cfg['t_handle'],
+        'time_process': cfg['t_process']
+    }
 
     R, B, L = config['max_row'], config['max_bay'], config['max_level']
     total_boxes = config['total_boxes']
 
-    # 2. 產出 yard_config.csv (供演算法主程式讀取)
+    # 2. 產出 yard_config.csv
     with open('yard_config.csv', 'w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=config.keys())
         writer.writeheader()
         writer.writerow(config)
 
-    # 3. 產出 mock_yard.csv (符合物理堆疊)
-    # 邏輯：先隨機分配每根柱子要堆多高，直到總數達到 400
+    # 3. 隨機生成堆場分佈
     all_columns = [(r, b) for r in range(R) for b in range(B)]
     column_heights = {col: 0 for col in all_columns}
     
@@ -46,19 +33,18 @@ def generate_yard():
             column_heights[col] += 1
             current_count += 1
 
-    # 4. 根據高度分配 ID 並寫入檔案
+    # 4. 寫入 mock_yard.csv
     box_id = 1
     with open('mock_yard.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(["container_id", "row", "bay", "level"])
         for col, height in column_heights.items():
-            for level in range(height):
-                # 這裡確保每一層(level)都是連續的，從 0 開始往上填
-                writer.writerow([box_id, col[0], col[1], level])
+            for l in range(height):
+                writer.writerow([box_id, col[0], col[1], l])
                 box_id += 1
+    
+    print(f"Yard generated: size {R}x{B}x{L}, boxes: {total_boxes}")
 
-    print(f"yard generated")
-    print(f"size ：{R}x{B}x{L}, container_num: {total_boxes}")
-
-if __name__ == "__main__":
-    generate_yard()
+# 保留舊接口以防萬一
+def generate_yard():
+    pass
