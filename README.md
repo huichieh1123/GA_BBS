@@ -243,8 +243,8 @@ python setup.py build_ext --inplace
 python main.py
 ```
 ## 2026/01/25 新增優化邏輯
-AGV 在將貨櫃送達 Port 並執行放下動作（TIME_HANDLE）後立即釋放，不再於原位等待 $5n$ 秒的揀貨時間。
+AGV 在將貨櫃送達 Port 並執行放下動作（TIME_HANDLE）後立即釋放，不再於原位等待 5n 秒的揀貨時間。
 
-根據 mock_commands.csv 中的 sku_qty 欄位，系統會動態計算每個貨櫃的揀貨耗時（$Duration = SKU \times 5.0s$）
+根據 mock_commands.csv 中的 sku_qty 欄位，系統會動態計算每個貨櫃的揀貨耗時（Duration = SKU \times 5.0s）
 
 AGV 獲得自由後，可利用工作站揀貨的空窗期，執行其他任務（如翻箱 Reshuffle 或搬運下一個目標箱），將原本的「無效等待時間」轉化為「有效作業時間」。
