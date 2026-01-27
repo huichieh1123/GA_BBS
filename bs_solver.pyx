@@ -235,15 +235,18 @@ cdef double W_PENALTY_LOOKAHEAD = 500.0
 cdef double TIME_TRAVEL_UNIT = 5.0
 cdef double TIME_HANDLE = 30.0
 cdef double TIME_PROCESS = 10.0
+cdef double TIME_PICK = 5.0
 cdef int AGV_COUNT = 3
 cdef int BEAM_WIDTH = 100
 cdef int PORT_COUNT = 5
 
-def set_config(double t_travel, double t_handle, double t_process, int agv_cnt, int beam_w):
-    global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, AGV_COUNT, BEAM_WIDTH
+# bs_solver.pyx 
+def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w):
+    global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH
     TIME_TRAVEL_UNIT = t_travel
     TIME_HANDLE = t_handle
     TIME_PROCESS = t_process
+    TIME_PICK = t_pick  
     AGV_COUNT = agv_cnt
     BEAM_WIDTH = beam_w
 
@@ -392,7 +395,7 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                 if isTop:
                     src = node.yard.getBoxPosition(targetId)
                     bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0; selectedPort = -1
-                    dynamic_process_time = sku_map[targetId] * 5.0
+                    dynamic_process_time = sku_map[targetId] * TIME_PICK
                     for i in range(AGV_COUNT):
                         travel = getTravelTime(node.agvs[i].currentPos, src)
                         start = fmax(node.agvs[i].availableTime, node.gridBusyTime[src.row][src.bay])

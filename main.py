@@ -18,7 +18,8 @@ GLOBAL_CONFIG = {
     'beam_width': 200,
     't_travel': 5.0,
     't_handle': 30.0,
-    't_process': 10.0
+    't_process': 10.0,
+    't_pick': 2.0
 }
 
 def load_csv_data():
@@ -83,9 +84,10 @@ def main():
     
     # 3. 配置 Solver (自動帶入 GLOBAL_CONFIG 參數)
     bs_solver.set_config(
-        config['t_travel'], 
-        config['t_handle'], 
-        config['t_process'],
+        GLOBAL_CONFIG['t_travel'], 
+        GLOBAL_CONFIG['t_handle'], 
+        GLOBAL_CONFIG['t_process'],
+        GLOBAL_CONFIG['t_pick'],
         GLOBAL_CONFIG['agv_count'], 
         GLOBAL_CONFIG['beam_width']
     )
@@ -104,6 +106,7 @@ def main():
         ])
         
         SIM_START_EPOCH = 1705363200
+        t_pick_val = GLOBAL_CONFIG['t_pick']
         
         for log in logs:
             if log.src[0] == -1:
@@ -120,7 +123,7 @@ def main():
             current_sku = sku_map.get(target_id, 0)
             
             if log.mission_type == "target" and log.dst[0] == -1:
-                duration = current_sku * 5.0
+                duration = current_sku * t_pick_val
             else:
                 duration = 0.0
 
