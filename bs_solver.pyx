@@ -239,16 +239,18 @@ cdef double TIME_PICK = 5.0
 cdef int AGV_COUNT = 3
 cdef int BEAM_WIDTH = 100
 cdef int PORT_COUNT = 5
+cdef long long SIM_START_EPOCH = 1705363200
 
 # bs_solver.pyx 
-def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w):
-    global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH
+def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start):
+    global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH
     TIME_TRAVEL_UNIT = t_travel
     TIME_HANDLE = t_handle
     TIME_PROCESS = t_process
     TIME_PICK = t_pick  
     AGV_COUNT = agv_cnt
     BEAM_WIDTH = beam_w
+    SIM_START_EPOCH = sim_start
 
 cdef int getSeqIndex(int boxId, vector[int]& seq) noexcept nogil:
     for k in range(seq.size()):
@@ -363,19 +365,22 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             if not node.yard.canReceiveBox(r, b): continue
                             dst = make_coord(r, b, node.yard.tops[r][b])
                             penalty = calculateReturnPenalty(node.yard, r, b, seq, seqIdx)
-                            bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0
+                            bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0;pickupTime = 0
                             for i in range(AGV_COUNT):
                                 travel = getTravelTime(node.agvs[i].currentPos, src)
                                 start = fmax(node.agvs[i].availableTime, node.portsBusyTime[selectedPort])
                                 travelToDest = getTravelTime(src, dst)
+                                
                                 finish = start + travel + TIME_HANDLE + travelToDest + TIME_HANDLE
                                 if finish < bestFinishTime:
                                     bestFinishTime = finish; bestAGV = i; bestStartTime = start
+                                    pickupTime = start + travel + TIME_HANDLE
                             newNode = node
                             newNode.yard.returnFromPort(targetId, dst.row, dst.bay)
                             newNode.isCurrentTargetRetrieved = True 
                             newNode.agvs[bestAGV].currentPos = dst
                             newNode.agvs[bestAGV].availableTime = bestFinishTime
+                            newNode.portsBusyTime[selectedPort] = pickupTime
                             newNode.gridBusyTime[dst.row][dst.bay] = bestFinishTime
                             maxAGV = 0
                             for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
@@ -385,8 +390,8 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                             log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 2 
                             log.container_id = targetId; log.related_target_id = targetId
                             log.src = src; log.dst = dst
-                            log.start_time_epoch = <long long>bestStartTime + 1705363200
-                            log.end_time_epoch = <long long>bestFinishTime + 1705363200
+                            log.start_time_epoch = <long long>bestStartTime + SIM_START_EPOCH 
+                            log.end_time_epoch = <long long>bestFinishTime + SIM_START_EPOCH 
                             log.makespan_snapshot = newNode.g; newNode.history.push_back(log); nextBeam.push_back(newNode)
                     continue 
 
@@ -416,7 +421,7 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                         processStart = fmax(agvArrivalAtPort, node.portsBusyTime[p])
                         
                         agvFreeTime = processStart + TIME_HANDLE 
-                        portFinishTime = agvFreeTime + dynamic_process_time
+                        portFinishTime = agvFreeTime + TIME_PROCESS + dynamic_process_time
                         
                         if portFinishTime < bestFinishTime:
                             bestFinishTime = portFinishTime; bestAGV = i; bestStartTime = start; selectedPort = p; pickupTime = agvFreeTime
@@ -435,8 +440,8 @@ cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq
                     log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 0 
                     log.container_id = targetId; log.related_target_id = targetId
                     log.src = src; log.dst = selectedPortCoord 
-                    log.start_time_epoch = <long long>bestStartTime + 1705363200
-                    log.end_time_epoch = <long long>pickupTime + 1705363200
+                    log.start_time_epoch = <long long>bestStartTime + SIM_START_EPOCH
+                    log.end_time_epoch = <long long>bestFinishTime + SIM_START_EPOCH
                     log.makespan_snapshot = newNode.g; newNode.history.push_back(log); nextBeam.push_back(newNode)
                 else:
                     # Case D: RESHUFFLE

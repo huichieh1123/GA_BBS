@@ -3,7 +3,6 @@ import random
 import re
 
 def get_mission_count_from_cpp(file_path):
-    """從 C++ 檔案中同步任務數量設定"""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -13,7 +12,6 @@ def get_mission_count_from_cpp(file_path):
         return 50
 
 def generate_sequence_with_config(cfg):
-    # 優先從 cfg 讀取數量，若無則從 CPP 同步
     mission_cnt = cfg.get('mission_count')
     if mission_cnt is None:
         mission_cnt = get_mission_count_from_cpp('DataGenerator.cpp')
@@ -85,7 +83,7 @@ def generate_sequence_with_config(cfg):
                          "src_row", "src_bay", "src_level", "dest_row", "dest_bay", "dest_level", 
                          "create_time", "sku_qty"])
         
-        baseTime = 1705363200
+        baseTime = cfg.get('sim_start_epoch', 1705363200) 
         for i, tid in enumerate(final_seq):
             r, b, t = box_pos[tid]
             sku_qty = random.randint(1, 30)

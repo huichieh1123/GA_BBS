@@ -19,7 +19,8 @@ GLOBAL_CONFIG = {
     't_travel': 5.0,
     't_handle': 30.0,
     't_process': 10.0,
-    't_pick': 2.0
+    't_pick': 2.0,
+    'sim_start_epoch': 1705363200
 }
 
 def load_csv_data():
@@ -89,7 +90,8 @@ def main():
         GLOBAL_CONFIG['t_process'],
         GLOBAL_CONFIG['t_pick'],
         GLOBAL_CONFIG['agv_count'], 
-        GLOBAL_CONFIG['beam_width']
+        GLOBAL_CONFIG['beam_width'],
+        GLOBAL_CONFIG['sim_start_epoch']
     )
 
     # 4. 執行求解
@@ -105,7 +107,7 @@ def main():
             "end_time", "start_s", "end_s", "makespan", "sku_qty", "picking_duration(s)"
         ])
         
-        SIM_START_EPOCH = 1705363200
+        SIM_START_EPOCH = GLOBAL_CONFIG['sim_start_epoch']
         t_pick_val = GLOBAL_CONFIG['t_pick']
         
         for log in logs:
