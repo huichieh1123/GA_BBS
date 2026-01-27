@@ -242,8 +242,8 @@ cdef int PORT_COUNT = 5
 cdef long long SIM_START_EPOCH = 1705363200
 
 # bs_solver.pyx 
-def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start):
-    global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH
+def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start, double w_blocking, double w_lookahead,int port_cnt):
+    global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH, W_PENALTY_BLOCKING, W_PENALTY_LOOKAHEAD, PORT_COUNT
     TIME_TRAVEL_UNIT = t_travel
     TIME_HANDLE = t_handle
     TIME_PROCESS = t_process
@@ -251,6 +251,9 @@ def set_config(double t_travel, double t_handle, double t_process, double t_pick
     AGV_COUNT = agv_cnt
     BEAM_WIDTH = beam_w
     SIM_START_EPOCH = sim_start
+    W_PENALTY_BLOCKING = w_blocking
+    W_PENALTY_LOOKAHEAD = w_lookahead
+    PORT_COUNT = port_cnt
 
 cdef int getSeqIndex(int boxId, vector[int]& seq) noexcept nogil:
     for k in range(seq.size()):

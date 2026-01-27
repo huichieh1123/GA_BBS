@@ -20,22 +20,25 @@ GLOBAL_CONFIG = {
     't_handle': 30.0,
     't_process': 10.0,
     't_pick': 2.0,
-    'sim_start_epoch': 1705363200
+    'sim_start_epoch': 1705363200,
+    'w_penalty_blocking': 2000.0,  
+    'w_penalty_lookahead': 500.0,
+    'port_count': 2
 }
 
 def load_csv_data():
     # 1. Load Config
-    config = {}
-    with open('yard_config.csv', 'r') as f:
-        reader = csv.DictReader(f)
-        row = next(reader)
-        config['max_row'] = int(row['max_row'])
-        config['max_bay'] = int(row['max_bay'])
-        config['max_level'] = int(row['max_level'])
-        config['total_boxes'] = int(row['total_boxes'])
-        config['t_travel'] = float(row.get('time_travel_unit', 5.0))
-        config['t_handle'] = float(row.get('time_handle', 30.0))
-        config['t_process'] = float(row.get('time_process', 10.0))
+    # config = {}
+    # with open('yard_config.csv', 'r') as f:
+    #     reader = csv.DictReader(f)
+    #     row = next(reader)
+    #     config['max_row'] = int(row['max_row'])
+    #     config['max_bay'] = int(row['max_bay'])
+    #     config['max_level'] = int(row['max_level'])
+    #     config['total_boxes'] = int(row['total_boxes'])
+    #     config['t_travel'] = float(row.get('time_travel_unit', 5.0))
+    #     config['t_handle'] = float(row.get('time_handle', 30.0))
+    #     config['t_process'] = float(row.get('time_process', 10.0))
 
     # 2. Load Yard
     boxes = []
@@ -71,19 +74,19 @@ def load_csv_data():
                 'sku_qty': qty
             })
             
-    return config, boxes, commands, sku_map
+    return boxes, commands, sku_map
 
 def main():
-    # 1. 根據 GLOBAL_CONFIG 重新生成數據 (解耦 C++ Generator)
+
     gen_yard.generate_yard_with_config(GLOBAL_CONFIG)
     job_sequence = gen_sequence.generate_sequence_with_config(GLOBAL_CONFIG)
 
     start_t = time.time()
     
-    # 2. 讀取數據
-    config, boxes, commands, sku_map = load_csv_data()
+    boxes, commands, sku_map = load_csv_data()
     
-    # 3. 配置 Solver (自動帶入 GLOBAL_CONFIG 參數)
+    # job_sequence = [cmd['id'] for cmd in commands if cmd['type'] == 'target']
+
     bs_solver.set_config(
         GLOBAL_CONFIG['t_travel'], 
         GLOBAL_CONFIG['t_handle'], 
@@ -91,12 +94,15 @@ def main():
         GLOBAL_CONFIG['t_pick'],
         GLOBAL_CONFIG['agv_count'], 
         GLOBAL_CONFIG['beam_width'],
-        GLOBAL_CONFIG['sim_start_epoch']
+        GLOBAL_CONFIG['sim_start_epoch'],
+        GLOBAL_CONFIG['w_penalty_blocking'], 
+        GLOBAL_CONFIG['w_penalty_lookahead'],
+        GLOBAL_CONFIG['port_count']
     )
 
     # 4. 執行求解
-    print(f"Starting Solver with {len(job_sequence)} rule-based jobs...")
-    logs = bs_solver.run_fixed_solver(config, boxes, commands, job_sequence, sku_map)
+    print(f"Starting Solver with {len(job_sequence)} jobs (Ports: {GLOBAL_CONFIG['port_count']})...")
+    logs = bs_solver.run_fixed_solver(GLOBAL_CONFIG, boxes, commands, job_sequence, sku_map)
     
     # 5. 輸出任務日誌 (含相對秒數與 SKU 詳情)
     with open('output_missions_python.csv', 'w', newline='') as f:

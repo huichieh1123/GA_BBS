@@ -1734,7 +1734,7 @@ static const char* const __pyx_f[] = {
 /*--- Type declarations ---*/
 struct __pyx_obj_9bs_solver_PyMissionLog;
 
-/* "bs_solver.pyx":491
+/* "bs_solver.pyx":494
  * # 5. Entry Point
  * # ==========================================
  * cdef class PyMissionLog:             # <<<<<<<<<<<<<<
@@ -2712,7 +2712,7 @@ int __pyx_module_is_main_bs_solver = 0;
 /* #### Code section: string_decls ### */
 static const char __pyx_k_agv_id_container_id_dst_end_time[] = "agv_id, container_id, dst, end_time, makespan, mission_no, mission_type, related_target_id, src, start_time";
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_9bs_solver_set_config(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_t_travel, double __pyx_v_t_handle, double __pyx_v_t_process, double __pyx_v_t_pick, int __pyx_v_agv_cnt, int __pyx_v_beam_w, PY_LONG_LONG __pyx_v_sim_start); /* proto */
+static PyObject *__pyx_pf_9bs_solver_set_config(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_t_travel, double __pyx_v_t_handle, double __pyx_v_t_process, double __pyx_v_t_pick, int __pyx_v_agv_cnt, int __pyx_v_beam_w, PY_LONG_LONG __pyx_v_sim_start, double __pyx_v_w_blocking, double __pyx_v_w_lookahead, int __pyx_v_port_cnt); /* proto */
 static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_10mission_no___get__(struct __pyx_obj_9bs_solver_PyMissionLog *__pyx_v_self); /* proto */
 static int __pyx_pf_9bs_solver_12PyMissionLog_10mission_no_2__set__(struct __pyx_obj_9bs_solver_PyMissionLog *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_6agv_id___get__(struct __pyx_obj_9bs_solver_PyMissionLog *__pyx_v_self); /* proto */
@@ -2767,7 +2767,7 @@ typedef struct {
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_pop;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_values;
   PyObject *__pyx_codeobj_tab[5];
-  PyObject *__pyx_string_tab[88];
+  PyObject *__pyx_string_tab[91];
   PyObject *__pyx_number_tab[1];
 /* #### Code section: module_state_contents ### */
 /* CommonTypesMetaclass.module_state_decls */
@@ -2856,47 +2856,50 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_pid __pyx_string_tab[44]
 #define __pyx_n_u_pl __pyx_string_tab[45]
 #define __pyx_n_u_pop __pyx_string_tab[46]
-#define __pyx_n_u_py_logs __pyx_string_tab[47]
-#define __pyx_n_u_pyx_checksum __pyx_string_tab[48]
-#define __pyx_n_u_pyx_result __pyx_string_tab[49]
-#define __pyx_n_u_pyx_state __pyx_string_tab[50]
-#define __pyx_n_u_pyx_type __pyx_string_tab[51]
-#define __pyx_n_u_pyx_unpickle_PyMissionLog __pyx_string_tab[52]
-#define __pyx_n_u_qualname __pyx_string_tab[53]
-#define __pyx_n_u_reduce __pyx_string_tab[54]
-#define __pyx_n_u_reduce_cython __pyx_string_tab[55]
-#define __pyx_n_u_reduce_ex __pyx_string_tab[56]
-#define __pyx_n_u_reshuffle __pyx_string_tab[57]
-#define __pyx_n_u_return __pyx_string_tab[58]
-#define __pyx_n_u_row __pyx_string_tab[59]
-#define __pyx_n_u_run_fixed_solver __pyx_string_tab[60]
-#define __pyx_n_u_self __pyx_string_tab[61]
-#define __pyx_n_u_sequence __pyx_string_tab[62]
-#define __pyx_n_u_set_config __pyx_string_tab[63]
-#define __pyx_n_u_set_name __pyx_string_tab[64]
-#define __pyx_n_u_setdefault __pyx_string_tab[65]
-#define __pyx_n_u_setstate __pyx_string_tab[66]
-#define __pyx_n_u_setstate_cython __pyx_string_tab[67]
-#define __pyx_n_u_sim_start __pyx_string_tab[68]
-#define __pyx_n_u_sku_map __pyx_string_tab[69]
-#define __pyx_n_u_state __pyx_string_tab[70]
-#define __pyx_n_u_t_handle __pyx_string_tab[71]
-#define __pyx_n_u_t_pick __pyx_string_tab[72]
-#define __pyx_n_u_t_process __pyx_string_tab[73]
-#define __pyx_n_u_t_travel __pyx_string_tab[74]
-#define __pyx_n_u_target __pyx_string_tab[75]
-#define __pyx_n_u_test __pyx_string_tab[76]
-#define __pyx_n_u_time __pyx_string_tab[77]
-#define __pyx_n_u_total_boxes __pyx_string_tab[78]
-#define __pyx_n_u_update __pyx_string_tab[79]
-#define __pyx_n_u_use_setstate __pyx_string_tab[80]
-#define __pyx_n_u_v __pyx_string_tab[81]
-#define __pyx_n_u_values __pyx_string_tab[82]
-#define __pyx_kp_b_iso88591_6 __pyx_string_tab[83]
-#define __pyx_kp_b_iso88591_T_oT_t_d_UYYffjjyy_R_R_V_V_a_G1 __pyx_string_tab[84]
-#define __pyx_kp_b_iso88591_q_0_kQR_xq_7_a_nA_1 __pyx_string_tab[85]
-#define __pyx_kp_b_iso88591_q_1_a __pyx_string_tab[86]
-#define __pyx_kp_b_iso88591_uAV1L_a_6_PVVWWX_wk_QgS_AXSPQQR __pyx_string_tab[87]
+#define __pyx_n_u_port_cnt __pyx_string_tab[47]
+#define __pyx_n_u_py_logs __pyx_string_tab[48]
+#define __pyx_n_u_pyx_checksum __pyx_string_tab[49]
+#define __pyx_n_u_pyx_result __pyx_string_tab[50]
+#define __pyx_n_u_pyx_state __pyx_string_tab[51]
+#define __pyx_n_u_pyx_type __pyx_string_tab[52]
+#define __pyx_n_u_pyx_unpickle_PyMissionLog __pyx_string_tab[53]
+#define __pyx_n_u_qualname __pyx_string_tab[54]
+#define __pyx_n_u_reduce __pyx_string_tab[55]
+#define __pyx_n_u_reduce_cython __pyx_string_tab[56]
+#define __pyx_n_u_reduce_ex __pyx_string_tab[57]
+#define __pyx_n_u_reshuffle __pyx_string_tab[58]
+#define __pyx_n_u_return __pyx_string_tab[59]
+#define __pyx_n_u_row __pyx_string_tab[60]
+#define __pyx_n_u_run_fixed_solver __pyx_string_tab[61]
+#define __pyx_n_u_self __pyx_string_tab[62]
+#define __pyx_n_u_sequence __pyx_string_tab[63]
+#define __pyx_n_u_set_config __pyx_string_tab[64]
+#define __pyx_n_u_set_name __pyx_string_tab[65]
+#define __pyx_n_u_setdefault __pyx_string_tab[66]
+#define __pyx_n_u_setstate __pyx_string_tab[67]
+#define __pyx_n_u_setstate_cython __pyx_string_tab[68]
+#define __pyx_n_u_sim_start __pyx_string_tab[69]
+#define __pyx_n_u_sku_map __pyx_string_tab[70]
+#define __pyx_n_u_state __pyx_string_tab[71]
+#define __pyx_n_u_t_handle __pyx_string_tab[72]
+#define __pyx_n_u_t_pick __pyx_string_tab[73]
+#define __pyx_n_u_t_process __pyx_string_tab[74]
+#define __pyx_n_u_t_travel __pyx_string_tab[75]
+#define __pyx_n_u_target __pyx_string_tab[76]
+#define __pyx_n_u_test __pyx_string_tab[77]
+#define __pyx_n_u_time __pyx_string_tab[78]
+#define __pyx_n_u_total_boxes __pyx_string_tab[79]
+#define __pyx_n_u_update __pyx_string_tab[80]
+#define __pyx_n_u_use_setstate __pyx_string_tab[81]
+#define __pyx_n_u_v __pyx_string_tab[82]
+#define __pyx_n_u_values __pyx_string_tab[83]
+#define __pyx_n_u_w_blocking __pyx_string_tab[84]
+#define __pyx_n_u_w_lookahead __pyx_string_tab[85]
+#define __pyx_kp_b_iso88591_6 __pyx_string_tab[86]
+#define __pyx_kp_b_iso88591_T_oT_t_d_UYYffjjyy_R_R_V_V_a_G1 __pyx_string_tab[87]
+#define __pyx_kp_b_iso88591_q_0_kQR_xq_7_a_nA_1 __pyx_string_tab[88]
+#define __pyx_kp_b_iso88591_q_1_a __pyx_string_tab[89]
+#define __pyx_kp_b_iso88591_uAV1L_a_6_PVVWWX_wk_QgS_AXSPQQR __pyx_string_tab[90]
 #define __pyx_int_200751618 __pyx_number_tab[0]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
@@ -2915,7 +2918,7 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_ptype_9bs_solver_PyMissionLog);
   Py_CLEAR(clear_module_state->__pyx_type_9bs_solver_PyMissionLog);
   for (int i=0; i<5; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<88; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<91; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_clear_contents ### */
 /* CommonTypesMetaclass.module_state_clear */
@@ -2942,7 +2945,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   Py_VISIT(traverse_module_state->__pyx_ptype_9bs_solver_PyMissionLog);
   Py_VISIT(traverse_module_state->__pyx_type_9bs_solver_PyMissionLog);
   for (int i=0; i<5; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<88; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<91; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_traverse_contents ### */
 /* CommonTypesMetaclass.module_state_traverse */
@@ -2960,8 +2963,8 @@ return 0;
 /* "bs_solver.pyx":245
  * 
  * # bs_solver.pyx
- * def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start):             # <<<<<<<<<<<<<<
- *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH
+ * def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start, double w_blocking, double w_lookahead,int port_cnt):             # <<<<<<<<<<<<<<
+ *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH, W_PENALTY_BLOCKING, W_PENALTY_LOOKAHEAD, PORT_COUNT
  *     TIME_TRAVEL_UNIT = t_travel
 */
 
@@ -2988,11 +2991,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   int __pyx_v_agv_cnt;
   int __pyx_v_beam_w;
   PY_LONG_LONG __pyx_v_sim_start;
+  double __pyx_v_w_blocking;
+  double __pyx_v_w_lookahead;
+  int __pyx_v_port_cnt;
   #if !CYTHON_METH_FASTCALL
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   #endif
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject* values[7] = {0,0,0,0,0,0,0};
+  PyObject* values[10] = {0,0,0,0,0,0,0,0,0,0};
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3008,11 +3014,23 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
   {
-    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_t_travel,&__pyx_mstate_global->__pyx_n_u_t_handle,&__pyx_mstate_global->__pyx_n_u_t_process,&__pyx_mstate_global->__pyx_n_u_t_pick,&__pyx_mstate_global->__pyx_n_u_agv_cnt,&__pyx_mstate_global->__pyx_n_u_beam_w,&__pyx_mstate_global->__pyx_n_u_sim_start,0};
+    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_t_travel,&__pyx_mstate_global->__pyx_n_u_t_handle,&__pyx_mstate_global->__pyx_n_u_t_process,&__pyx_mstate_global->__pyx_n_u_t_pick,&__pyx_mstate_global->__pyx_n_u_agv_cnt,&__pyx_mstate_global->__pyx_n_u_beam_w,&__pyx_mstate_global->__pyx_n_u_sim_start,&__pyx_mstate_global->__pyx_n_u_w_blocking,&__pyx_mstate_global->__pyx_n_u_w_lookahead,&__pyx_mstate_global->__pyx_n_u_port_cnt,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
     if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 245, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
+        case 10:
+        values[9] = __Pyx_ArgRef_FASTCALL(__pyx_args, 9);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 245, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
+        case  9:
+        values[8] = __Pyx_ArgRef_FASTCALL(__pyx_args, 8);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 245, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
+        case  8:
+        values[7] = __Pyx_ArgRef_FASTCALL(__pyx_args, 7);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 245, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
         case  7:
         values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
         if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 245, __pyx_L3_error)
@@ -3046,10 +3064,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
       if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "set_config", 0) < (0)) __PYX_ERR(0, 245, __pyx_L3_error)
-      for (Py_ssize_t i = __pyx_nargs; i < 7; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("set_config", 1, 7, 7, i); __PYX_ERR(0, 245, __pyx_L3_error) }
+      for (Py_ssize_t i = __pyx_nargs; i < 10; i++) {
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("set_config", 1, 10, 10, i); __PYX_ERR(0, 245, __pyx_L3_error) }
       }
-    } else if (unlikely(__pyx_nargs != 7)) {
+    } else if (unlikely(__pyx_nargs != 10)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
@@ -3066,6 +3084,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 245, __pyx_L3_error)
       values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
       if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 245, __pyx_L3_error)
+      values[7] = __Pyx_ArgRef_FASTCALL(__pyx_args, 7);
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 245, __pyx_L3_error)
+      values[8] = __Pyx_ArgRef_FASTCALL(__pyx_args, 8);
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 245, __pyx_L3_error)
+      values[9] = __Pyx_ArgRef_FASTCALL(__pyx_args, 9);
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 245, __pyx_L3_error)
     }
     __pyx_v_t_travel = __Pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_t_travel == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
     __pyx_v_t_handle = __Pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_t_handle == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
@@ -3074,10 +3098,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
     __pyx_v_agv_cnt = __Pyx_PyLong_As_int(values[4]); if (unlikely((__pyx_v_agv_cnt == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
     __pyx_v_beam_w = __Pyx_PyLong_As_int(values[5]); if (unlikely((__pyx_v_beam_w == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
     __pyx_v_sim_start = __Pyx_PyLong_As_PY_LONG_LONG(values[6]); if (unlikely((__pyx_v_sim_start == (PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+    __pyx_v_w_blocking = __Pyx_PyFloat_AsDouble(values[7]); if (unlikely((__pyx_v_w_blocking == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+    __pyx_v_w_lookahead = __Pyx_PyFloat_AsDouble(values[8]); if (unlikely((__pyx_v_w_lookahead == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
+    __pyx_v_port_cnt = __Pyx_PyLong_As_int(values[9]); if (unlikely((__pyx_v_port_cnt == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_config", 1, 7, 7, __pyx_nargs); __PYX_ERR(0, 245, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_config", 1, 10, 10, __pyx_nargs); __PYX_ERR(0, 245, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3088,7 +3115,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9bs_solver_set_config(__pyx_self, __pyx_v_t_travel, __pyx_v_t_handle, __pyx_v_t_process, __pyx_v_t_pick, __pyx_v_agv_cnt, __pyx_v_beam_w, __pyx_v_sim_start);
+  __pyx_r = __pyx_pf_9bs_solver_set_config(__pyx_self, __pyx_v_t_travel, __pyx_v_t_handle, __pyx_v_t_process, __pyx_v_t_pick, __pyx_v_agv_cnt, __pyx_v_beam_w, __pyx_v_sim_start, __pyx_v_w_blocking, __pyx_v_w_lookahead, __pyx_v_port_cnt);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -3098,14 +3125,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9bs_solver_set_config(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_t_travel, double __pyx_v_t_handle, double __pyx_v_t_process, double __pyx_v_t_pick, int __pyx_v_agv_cnt, int __pyx_v_beam_w, PY_LONG_LONG __pyx_v_sim_start) {
+static PyObject *__pyx_pf_9bs_solver_set_config(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_t_travel, double __pyx_v_t_handle, double __pyx_v_t_process, double __pyx_v_t_pick, int __pyx_v_agv_cnt, int __pyx_v_beam_w, PY_LONG_LONG __pyx_v_sim_start, double __pyx_v_w_blocking, double __pyx_v_w_lookahead, int __pyx_v_port_cnt) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_config", 0);
 
   /* "bs_solver.pyx":247
- * def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start):
- *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH
+ * def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start, double w_blocking, double w_lookahead,int port_cnt):
+ *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH, W_PENALTY_BLOCKING, W_PENALTY_LOOKAHEAD, PORT_COUNT
  *     TIME_TRAVEL_UNIT = t_travel             # <<<<<<<<<<<<<<
  *     TIME_HANDLE = t_handle
  *     TIME_PROCESS = t_process
@@ -3113,7 +3140,7 @@ static PyObject *__pyx_pf_9bs_solver_set_config(CYTHON_UNUSED PyObject *__pyx_se
   __pyx_v_9bs_solver_TIME_TRAVEL_UNIT = __pyx_v_t_travel;
 
   /* "bs_solver.pyx":248
- *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH
+ *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH, W_PENALTY_BLOCKING, W_PENALTY_LOOKAHEAD, PORT_COUNT
  *     TIME_TRAVEL_UNIT = t_travel
  *     TIME_HANDLE = t_handle             # <<<<<<<<<<<<<<
  *     TIME_PROCESS = t_process
@@ -3153,7 +3180,7 @@ static PyObject *__pyx_pf_9bs_solver_set_config(CYTHON_UNUSED PyObject *__pyx_se
  *     AGV_COUNT = agv_cnt
  *     BEAM_WIDTH = beam_w             # <<<<<<<<<<<<<<
  *     SIM_START_EPOCH = sim_start
- * 
+ *     W_PENALTY_BLOCKING = w_blocking
 */
   __pyx_v_9bs_solver_BEAM_WIDTH = __pyx_v_beam_w;
 
@@ -3161,16 +3188,43 @@ static PyObject *__pyx_pf_9bs_solver_set_config(CYTHON_UNUSED PyObject *__pyx_se
  *     AGV_COUNT = agv_cnt
  *     BEAM_WIDTH = beam_w
  *     SIM_START_EPOCH = sim_start             # <<<<<<<<<<<<<<
+ *     W_PENALTY_BLOCKING = w_blocking
+ *     W_PENALTY_LOOKAHEAD = w_lookahead
+*/
+  __pyx_v_9bs_solver_SIM_START_EPOCH = __pyx_v_sim_start;
+
+  /* "bs_solver.pyx":254
+ *     BEAM_WIDTH = beam_w
+ *     SIM_START_EPOCH = sim_start
+ *     W_PENALTY_BLOCKING = w_blocking             # <<<<<<<<<<<<<<
+ *     W_PENALTY_LOOKAHEAD = w_lookahead
+ *     PORT_COUNT = port_cnt
+*/
+  __pyx_v_9bs_solver_W_PENALTY_BLOCKING = __pyx_v_w_blocking;
+
+  /* "bs_solver.pyx":255
+ *     SIM_START_EPOCH = sim_start
+ *     W_PENALTY_BLOCKING = w_blocking
+ *     W_PENALTY_LOOKAHEAD = w_lookahead             # <<<<<<<<<<<<<<
+ *     PORT_COUNT = port_cnt
+ * 
+*/
+  __pyx_v_9bs_solver_W_PENALTY_LOOKAHEAD = __pyx_v_w_lookahead;
+
+  /* "bs_solver.pyx":256
+ *     W_PENALTY_BLOCKING = w_blocking
+ *     W_PENALTY_LOOKAHEAD = w_lookahead
+ *     PORT_COUNT = port_cnt             # <<<<<<<<<<<<<<
  * 
  * cdef int getSeqIndex(int boxId, vector[int]& seq) noexcept nogil:
 */
-  __pyx_v_9bs_solver_SIM_START_EPOCH = __pyx_v_sim_start;
+  __pyx_v_9bs_solver_PORT_COUNT = __pyx_v_port_cnt;
 
   /* "bs_solver.pyx":245
  * 
  * # bs_solver.pyx
- * def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start):             # <<<<<<<<<<<<<<
- *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH
+ * def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start, double w_blocking, double w_lookahead,int port_cnt):             # <<<<<<<<<<<<<<
+ *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH, W_PENALTY_BLOCKING, W_PENALTY_LOOKAHEAD, PORT_COUNT
  *     TIME_TRAVEL_UNIT = t_travel
 */
 
@@ -3181,8 +3235,8 @@ static PyObject *__pyx_pf_9bs_solver_set_config(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":255
- *     SIM_START_EPOCH = sim_start
+/* "bs_solver.pyx":258
+ *     PORT_COUNT = port_cnt
  * 
  * cdef int getSeqIndex(int boxId, vector[int]& seq) noexcept nogil:             # <<<<<<<<<<<<<<
  *     for k in range(seq.size()):
@@ -3197,7 +3251,7 @@ static int __pyx_f_9bs_solver_getSeqIndex(int __pyx_v_boxId, std::vector<int>  &
   std::vector<int> ::size_type __pyx_t_3;
   int __pyx_t_4;
 
-  /* "bs_solver.pyx":256
+  /* "bs_solver.pyx":259
  * 
  * cdef int getSeqIndex(int boxId, vector[int]& seq) noexcept nogil:
  *     for k in range(seq.size()):             # <<<<<<<<<<<<<<
@@ -3209,7 +3263,7 @@ static int __pyx_f_9bs_solver_getSeqIndex(int __pyx_v_boxId, std::vector<int>  &
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_k = __pyx_t_3;
 
-    /* "bs_solver.pyx":257
+    /* "bs_solver.pyx":260
  * cdef int getSeqIndex(int boxId, vector[int]& seq) noexcept nogil:
  *     for k in range(seq.size()):
  *         if seq[k] == boxId: return k             # <<<<<<<<<<<<<<
@@ -3223,7 +3277,7 @@ static int __pyx_f_9bs_solver_getSeqIndex(int __pyx_v_boxId, std::vector<int>  &
     }
   }
 
-  /* "bs_solver.pyx":258
+  /* "bs_solver.pyx":261
  *     for k in range(seq.size()):
  *         if seq[k] == boxId: return k
  *     return 999999             # <<<<<<<<<<<<<<
@@ -3233,8 +3287,8 @@ static int __pyx_f_9bs_solver_getSeqIndex(int __pyx_v_boxId, std::vector<int>  &
   __pyx_r = 0xF423F;
   goto __pyx_L0;
 
-  /* "bs_solver.pyx":255
- *     SIM_START_EPOCH = sim_start
+  /* "bs_solver.pyx":258
+ *     PORT_COUNT = port_cnt
  * 
  * cdef int getSeqIndex(int boxId, vector[int]& seq) noexcept nogil:             # <<<<<<<<<<<<<<
  *     for k in range(seq.size()):
@@ -3246,7 +3300,7 @@ static int __pyx_f_9bs_solver_getSeqIndex(int __pyx_v_boxId, std::vector<int>  &
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":260
+/* "bs_solver.pyx":263
  *     return 999999
  * 
  * cdef double getTravelTime(Coordinate src, Coordinate dst) nogil:             # <<<<<<<<<<<<<<
@@ -3268,7 +3322,7 @@ static double __pyx_f_9bs_solver_getTravelTime(Coordinate __pyx_v_src, Coordinat
   int __pyx_clineno = 0;
   PyGILState_STATE __pyx_gilstate_save;
 
-  /* "bs_solver.pyx":261
+  /* "bs_solver.pyx":264
  * 
  * cdef double getTravelTime(Coordinate src, Coordinate dst) nogil:
  *     cdef int r1 = 0 if src.row == -1 else src.row             # <<<<<<<<<<<<<<
@@ -3283,7 +3337,7 @@ static double __pyx_f_9bs_solver_getTravelTime(Coordinate __pyx_v_src, Coordinat
   }
   __pyx_v_r1 = __pyx_t_1;
 
-  /* "bs_solver.pyx":262
+  /* "bs_solver.pyx":265
  * cdef double getTravelTime(Coordinate src, Coordinate dst) nogil:
  *     cdef int r1 = 0 if src.row == -1 else src.row
  *     cdef int b1 = 0 if src.bay == -1 else src.bay             # <<<<<<<<<<<<<<
@@ -3298,7 +3352,7 @@ static double __pyx_f_9bs_solver_getTravelTime(Coordinate __pyx_v_src, Coordinat
   }
   __pyx_v_b1 = __pyx_t_1;
 
-  /* "bs_solver.pyx":263
+  /* "bs_solver.pyx":266
  *     cdef int r1 = 0 if src.row == -1 else src.row
  *     cdef int b1 = 0 if src.bay == -1 else src.bay
  *     cdef int r2 = 0 if dst.row == -1 else dst.row             # <<<<<<<<<<<<<<
@@ -3313,7 +3367,7 @@ static double __pyx_f_9bs_solver_getTravelTime(Coordinate __pyx_v_src, Coordinat
   }
   __pyx_v_r2 = __pyx_t_1;
 
-  /* "bs_solver.pyx":264
+  /* "bs_solver.pyx":267
  *     cdef int b1 = 0 if src.bay == -1 else src.bay
  *     cdef int r2 = 0 if dst.row == -1 else dst.row
  *     cdef int b2 = 0 if dst.bay == -1 else dst.bay             # <<<<<<<<<<<<<<
@@ -3328,7 +3382,7 @@ static double __pyx_f_9bs_solver_getTravelTime(Coordinate __pyx_v_src, Coordinat
   }
   __pyx_v_b2 = __pyx_t_1;
 
-  /* "bs_solver.pyx":265
+  /* "bs_solver.pyx":268
  *     cdef int r2 = 0 if dst.row == -1 else dst.row
  *     cdef int b2 = 0 if dst.bay == -1 else dst.bay
  *     return (abs(r1 - r2) + abs(b1 - b2)) * TIME_TRAVEL_UNIT             # <<<<<<<<<<<<<<
@@ -3341,7 +3395,7 @@ static double __pyx_f_9bs_solver_getTravelTime(Coordinate __pyx_v_src, Coordinat
     PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
     __Pyx_CppExn2PyErr();
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
-    __PYX_ERR(0, 265, __pyx_L1_error)
+    __PYX_ERR(0, 268, __pyx_L1_error)
   }
   try {
     __pyx_t_3 = std::abs((__pyx_v_b1 - __pyx_v_b2));
@@ -3349,12 +3403,12 @@ static double __pyx_f_9bs_solver_getTravelTime(Coordinate __pyx_v_src, Coordinat
     PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
     __Pyx_CppExn2PyErr();
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
-    __PYX_ERR(0, 265, __pyx_L1_error)
+    __PYX_ERR(0, 268, __pyx_L1_error)
   }
   __pyx_r = ((__pyx_t_1 + __pyx_t_3) * __pyx_v_9bs_solver_TIME_TRAVEL_UNIT);
   goto __pyx_L0;
 
-  /* "bs_solver.pyx":260
+  /* "bs_solver.pyx":263
  *     return 999999
  * 
  * cdef double getTravelTime(Coordinate src, Coordinate dst) nogil:             # <<<<<<<<<<<<<<
@@ -3372,7 +3426,7 @@ static double __pyx_f_9bs_solver_getTravelTime(Coordinate __pyx_v_src, Coordinat
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":267
+/* "bs_solver.pyx":270
  *     return (abs(r1 - r2) + abs(b1 - b2)) * TIME_TRAVEL_UNIT
  * 
  * cdef double calculateRILPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx, int movingBoxId) noexcept nogil:             # <<<<<<<<<<<<<<
@@ -3395,7 +3449,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
   int __pyx_t_3;
   int __pyx_t_4;
 
-  /* "bs_solver.pyx":268
+  /* "bs_solver.pyx":271
  * 
  * cdef double calculateRILPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx, int movingBoxId) noexcept nogil:
  *     cdef int currentTop = yard.tops[r][b]             # <<<<<<<<<<<<<<
@@ -3404,7 +3458,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
 */
   __pyx_v_currentTop = ((__pyx_v_yard.tops[__pyx_v_r])[__pyx_v_b]);
 
-  /* "bs_solver.pyx":269
+  /* "bs_solver.pyx":272
  * cdef double calculateRILPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx, int movingBoxId) noexcept nogil:
  *     cdef int currentTop = yard.tops[r][b]
  *     if currentTop == 0: return 0.0             # <<<<<<<<<<<<<<
@@ -3417,7 +3471,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
     goto __pyx_L0;
   }
 
-  /* "bs_solver.pyx":270
+  /* "bs_solver.pyx":273
  *     cdef int currentTop = yard.tops[r][b]
  *     if currentTop == 0: return 0.0
  *     cdef int topBoxId = yard.grid[r][b][currentTop - 1]             # <<<<<<<<<<<<<<
@@ -3426,7 +3480,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
 */
   __pyx_v_topBoxId = (((__pyx_v_yard.grid[__pyx_v_r])[__pyx_v_b])[(__pyx_v_currentTop - 1)]);
 
-  /* "bs_solver.pyx":271
+  /* "bs_solver.pyx":274
  *     if currentTop == 0: return 0.0
  *     cdef int topBoxId = yard.grid[r][b][currentTop - 1]
  *     cdef int movingBoxRank = getSeqIndex(movingBoxId, seq)             # <<<<<<<<<<<<<<
@@ -3435,7 +3489,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
 */
   __pyx_v_movingBoxRank = __pyx_f_9bs_solver_getSeqIndex(__pyx_v_movingBoxId, __pyx_v_seq);
 
-  /* "bs_solver.pyx":272
+  /* "bs_solver.pyx":275
  *     cdef int topBoxId = yard.grid[r][b][currentTop - 1]
  *     cdef int movingBoxRank = getSeqIndex(movingBoxId, seq)
  *     cdef int topBoxRank = getSeqIndex(topBoxId, seq)             # <<<<<<<<<<<<<<
@@ -3444,7 +3498,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
 */
   __pyx_v_topBoxRank = __pyx_f_9bs_solver_getSeqIndex(__pyx_v_topBoxId, __pyx_v_seq);
 
-  /* "bs_solver.pyx":273
+  /* "bs_solver.pyx":276
  *     cdef int movingBoxRank = getSeqIndex(movingBoxId, seq)
  *     cdef int topBoxRank = getSeqIndex(topBoxId, seq)
  *     cdef int t, boxId, rank, blockingCount = 0             # <<<<<<<<<<<<<<
@@ -3453,7 +3507,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
 */
   __pyx_v_blockingCount = 0;
 
-  /* "bs_solver.pyx":274
+  /* "bs_solver.pyx":277
  *     cdef int topBoxRank = getSeqIndex(topBoxId, seq)
  *     cdef int t, boxId, rank, blockingCount = 0
  *     for t in range(currentTop):             # <<<<<<<<<<<<<<
@@ -3465,7 +3519,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_t = __pyx_t_4;
 
-    /* "bs_solver.pyx":275
+    /* "bs_solver.pyx":278
  *     cdef int t, boxId, rank, blockingCount = 0
  *     for t in range(currentTop):
  *         boxId = yard.grid[r][b][t]             # <<<<<<<<<<<<<<
@@ -3474,7 +3528,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
 */
     __pyx_v_boxId = (((__pyx_v_yard.grid[__pyx_v_r])[__pyx_v_b])[__pyx_v_t]);
 
-    /* "bs_solver.pyx":276
+    /* "bs_solver.pyx":279
  *     for t in range(currentTop):
  *         boxId = yard.grid[r][b][t]
  *         rank = getSeqIndex(boxId, seq)             # <<<<<<<<<<<<<<
@@ -3483,7 +3537,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
 */
     __pyx_v_rank = __pyx_f_9bs_solver_getSeqIndex(__pyx_v_boxId, __pyx_v_seq);
 
-    /* "bs_solver.pyx":277
+    /* "bs_solver.pyx":280
  *         boxId = yard.grid[r][b][t]
  *         rank = getSeqIndex(boxId, seq)
  *         if rank < movingBoxRank: blockingCount += 1             # <<<<<<<<<<<<<<
@@ -3496,7 +3550,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
     }
   }
 
-  /* "bs_solver.pyx":278
+  /* "bs_solver.pyx":281
  *         rank = getSeqIndex(boxId, seq)
  *         if rank < movingBoxRank: blockingCount += 1
  *     if blockingCount > 0: return W_PENALTY_BLOCKING * blockingCount             # <<<<<<<<<<<<<<
@@ -3509,7 +3563,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
     goto __pyx_L0;
   }
 
-  /* "bs_solver.pyx":279
+  /* "bs_solver.pyx":282
  *         if rank < movingBoxRank: blockingCount += 1
  *     if blockingCount > 0: return W_PENALTY_BLOCKING * blockingCount
  *     if topBoxRank > movingBoxRank: return 0.0             # <<<<<<<<<<<<<<
@@ -3522,7 +3576,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
     goto __pyx_L0;
   }
 
-  /* "bs_solver.pyx":280
+  /* "bs_solver.pyx":283
  *     if blockingCount > 0: return W_PENALTY_BLOCKING * blockingCount
  *     if topBoxRank > movingBoxRank: return 0.0
  *     if topBoxRank > currentSeqIdx: return W_PENALTY_LOOKAHEAD / <double>(topBoxRank - currentSeqIdx)             # <<<<<<<<<<<<<<
@@ -3535,7 +3589,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
     goto __pyx_L0;
   }
 
-  /* "bs_solver.pyx":281
+  /* "bs_solver.pyx":284
  *     if topBoxRank > movingBoxRank: return 0.0
  *     if topBoxRank > currentSeqIdx: return W_PENALTY_LOOKAHEAD / <double>(topBoxRank - currentSeqIdx)
  *     return 0.0             # <<<<<<<<<<<<<<
@@ -3545,7 +3599,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
   __pyx_r = 0.0;
   goto __pyx_L0;
 
-  /* "bs_solver.pyx":267
+  /* "bs_solver.pyx":270
  *     return (abs(r1 - r2) + abs(b1 - b2)) * TIME_TRAVEL_UNIT
  * 
  * cdef double calculateRILPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx, int movingBoxId) noexcept nogil:             # <<<<<<<<<<<<<<
@@ -3558,7 +3612,7 @@ static double __pyx_f_9bs_solver_calculateRILPenalty(YardSystem &__pyx_v_yard, i
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":283
+/* "bs_solver.pyx":286
  *     return 0.0
  * 
  * cdef double calculate_3D_UBALB(YardSystem& yard, vector[int]& remainingTargets, int currentSeqIdx, bint currentRetrievedStatus) noexcept nogil:             # <<<<<<<<<<<<<<
@@ -3593,7 +3647,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
   int __pyx_clineno = 0;
   PyGILState_STATE __pyx_gilstate_save;
 
-  /* "bs_solver.pyx":284
+  /* "bs_solver.pyx":287
  * 
  * cdef double calculate_3D_UBALB(YardSystem& yard, vector[int]& remainingTargets, int currentSeqIdx, bint currentRetrievedStatus) noexcept nogil:
  *     cdef double total_time = 0.0             # <<<<<<<<<<<<<<
@@ -3602,7 +3656,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
 */
   __pyx_v_total_time = 0.0;
 
-  /* "bs_solver.pyx":289
+  /* "bs_solver.pyx":292
  *     cdef Coordinate targetPos
  *     cdef double minPortDist, returnDist
  *     for i in range(currentSeqIdx, remainingTargets.size()):             # <<<<<<<<<<<<<<
@@ -3614,7 +3668,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
   for (__pyx_t_3 = __pyx_v_currentSeqIdx; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "bs_solver.pyx":290
+    /* "bs_solver.pyx":293
  *     cdef double minPortDist, returnDist
  *     for i in range(currentSeqIdx, remainingTargets.size()):
  *         targetId = remainingTargets[i]             # <<<<<<<<<<<<<<
@@ -3623,7 +3677,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
 */
     __pyx_v_targetId = (__pyx_v_remainingTargets[__pyx_v_i]);
 
-    /* "bs_solver.pyx":291
+    /* "bs_solver.pyx":294
  *     for i in range(currentSeqIdx, remainingTargets.size()):
  *         targetId = remainingTargets[i]
  *         if i == currentSeqIdx and currentRetrievedStatus: continue             # <<<<<<<<<<<<<<
@@ -3642,7 +3696,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
       goto __pyx_L3_continue;
     }
 
-    /* "bs_solver.pyx":292
+    /* "bs_solver.pyx":295
  *         targetId = remainingTargets[i]
  *         if i == currentSeqIdx and currentRetrievedStatus: continue
  *         targetPos = yard.getBoxPosition(targetId)             # <<<<<<<<<<<<<<
@@ -3651,7 +3705,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
 */
     __pyx_v_targetPos = __pyx_v_yard.getBoxPosition(__pyx_v_targetId);
 
-    /* "bs_solver.pyx":293
+    /* "bs_solver.pyx":296
  *         if i == currentSeqIdx and currentRetrievedStatus: continue
  *         targetPos = yard.getBoxPosition(targetId)
  *         if targetPos.row == -1: continue             # <<<<<<<<<<<<<<
@@ -3663,7 +3717,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
       goto __pyx_L3_continue;
     }
 
-    /* "bs_solver.pyx":294
+    /* "bs_solver.pyx":297
  *         targetPos = yard.getBoxPosition(targetId)
  *         if targetPos.row == -1: continue
  *         topTier = yard.tops[targetPos.row][targetPos.bay] - 1             # <<<<<<<<<<<<<<
@@ -3672,7 +3726,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
 */
     __pyx_v_topTier = (((__pyx_v_yard.tops[__pyx_v_targetPos.row])[__pyx_v_targetPos.bay]) - 1);
 
-    /* "bs_solver.pyx":295
+    /* "bs_solver.pyx":298
  *         if targetPos.row == -1: continue
  *         topTier = yard.tops[targetPos.row][targetPos.bay] - 1
  *         for l in range(topTier, targetPos.tier, -1):             # <<<<<<<<<<<<<<
@@ -3684,7 +3738,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
     for (__pyx_t_8 = __pyx_v_topTier; __pyx_t_8 > __pyx_t_7; __pyx_t_8-=1) {
       __pyx_v_l = __pyx_t_8;
 
-      /* "bs_solver.pyx":296
+      /* "bs_solver.pyx":299
  *         topTier = yard.tops[targetPos.row][targetPos.bay] - 1
  *         for l in range(topTier, targetPos.tier, -1):
  *             total_time += TIME_HANDLE + TIME_TRAVEL_UNIT + TIME_HANDLE             # <<<<<<<<<<<<<<
@@ -3694,7 +3748,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
       __pyx_v_total_time = (__pyx_v_total_time + ((__pyx_v_9bs_solver_TIME_HANDLE + __pyx_v_9bs_solver_TIME_TRAVEL_UNIT) + __pyx_v_9bs_solver_TIME_HANDLE));
     }
 
-    /* "bs_solver.pyx":297
+    /* "bs_solver.pyx":300
  *         for l in range(topTier, targetPos.tier, -1):
  *             total_time += TIME_HANDLE + TIME_TRAVEL_UNIT + TIME_HANDLE
  *         minPortDist = 1e9             # <<<<<<<<<<<<<<
@@ -3703,7 +3757,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
 */
     __pyx_v_minPortDist = 1e9;
 
-    /* "bs_solver.pyx":298
+    /* "bs_solver.pyx":301
  *             total_time += TIME_HANDLE + TIME_TRAVEL_UNIT + TIME_HANDLE
  *         minPortDist = 1e9
  *         for p in range(1, PORT_COUNT + 1):             # <<<<<<<<<<<<<<
@@ -3715,18 +3769,18 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
     for (__pyx_t_6 = 1; __pyx_t_6 < __pyx_t_10; __pyx_t_6+=1) {
       __pyx_v_p = __pyx_t_6;
 
-      /* "bs_solver.pyx":299
+      /* "bs_solver.pyx":302
  *         minPortDist = 1e9
  *         for p in range(1, PORT_COUNT + 1):
  *              minPortDist = fmin(minPortDist, getTravelTime(targetPos, make_coord(-1, -1, p)))             # <<<<<<<<<<<<<<
  *         total_time += TIME_HANDLE + minPortDist + TIME_HANDLE + TIME_PROCESS
  *         returnDist = (yard.MAX_ROWS + yard.MAX_BAYS) / 2.0 * TIME_TRAVEL_UNIT
 */
-      __pyx_t_11 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_targetPos, make_coord(-1, -1, __pyx_v_p)); if (unlikely(__pyx_t_11 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 299, __pyx_L1_error)
+      __pyx_t_11 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_targetPos, make_coord(-1, -1, __pyx_v_p)); if (unlikely(__pyx_t_11 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 302, __pyx_L1_error)
       __pyx_v_minPortDist = fmin(__pyx_v_minPortDist, __pyx_t_11);
     }
 
-    /* "bs_solver.pyx":300
+    /* "bs_solver.pyx":303
  *         for p in range(1, PORT_COUNT + 1):
  *              minPortDist = fmin(minPortDist, getTravelTime(targetPos, make_coord(-1, -1, p)))
  *         total_time += TIME_HANDLE + minPortDist + TIME_HANDLE + TIME_PROCESS             # <<<<<<<<<<<<<<
@@ -3735,7 +3789,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
 */
     __pyx_v_total_time = (__pyx_v_total_time + (((__pyx_v_9bs_solver_TIME_HANDLE + __pyx_v_minPortDist) + __pyx_v_9bs_solver_TIME_HANDLE) + __pyx_v_9bs_solver_TIME_PROCESS));
 
-    /* "bs_solver.pyx":301
+    /* "bs_solver.pyx":304
  *              minPortDist = fmin(minPortDist, getTravelTime(targetPos, make_coord(-1, -1, p)))
  *         total_time += TIME_HANDLE + minPortDist + TIME_HANDLE + TIME_PROCESS
  *         returnDist = (yard.MAX_ROWS + yard.MAX_BAYS) / 2.0 * TIME_TRAVEL_UNIT             # <<<<<<<<<<<<<<
@@ -3744,7 +3798,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
 */
     __pyx_v_returnDist = ((((double)(__pyx_v_yard.MAX_ROWS + __pyx_v_yard.MAX_BAYS)) / 2.0) * __pyx_v_9bs_solver_TIME_TRAVEL_UNIT);
 
-    /* "bs_solver.pyx":302
+    /* "bs_solver.pyx":305
  *         total_time += TIME_HANDLE + minPortDist + TIME_HANDLE + TIME_PROCESS
  *         returnDist = (yard.MAX_ROWS + yard.MAX_BAYS) / 2.0 * TIME_TRAVEL_UNIT
  *         total_time += TIME_HANDLE + returnDist + TIME_HANDLE             # <<<<<<<<<<<<<<
@@ -3755,7 +3809,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
     __pyx_L3_continue:;
   }
 
-  /* "bs_solver.pyx":303
+  /* "bs_solver.pyx":306
  *         returnDist = (yard.MAX_ROWS + yard.MAX_BAYS) / 2.0 * TIME_TRAVEL_UNIT
  *         total_time += TIME_HANDLE + returnDist + TIME_HANDLE
  *     return total_time / <double>AGV_COUNT             # <<<<<<<<<<<<<<
@@ -3765,7 +3819,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
   __pyx_r = (__pyx_v_total_time / ((double)__pyx_v_9bs_solver_AGV_COUNT));
   goto __pyx_L0;
 
-  /* "bs_solver.pyx":283
+  /* "bs_solver.pyx":286
  *     return 0.0
  * 
  * cdef double calculate_3D_UBALB(YardSystem& yard, vector[int]& remainingTargets, int currentSeqIdx, bint currentRetrievedStatus) noexcept nogil:             # <<<<<<<<<<<<<<
@@ -3783,7 +3837,7 @@ static double __pyx_f_9bs_solver_calculate_3D_UBALB(YardSystem &__pyx_v_yard, st
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":305
+/* "bs_solver.pyx":308
  *     return total_time / <double>AGV_COUNT
  * 
  * cdef int calculateReturnPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx) noexcept nogil:             # <<<<<<<<<<<<<<
@@ -3807,7 +3861,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
   size_t __pyx_t_6;
   int __pyx_t_7;
 
-  /* "bs_solver.pyx":306
+  /* "bs_solver.pyx":309
  * 
  * cdef int calculateReturnPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx) noexcept nogil:
  *     cdef int penalty = 0             # <<<<<<<<<<<<<<
@@ -3816,7 +3870,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
 */
   __pyx_v_penalty = 0;
 
-  /* "bs_solver.pyx":307
+  /* "bs_solver.pyx":310
  * cdef int calculateReturnPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx) noexcept nogil:
  *     cdef int penalty = 0
  *     cdef int currentTop = yard.tops[r][b]             # <<<<<<<<<<<<<<
@@ -3825,7 +3879,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
 */
   __pyx_v_currentTop = ((__pyx_v_yard.tops[__pyx_v_r])[__pyx_v_b]);
 
-  /* "bs_solver.pyx":310
+  /* "bs_solver.pyx":313
  *     cdef int t, boxId, urgency
  *     cdef size_t k
  *     for t in range(currentTop):             # <<<<<<<<<<<<<<
@@ -3837,7 +3891,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_t = __pyx_t_3;
 
-    /* "bs_solver.pyx":311
+    /* "bs_solver.pyx":314
  *     cdef size_t k
  *     for t in range(currentTop):
  *         boxId = yard.grid[r][b][t]             # <<<<<<<<<<<<<<
@@ -3846,7 +3900,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
 */
     __pyx_v_boxId = (((__pyx_v_yard.grid[__pyx_v_r])[__pyx_v_b])[__pyx_v_t]);
 
-    /* "bs_solver.pyx":312
+    /* "bs_solver.pyx":315
  *     for t in range(currentTop):
  *         boxId = yard.grid[r][b][t]
  *         for k in range(currentSeqIdx + 1, seq.size()):             # <<<<<<<<<<<<<<
@@ -3858,7 +3912,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
     for (__pyx_t_6 = (__pyx_v_currentSeqIdx + 1); __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_k = __pyx_t_6;
 
-      /* "bs_solver.pyx":313
+      /* "bs_solver.pyx":316
  *         boxId = yard.grid[r][b][t]
  *         for k in range(currentSeqIdx + 1, seq.size()):
  *             if seq[k] == boxId:             # <<<<<<<<<<<<<<
@@ -3868,7 +3922,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
       __pyx_t_7 = ((__pyx_v_seq[__pyx_v_k]) == __pyx_v_boxId);
       if (__pyx_t_7) {
 
-        /* "bs_solver.pyx":314
+        /* "bs_solver.pyx":317
  *         for k in range(currentSeqIdx + 1, seq.size()):
  *             if seq[k] == boxId:
  *                 urgency = (k - currentSeqIdx)             # <<<<<<<<<<<<<<
@@ -3877,7 +3931,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
 */
         __pyx_v_urgency = (__pyx_v_k - __pyx_v_currentSeqIdx);
 
-        /* "bs_solver.pyx":315
+        /* "bs_solver.pyx":318
  *             if seq[k] == boxId:
  *                 urgency = (k - currentSeqIdx)
  *                 penalty += 1000 // (urgency + 1)             # <<<<<<<<<<<<<<
@@ -3886,7 +3940,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
 */
         __pyx_v_penalty = (__pyx_v_penalty + (0x3E8 / (__pyx_v_urgency + 1)));
 
-        /* "bs_solver.pyx":313
+        /* "bs_solver.pyx":316
  *         boxId = yard.grid[r][b][t]
  *         for k in range(currentSeqIdx + 1, seq.size()):
  *             if seq[k] == boxId:             # <<<<<<<<<<<<<<
@@ -3897,7 +3951,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
     }
   }
 
-  /* "bs_solver.pyx":316
+  /* "bs_solver.pyx":319
  *                 urgency = (k - currentSeqIdx)
  *                 penalty += 1000 // (urgency + 1)
  *     return penalty             # <<<<<<<<<<<<<<
@@ -3907,7 +3961,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
   __pyx_r = __pyx_v_penalty;
   goto __pyx_L0;
 
-  /* "bs_solver.pyx":305
+  /* "bs_solver.pyx":308
  *     return total_time / <double>AGV_COUNT
  * 
  * cdef int calculateReturnPenalty(YardSystem& yard, int r, int b, vector[int]& seq, int currentSeqIdx) noexcept nogil:             # <<<<<<<<<<<<<<
@@ -3920,7 +3974,7 @@ static int __pyx_f_9bs_solver_calculateReturnPenalty(YardSystem &__pyx_v_yard, i
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":321
+/* "bs_solver.pyx":324
  * # 4. BBS Solver ( 1 )
  * # ==========================================
  * cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq, unordered_map[int, int]& sku_map) noexcept nogil:             # <<<<<<<<<<<<<<
@@ -4003,7 +4057,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
   int __pyx_clineno = 0;
   PyGILState_STATE __pyx_gilstate_save;
 
-  /* "bs_solver.pyx":322
+  /* "bs_solver.pyx":325
  * # ==========================================
  * cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq, unordered_map[int, int]& sku_map) noexcept nogil:
  *     srand(12345)             # <<<<<<<<<<<<<<
@@ -4012,7 +4066,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
   srand(0x3039);
 
-  /* "bs_solver.pyx":324
+  /* "bs_solver.pyx":327
  *     srand(12345)
  *     cdef SearchNode root
  *     root.yard = initialYard             # <<<<<<<<<<<<<<
@@ -4021,7 +4075,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
   __pyx_v_root.yard = __pyx_v_initialYard;
 
-  /* "bs_solver.pyx":325
+  /* "bs_solver.pyx":328
  *     cdef SearchNode root
  *     root.yard = initialYard
  *     root.g = root.h = root.f = 0             # <<<<<<<<<<<<<<
@@ -4032,7 +4086,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
   __pyx_v_root.h = 0.0;
   __pyx_v_root.f = 0.0;
 
-  /* "bs_solver.pyx":326
+  /* "bs_solver.pyx":329
  *     root.yard = initialYard
  *     root.g = root.h = root.f = 0
  *     root.isCurrentTargetRetrieved = False             # <<<<<<<<<<<<<<
@@ -4041,7 +4095,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
   __pyx_v_root.isCurrentTargetRetrieved = 0;
 
-  /* "bs_solver.pyx":327
+  /* "bs_solver.pyx":330
  *     root.g = root.h = root.f = 0
  *     root.isCurrentTargetRetrieved = False
  *     root.gridBusyTime.resize(initialYard.MAX_ROWS, vector[double](initialYard.MAX_BAYS, 0.0))             # <<<<<<<<<<<<<<
@@ -4054,7 +4108,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
     PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
     __Pyx_CppExn2PyErr();
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
-    __PYX_ERR(0, 327, __pyx_L1_error)
+    __PYX_ERR(0, 330, __pyx_L1_error)
   }
   try {
     __pyx_v_root.gridBusyTime.resize(__pyx_v_initialYard.MAX_ROWS, __pyx_t_1);
@@ -4062,10 +4116,10 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
     PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
     __Pyx_CppExn2PyErr();
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
-    __PYX_ERR(0, 327, __pyx_L1_error)
+    __PYX_ERR(0, 330, __pyx_L1_error)
   }
 
-  /* "bs_solver.pyx":328
+  /* "bs_solver.pyx":331
  *     root.isCurrentTargetRetrieved = False
  *     root.gridBusyTime.resize(initialYard.MAX_ROWS, vector[double](initialYard.MAX_BAYS, 0.0))
  *     root.portsBusyTime.resize(PORT_COUNT + 1, 0.0)             # <<<<<<<<<<<<<<
@@ -4078,10 +4132,10 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
     PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
     __Pyx_CppExn2PyErr();
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
-    __PYX_ERR(0, 328, __pyx_L1_error)
+    __PYX_ERR(0, 331, __pyx_L1_error)
   }
 
-  /* "bs_solver.pyx":331
+  /* "bs_solver.pyx":334
  *     cdef int i, p, port_idx
  *     cdef Agent agv
  *     agv.currentPos = make_coord(0, 0, 0)             # <<<<<<<<<<<<<<
@@ -4090,7 +4144,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
   __pyx_v_agv.currentPos = make_coord(0, 0, 0);
 
-  /* "bs_solver.pyx":332
+  /* "bs_solver.pyx":335
  *     cdef Agent agv
  *     agv.currentPos = make_coord(0, 0, 0)
  *     agv.availableTime = 0.0             # <<<<<<<<<<<<<<
@@ -4099,7 +4153,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
   __pyx_v_agv.availableTime = 0.0;
 
-  /* "bs_solver.pyx":333
+  /* "bs_solver.pyx":336
  *     agv.currentPos = make_coord(0, 0, 0)
  *     agv.availableTime = 0.0
  *     for i in range(AGV_COUNT):             # <<<<<<<<<<<<<<
@@ -4111,7 +4165,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_i = __pyx_t_4;
 
-    /* "bs_solver.pyx":334
+    /* "bs_solver.pyx":337
  *     agv.availableTime = 0.0
  *     for i in range(AGV_COUNT):
  *         agv.id = i             # <<<<<<<<<<<<<<
@@ -4120,7 +4174,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
     __pyx_v_agv.id = __pyx_v_i;
 
-    /* "bs_solver.pyx":335
+    /* "bs_solver.pyx":338
  *     for i in range(AGV_COUNT):
  *         agv.id = i
  *         root.agvs.push_back(agv)             # <<<<<<<<<<<<<<
@@ -4133,11 +4187,11 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
       PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
       __Pyx_CppExn2PyErr();
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
-      __PYX_ERR(0, 335, __pyx_L1_error)
+      __PYX_ERR(0, 338, __pyx_L1_error)
     }
   }
 
-  /* "bs_solver.pyx":337
+  /* "bs_solver.pyx":340
  *         root.agvs.push_back(agv)
  *     cdef vector[SearchNode] currentBeam, nextBeam
  *     currentBeam.push_back(root)             # <<<<<<<<<<<<<<
@@ -4150,10 +4204,10 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
     PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
     __Pyx_CppExn2PyErr();
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
-    __PYX_ERR(0, 337, __pyx_L1_error)
+    __PYX_ERR(0, 340, __pyx_L1_error)
   }
 
-  /* "bs_solver.pyx":348
+  /* "bs_solver.pyx":351
  *     cdef MissionLog log
  * 
  *     for seqIdx in range(seq.size()):             # <<<<<<<<<<<<<<
@@ -4165,7 +4219,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
   for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
     __pyx_v_seqIdx = __pyx_t_7;
 
-    /* "bs_solver.pyx":349
+    /* "bs_solver.pyx":352
  * 
  *     for seqIdx in range(seq.size()):
  *         targetId = seq[seqIdx]             # <<<<<<<<<<<<<<
@@ -4174,7 +4228,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
     __pyx_v_targetId = (__pyx_v_seq[__pyx_v_seqIdx]);
 
-    /* "bs_solver.pyx":350
+    /* "bs_solver.pyx":353
  *     for seqIdx in range(seq.size()):
  *         targetId = seq[seqIdx]
  *         targetCycleDone = False             # <<<<<<<<<<<<<<
@@ -4183,7 +4237,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
     __pyx_v_targetCycleDone = 0;
 
-    /* "bs_solver.pyx":351
+    /* "bs_solver.pyx":354
  *         targetId = seq[seqIdx]
  *         targetCycleDone = False
  *         expansion_limit = 0             # <<<<<<<<<<<<<<
@@ -4192,7 +4246,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
     __pyx_v_expansion_limit = 0;
 
-    /* "bs_solver.pyx":352
+    /* "bs_solver.pyx":355
  *         targetCycleDone = False
  *         expansion_limit = 0
  *         while not targetCycleDone and expansion_limit < 40:             # <<<<<<<<<<<<<<
@@ -4211,7 +4265,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
       __pyx_L9_bool_binop_done:;
       if (!__pyx_t_8) break;
 
-      /* "bs_solver.pyx":353
+      /* "bs_solver.pyx":356
  *         expansion_limit = 0
  *         while not targetCycleDone and expansion_limit < 40:
  *             expansion_limit += 1             # <<<<<<<<<<<<<<
@@ -4220,7 +4274,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
       __pyx_v_expansion_limit = (__pyx_v_expansion_limit + 1);
 
-      /* "bs_solver.pyx":354
+      /* "bs_solver.pyx":357
  *         while not targetCycleDone and expansion_limit < 40:
  *             expansion_limit += 1
  *             nextBeam.clear()             # <<<<<<<<<<<<<<
@@ -4229,7 +4283,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
       __pyx_v_nextBeam.clear();
 
-      /* "bs_solver.pyx":355
+      /* "bs_solver.pyx":358
  *             expansion_limit += 1
  *             nextBeam.clear()
  *             for node in currentBeam:             # <<<<<<<<<<<<<<
@@ -4241,7 +4295,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
         __pyx_t_11 = *__pyx_t_10;
         __pyx_v_node = __PYX_STD_MOVE_IF_SUPPORTED(__pyx_t_11);
 
-        /* "bs_solver.pyx":356
+        /* "bs_solver.pyx":359
  *             nextBeam.clear()
  *             for node in currentBeam:
  *                 targetPos = node.yard.getBoxPosition(targetId)             # <<<<<<<<<<<<<<
@@ -4250,7 +4304,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
         __pyx_v_targetPos = __pyx_v_node.yard.getBoxPosition(__pyx_v_targetId);
 
-        /* "bs_solver.pyx":357
+        /* "bs_solver.pyx":360
  *             for node in currentBeam:
  *                 targetPos = node.yard.getBoxPosition(targetId)
  *                 if targetPos.row != -1 and node.isCurrentTargetRetrieved:             # <<<<<<<<<<<<<<
@@ -4267,7 +4321,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
         __pyx_L14_bool_binop_done:;
         if (__pyx_t_8) {
 
-          /* "bs_solver.pyx":358
+          /* "bs_solver.pyx":361
  *                 targetPos = node.yard.getBoxPosition(targetId)
  *                 if targetPos.row != -1 and node.isCurrentTargetRetrieved:
  *                     nextBeam.push_back(node); targetCycleDone = True; continue             # <<<<<<<<<<<<<<
@@ -4280,12 +4334,12 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
             __Pyx_CppExn2PyErr();
             __Pyx_PyGILState_Release(__pyx_gilstate_save);
-            __PYX_ERR(0, 358, __pyx_L1_error)
+            __PYX_ERR(0, 361, __pyx_L1_error)
           }
           __pyx_v_targetCycleDone = 1;
           goto __pyx_L11_continue;
 
-          /* "bs_solver.pyx":357
+          /* "bs_solver.pyx":360
  *             for node in currentBeam:
  *                 targetPos = node.yard.getBoxPosition(targetId)
  *                 if targetPos.row != -1 and node.isCurrentTargetRetrieved:             # <<<<<<<<<<<<<<
@@ -4294,7 +4348,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
         }
 
-        /* "bs_solver.pyx":361
+        /* "bs_solver.pyx":364
  * 
  *                 # Case B: RETURN
  *                 if targetPos.row == -1:             # <<<<<<<<<<<<<<
@@ -4304,7 +4358,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
         __pyx_t_8 = (__pyx_v_targetPos.row == -1L);
         if (__pyx_t_8) {
 
-          /* "bs_solver.pyx":362
+          /* "bs_solver.pyx":365
  *                 # Case B: RETURN
  *                 if targetPos.row == -1:
  *                     selectedPort = targetPos.tier; src = make_coord(-1, -1, selectedPort)             # <<<<<<<<<<<<<<
@@ -4315,7 +4369,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           __pyx_v_selectedPort = __pyx_t_2;
           __pyx_v_src = make_coord(-1, -1, __pyx_v_selectedPort);
 
-          /* "bs_solver.pyx":363
+          /* "bs_solver.pyx":366
  *                 if targetPos.row == -1:
  *                     selectedPort = targetPos.tier; src = make_coord(-1, -1, selectedPort)
  *                     for r in range(node.yard.MAX_ROWS):             # <<<<<<<<<<<<<<
@@ -4327,7 +4381,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
             __pyx_v_r = __pyx_t_4;
 
-            /* "bs_solver.pyx":364
+            /* "bs_solver.pyx":367
  *                     selectedPort = targetPos.tier; src = make_coord(-1, -1, selectedPort)
  *                     for r in range(node.yard.MAX_ROWS):
  *                         for b in range(node.yard.MAX_BAYS):             # <<<<<<<<<<<<<<
@@ -4339,7 +4393,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
               __pyx_v_b = __pyx_t_14;
 
-              /* "bs_solver.pyx":365
+              /* "bs_solver.pyx":368
  *                     for r in range(node.yard.MAX_ROWS):
  *                         for b in range(node.yard.MAX_BAYS):
  *                             if not node.yard.canReceiveBox(r, b): continue             # <<<<<<<<<<<<<<
@@ -4351,7 +4405,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 goto __pyx_L19_continue;
               }
 
-              /* "bs_solver.pyx":366
+              /* "bs_solver.pyx":369
  *                         for b in range(node.yard.MAX_BAYS):
  *                             if not node.yard.canReceiveBox(r, b): continue
  *                             dst = make_coord(r, b, node.yard.tops[r][b])             # <<<<<<<<<<<<<<
@@ -4360,7 +4414,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_dst = make_coord(__pyx_v_r, __pyx_v_b, ((__pyx_v_node.yard.tops[__pyx_v_r])[__pyx_v_b]));
 
-              /* "bs_solver.pyx":367
+              /* "bs_solver.pyx":370
  *                             if not node.yard.canReceiveBox(r, b): continue
  *                             dst = make_coord(r, b, node.yard.tops[r][b])
  *                             penalty = calculateReturnPenalty(node.yard, r, b, seq, seqIdx)             # <<<<<<<<<<<<<<
@@ -4369,7 +4423,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_penalty = __pyx_f_9bs_solver_calculateReturnPenalty(__pyx_v_node.yard, __pyx_v_r, __pyx_v_b, __pyx_v_seq, __pyx_v_seqIdx);
 
-              /* "bs_solver.pyx":368
+              /* "bs_solver.pyx":371
  *                             dst = make_coord(r, b, node.yard.tops[r][b])
  *                             penalty = calculateReturnPenalty(node.yard, r, b, seq, seqIdx)
  *                             bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0;pickupTime = 0             # <<<<<<<<<<<<<<
@@ -4381,7 +4435,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_bestStartTime = 0.0;
               __pyx_v_pickupTime = 0.0;
 
-              /* "bs_solver.pyx":369
+              /* "bs_solver.pyx":372
  *                             penalty = calculateReturnPenalty(node.yard, r, b, seq, seqIdx)
  *                             bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0;pickupTime = 0
  *                             for i in range(AGV_COUNT):             # <<<<<<<<<<<<<<
@@ -4393,17 +4447,17 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               for (__pyx_t_17 = 0; __pyx_t_17 < __pyx_t_16; __pyx_t_17+=1) {
                 __pyx_v_i = __pyx_t_17;
 
-                /* "bs_solver.pyx":370
+                /* "bs_solver.pyx":373
  *                             bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0;pickupTime = 0
  *                             for i in range(AGV_COUNT):
  *                                 travel = getTravelTime(node.agvs[i].currentPos, src)             # <<<<<<<<<<<<<<
  *                                 start = fmax(node.agvs[i].availableTime, node.portsBusyTime[selectedPort])
  *                                 travelToDest = getTravelTime(src, dst)
 */
-                __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_i]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 370, __pyx_L1_error)
+                __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_i]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 373, __pyx_L1_error)
                 __pyx_v_travel = __pyx_t_18;
 
-                /* "bs_solver.pyx":371
+                /* "bs_solver.pyx":374
  *                             for i in range(AGV_COUNT):
  *                                 travel = getTravelTime(node.agvs[i].currentPos, src)
  *                                 start = fmax(node.agvs[i].availableTime, node.portsBusyTime[selectedPort])             # <<<<<<<<<<<<<<
@@ -4412,17 +4466,17 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
                 __pyx_v_start = fmax((__pyx_v_node.agvs[__pyx_v_i]).availableTime, (__pyx_v_node.portsBusyTime[__pyx_v_selectedPort]));
 
-                /* "bs_solver.pyx":372
+                /* "bs_solver.pyx":375
  *                                 travel = getTravelTime(node.agvs[i].currentPos, src)
  *                                 start = fmax(node.agvs[i].availableTime, node.portsBusyTime[selectedPort])
  *                                 travelToDest = getTravelTime(src, dst)             # <<<<<<<<<<<<<<
  * 
  *                                 finish = start + travel + TIME_HANDLE + travelToDest + TIME_HANDLE
 */
-                __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_src, __pyx_v_dst); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 372, __pyx_L1_error)
+                __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_src, __pyx_v_dst); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 375, __pyx_L1_error)
                 __pyx_v_travelToDest = __pyx_t_18;
 
-                /* "bs_solver.pyx":374
+                /* "bs_solver.pyx":377
  *                                 travelToDest = getTravelTime(src, dst)
  * 
  *                                 finish = start + travel + TIME_HANDLE + travelToDest + TIME_HANDLE             # <<<<<<<<<<<<<<
@@ -4431,7 +4485,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
                 __pyx_v_finish = ((((__pyx_v_start + __pyx_v_travel) + __pyx_v_9bs_solver_TIME_HANDLE) + __pyx_v_travelToDest) + __pyx_v_9bs_solver_TIME_HANDLE);
 
-                /* "bs_solver.pyx":375
+                /* "bs_solver.pyx":378
  * 
  *                                 finish = start + travel + TIME_HANDLE + travelToDest + TIME_HANDLE
  *                                 if finish < bestFinishTime:             # <<<<<<<<<<<<<<
@@ -4441,7 +4495,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 __pyx_t_8 = (__pyx_v_finish < __pyx_v_bestFinishTime);
                 if (__pyx_t_8) {
 
-                  /* "bs_solver.pyx":376
+                  /* "bs_solver.pyx":379
  *                                 finish = start + travel + TIME_HANDLE + travelToDest + TIME_HANDLE
  *                                 if finish < bestFinishTime:
  *                                     bestFinishTime = finish; bestAGV = i; bestStartTime = start             # <<<<<<<<<<<<<<
@@ -4452,7 +4506,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                   __pyx_v_bestAGV = __pyx_v_i;
                   __pyx_v_bestStartTime = __pyx_v_start;
 
-                  /* "bs_solver.pyx":377
+                  /* "bs_solver.pyx":380
  *                                 if finish < bestFinishTime:
  *                                     bestFinishTime = finish; bestAGV = i; bestStartTime = start
  *                                     pickupTime = start + travel + TIME_HANDLE             # <<<<<<<<<<<<<<
@@ -4461,7 +4515,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
                   __pyx_v_pickupTime = ((__pyx_v_start + __pyx_v_travel) + __pyx_v_9bs_solver_TIME_HANDLE);
 
-                  /* "bs_solver.pyx":375
+                  /* "bs_solver.pyx":378
  * 
  *                                 finish = start + travel + TIME_HANDLE + travelToDest + TIME_HANDLE
  *                                 if finish < bestFinishTime:             # <<<<<<<<<<<<<<
@@ -4471,7 +4525,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 }
               }
 
-              /* "bs_solver.pyx":378
+              /* "bs_solver.pyx":381
  *                                     bestFinishTime = finish; bestAGV = i; bestStartTime = start
  *                                     pickupTime = start + travel + TIME_HANDLE
  *                             newNode = node             # <<<<<<<<<<<<<<
@@ -4480,7 +4534,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_newNode = __pyx_v_node;
 
-              /* "bs_solver.pyx":379
+              /* "bs_solver.pyx":382
  *                                     pickupTime = start + travel + TIME_HANDLE
  *                             newNode = node
  *                             newNode.yard.returnFromPort(targetId, dst.row, dst.bay)             # <<<<<<<<<<<<<<
@@ -4489,7 +4543,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_newNode.yard.returnFromPort(__pyx_v_targetId, __pyx_v_dst.row, __pyx_v_dst.bay);
 
-              /* "bs_solver.pyx":380
+              /* "bs_solver.pyx":383
  *                             newNode = node
  *                             newNode.yard.returnFromPort(targetId, dst.row, dst.bay)
  *                             newNode.isCurrentTargetRetrieved = True             # <<<<<<<<<<<<<<
@@ -4498,7 +4552,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_newNode.isCurrentTargetRetrieved = 1;
 
-              /* "bs_solver.pyx":381
+              /* "bs_solver.pyx":384
  *                             newNode.yard.returnFromPort(targetId, dst.row, dst.bay)
  *                             newNode.isCurrentTargetRetrieved = True
  *                             newNode.agvs[bestAGV].currentPos = dst             # <<<<<<<<<<<<<<
@@ -4507,7 +4561,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               (__pyx_v_newNode.agvs[__pyx_v_bestAGV]).currentPos = __pyx_v_dst;
 
-              /* "bs_solver.pyx":382
+              /* "bs_solver.pyx":385
  *                             newNode.isCurrentTargetRetrieved = True
  *                             newNode.agvs[bestAGV].currentPos = dst
  *                             newNode.agvs[bestAGV].availableTime = bestFinishTime             # <<<<<<<<<<<<<<
@@ -4516,7 +4570,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               (__pyx_v_newNode.agvs[__pyx_v_bestAGV]).availableTime = __pyx_v_bestFinishTime;
 
-              /* "bs_solver.pyx":383
+              /* "bs_solver.pyx":386
  *                             newNode.agvs[bestAGV].currentPos = dst
  *                             newNode.agvs[bestAGV].availableTime = bestFinishTime
  *                             newNode.portsBusyTime[selectedPort] = pickupTime             # <<<<<<<<<<<<<<
@@ -4525,7 +4579,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               (__pyx_v_newNode.portsBusyTime[__pyx_v_selectedPort]) = __pyx_v_pickupTime;
 
-              /* "bs_solver.pyx":384
+              /* "bs_solver.pyx":387
  *                             newNode.agvs[bestAGV].availableTime = bestFinishTime
  *                             newNode.portsBusyTime[selectedPort] = pickupTime
  *                             newNode.gridBusyTime[dst.row][dst.bay] = bestFinishTime             # <<<<<<<<<<<<<<
@@ -4534,7 +4588,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               ((__pyx_v_newNode.gridBusyTime[__pyx_v_dst.row])[__pyx_v_dst.bay]) = __pyx_v_bestFinishTime;
 
-              /* "bs_solver.pyx":385
+              /* "bs_solver.pyx":388
  *                             newNode.portsBusyTime[selectedPort] = pickupTime
  *                             newNode.gridBusyTime[dst.row][dst.bay] = bestFinishTime
  *                             maxAGV = 0             # <<<<<<<<<<<<<<
@@ -4543,7 +4597,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_maxAGV = 0.0;
 
-              /* "bs_solver.pyx":386
+              /* "bs_solver.pyx":389
  *                             newNode.gridBusyTime[dst.row][dst.bay] = bestFinishTime
  *                             maxAGV = 0
  *                             for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)             # <<<<<<<<<<<<<<
@@ -4557,7 +4611,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 __pyx_v_maxAGV = fmax(__pyx_v_maxAGV, (__pyx_v_newNode.agvs[__pyx_v_i]).availableTime);
               }
 
-              /* "bs_solver.pyx":387
+              /* "bs_solver.pyx":390
  *                             maxAGV = 0
  *                             for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
  *                             newNode.g = maxAGV             # <<<<<<<<<<<<<<
@@ -4566,7 +4620,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_newNode.g = __pyx_v_maxAGV;
 
-              /* "bs_solver.pyx":388
+              /* "bs_solver.pyx":391
  *                             for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
  *                             newNode.g = maxAGV
  *                             newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx + 1, False)             # <<<<<<<<<<<<<<
@@ -4575,7 +4629,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_newNode.h = __pyx_f_9bs_solver_calculate_3D_UBALB(__pyx_v_newNode.yard, __pyx_v_seq, (__pyx_v_seqIdx + 1), 0);
 
-              /* "bs_solver.pyx":389
+              /* "bs_solver.pyx":392
  *                             newNode.g = maxAGV
  *                             newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx + 1, False)
  *                             newNode.f = newNode.g + newNode.h + penalty + (<double>rand()/RAND_MAX)*0.01             # <<<<<<<<<<<<<<
@@ -4584,7 +4638,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_newNode.f = (((__pyx_v_newNode.g + __pyx_v_newNode.h) + __pyx_v_penalty) + ((((double)rand()) / ((double)RAND_MAX)) * 0.01));
 
-              /* "bs_solver.pyx":390
+              /* "bs_solver.pyx":393
  *                             newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx + 1, False)
  *                             newNode.f = newNode.g + newNode.h + penalty + (<double>rand()/RAND_MAX)*0.01
  *                             log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 2             # <<<<<<<<<<<<<<
@@ -4595,7 +4649,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_log.agv_id = __pyx_v_bestAGV;
               __pyx_v_log.type_code = 2;
 
-              /* "bs_solver.pyx":391
+              /* "bs_solver.pyx":394
  *                             newNode.f = newNode.g + newNode.h + penalty + (<double>rand()/RAND_MAX)*0.01
  *                             log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 2
  *                             log.container_id = targetId; log.related_target_id = targetId             # <<<<<<<<<<<<<<
@@ -4605,7 +4659,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_log.container_id = __pyx_v_targetId;
               __pyx_v_log.related_target_id = __pyx_v_targetId;
 
-              /* "bs_solver.pyx":392
+              /* "bs_solver.pyx":395
  *                             log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 2
  *                             log.container_id = targetId; log.related_target_id = targetId
  *                             log.src = src; log.dst = dst             # <<<<<<<<<<<<<<
@@ -4615,7 +4669,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_log.src = __pyx_v_src;
               __pyx_v_log.dst = __pyx_v_dst;
 
-              /* "bs_solver.pyx":393
+              /* "bs_solver.pyx":396
  *                             log.container_id = targetId; log.related_target_id = targetId
  *                             log.src = src; log.dst = dst
  *                             log.start_time_epoch = <long long>bestStartTime + SIM_START_EPOCH             # <<<<<<<<<<<<<<
@@ -4624,7 +4678,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_log.start_time_epoch = (((PY_LONG_LONG)__pyx_v_bestStartTime) + __pyx_v_9bs_solver_SIM_START_EPOCH);
 
-              /* "bs_solver.pyx":394
+              /* "bs_solver.pyx":397
  *                             log.src = src; log.dst = dst
  *                             log.start_time_epoch = <long long>bestStartTime + SIM_START_EPOCH
  *                             log.end_time_epoch = <long long>bestFinishTime + SIM_START_EPOCH             # <<<<<<<<<<<<<<
@@ -4633,7 +4687,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_log.end_time_epoch = (((PY_LONG_LONG)__pyx_v_bestFinishTime) + __pyx_v_9bs_solver_SIM_START_EPOCH);
 
-              /* "bs_solver.pyx":395
+              /* "bs_solver.pyx":398
  *                             log.start_time_epoch = <long long>bestStartTime + SIM_START_EPOCH
  *                             log.end_time_epoch = <long long>bestFinishTime + SIM_START_EPOCH
  *                             log.makespan_snapshot = newNode.g; newNode.history.push_back(log); nextBeam.push_back(newNode)             # <<<<<<<<<<<<<<
@@ -4648,7 +4702,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
                 __Pyx_CppExn2PyErr();
                 __Pyx_PyGILState_Release(__pyx_gilstate_save);
-                __PYX_ERR(0, 395, __pyx_L1_error)
+                __PYX_ERR(0, 398, __pyx_L1_error)
               }
               try {
                 __pyx_v_nextBeam.push_back(__pyx_v_newNode);
@@ -4656,13 +4710,13 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
                 __Pyx_CppExn2PyErr();
                 __Pyx_PyGILState_Release(__pyx_gilstate_save);
-                __PYX_ERR(0, 395, __pyx_L1_error)
+                __PYX_ERR(0, 398, __pyx_L1_error)
               }
               __pyx_L19_continue:;
             }
           }
 
-          /* "bs_solver.pyx":396
+          /* "bs_solver.pyx":399
  *                             log.end_time_epoch = <long long>bestFinishTime + SIM_START_EPOCH
  *                             log.makespan_snapshot = newNode.g; newNode.history.push_back(log); nextBeam.push_back(newNode)
  *                     continue             # <<<<<<<<<<<<<<
@@ -4671,7 +4725,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           goto __pyx_L11_continue;
 
-          /* "bs_solver.pyx":361
+          /* "bs_solver.pyx":364
  * 
  *                 # Case B: RETURN
  *                 if targetPos.row == -1:             # <<<<<<<<<<<<<<
@@ -4680,7 +4734,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
         }
 
-        /* "bs_solver.pyx":399
+        /* "bs_solver.pyx":402
  * 
  *                 # Case C: RETRIEVE
  *                 isTop = node.yard.isTop(targetId)             # <<<<<<<<<<<<<<
@@ -4689,7 +4743,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
         __pyx_v_isTop = __pyx_v_node.yard.isTop(__pyx_v_targetId);
 
-        /* "bs_solver.pyx":400
+        /* "bs_solver.pyx":403
  *                 # Case C: RETRIEVE
  *                 isTop = node.yard.isTop(targetId)
  *                 if isTop:             # <<<<<<<<<<<<<<
@@ -4698,7 +4752,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
         if (__pyx_v_isTop) {
 
-          /* "bs_solver.pyx":401
+          /* "bs_solver.pyx":404
  *                 isTop = node.yard.isTop(targetId)
  *                 if isTop:
  *                     src = node.yard.getBoxPosition(targetId)             # <<<<<<<<<<<<<<
@@ -4707,7 +4761,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           __pyx_v_src = __pyx_v_node.yard.getBoxPosition(__pyx_v_targetId);
 
-          /* "bs_solver.pyx":402
+          /* "bs_solver.pyx":405
  *                 if isTop:
  *                     src = node.yard.getBoxPosition(targetId)
  *                     bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0; selectedPort = -1             # <<<<<<<<<<<<<<
@@ -4719,7 +4773,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           __pyx_v_bestStartTime = 0.0;
           __pyx_v_selectedPort = -1;
 
-          /* "bs_solver.pyx":403
+          /* "bs_solver.pyx":406
  *                     src = node.yard.getBoxPosition(targetId)
  *                     bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0; selectedPort = -1
  *                     dynamic_process_time = sku_map[targetId] * TIME_PICK             # <<<<<<<<<<<<<<
@@ -4728,7 +4782,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           __pyx_v_dynamic_process_time = ((__pyx_v_sku_map[__pyx_v_targetId]) * __pyx_v_9bs_solver_TIME_PICK);
 
-          /* "bs_solver.pyx":404
+          /* "bs_solver.pyx":407
  *                     bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0; selectedPort = -1
  *                     dynamic_process_time = sku_map[targetId] * TIME_PICK
  *                     for i in range(AGV_COUNT):             # <<<<<<<<<<<<<<
@@ -4740,17 +4794,17 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
             __pyx_v_i = __pyx_t_4;
 
-            /* "bs_solver.pyx":405
+            /* "bs_solver.pyx":408
  *                     dynamic_process_time = sku_map[targetId] * TIME_PICK
  *                     for i in range(AGV_COUNT):
  *                         travel = getTravelTime(node.agvs[i].currentPos, src)             # <<<<<<<<<<<<<<
  *                         start = fmax(node.agvs[i].availableTime, node.gridBusyTime[src.row][src.bay])
  *                         arrivalAtPort = start + travel + TIME_HANDLE + getTravelTime(src, make_coord(-1, -1, 1))
 */
-            __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_i]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 405, __pyx_L1_error)
+            __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_i]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 408, __pyx_L1_error)
             __pyx_v_travel = __pyx_t_18;
 
-            /* "bs_solver.pyx":406
+            /* "bs_solver.pyx":409
  *                     for i in range(AGV_COUNT):
  *                         travel = getTravelTime(node.agvs[i].currentPos, src)
  *                         start = fmax(node.agvs[i].availableTime, node.gridBusyTime[src.row][src.bay])             # <<<<<<<<<<<<<<
@@ -4759,17 +4813,17 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
             __pyx_v_start = fmax((__pyx_v_node.agvs[__pyx_v_i]).availableTime, ((__pyx_v_node.gridBusyTime[__pyx_v_src.row])[__pyx_v_src.bay]));
 
-            /* "bs_solver.pyx":407
+            /* "bs_solver.pyx":410
  *                         travel = getTravelTime(node.agvs[i].currentPos, src)
  *                         start = fmax(node.agvs[i].availableTime, node.gridBusyTime[src.row][src.bay])
  *                         arrivalAtPort = start + travel + TIME_HANDLE + getTravelTime(src, make_coord(-1, -1, 1))             # <<<<<<<<<<<<<<
  *                         p = -1
  *                         for port_idx in range(1, PORT_COUNT + 1):
 */
-            __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_src, make_coord(-1, -1, 1)); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 407, __pyx_L1_error)
+            __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_src, make_coord(-1, -1, 1)); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 410, __pyx_L1_error)
             __pyx_v_arrivalAtPort = (((__pyx_v_start + __pyx_v_travel) + __pyx_v_9bs_solver_TIME_HANDLE) + __pyx_t_18);
 
-            /* "bs_solver.pyx":408
+            /* "bs_solver.pyx":411
  *                         start = fmax(node.agvs[i].availableTime, node.gridBusyTime[src.row][src.bay])
  *                         arrivalAtPort = start + travel + TIME_HANDLE + getTravelTime(src, make_coord(-1, -1, 1))
  *                         p = -1             # <<<<<<<<<<<<<<
@@ -4778,7 +4832,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
             __pyx_v_p = -1;
 
-            /* "bs_solver.pyx":409
+            /* "bs_solver.pyx":412
  *                         arrivalAtPort = start + travel + TIME_HANDLE + getTravelTime(src, make_coord(-1, -1, 1))
  *                         p = -1
  *                         for port_idx in range(1, PORT_COUNT + 1):             # <<<<<<<<<<<<<<
@@ -4790,7 +4844,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             for (__pyx_t_12 = 1; __pyx_t_12 < __pyx_t_20; __pyx_t_12+=1) {
               __pyx_v_port_idx = __pyx_t_12;
 
-              /* "bs_solver.pyx":410
+              /* "bs_solver.pyx":413
  *                         p = -1
  *                         for port_idx in range(1, PORT_COUNT + 1):
  *                             if node.portsBusyTime[port_idx] <= arrivalAtPort:             # <<<<<<<<<<<<<<
@@ -4800,7 +4854,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_t_8 = ((__pyx_v_node.portsBusyTime[__pyx_v_port_idx]) <= __pyx_v_arrivalAtPort);
               if (__pyx_t_8) {
 
-                /* "bs_solver.pyx":411
+                /* "bs_solver.pyx":414
  *                         for port_idx in range(1, PORT_COUNT + 1):
  *                             if node.portsBusyTime[port_idx] <= arrivalAtPort:
  *                                 p = port_idx             # <<<<<<<<<<<<<<
@@ -4809,7 +4863,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
                 __pyx_v_p = __pyx_v_port_idx;
 
-                /* "bs_solver.pyx":412
+                /* "bs_solver.pyx":415
  *                             if node.portsBusyTime[port_idx] <= arrivalAtPort:
  *                                 p = port_idx
  *                                 break             # <<<<<<<<<<<<<<
@@ -4818,7 +4872,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
                 goto __pyx_L31_break;
 
-                /* "bs_solver.pyx":410
+                /* "bs_solver.pyx":413
  *                         p = -1
  *                         for port_idx in range(1, PORT_COUNT + 1):
  *                             if node.portsBusyTime[port_idx] <= arrivalAtPort:             # <<<<<<<<<<<<<<
@@ -4829,7 +4883,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             }
             __pyx_L31_break:;
 
-            /* "bs_solver.pyx":413
+            /* "bs_solver.pyx":416
  *                                 p = port_idx
  *                                 break
  *                         if p == -1:             # <<<<<<<<<<<<<<
@@ -4839,7 +4893,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             __pyx_t_8 = (__pyx_v_p == -1L);
             if (__pyx_t_8) {
 
-              /* "bs_solver.pyx":414
+              /* "bs_solver.pyx":417
  *                                 break
  *                         if p == -1:
  *                             portReadyTime = 1e9             # <<<<<<<<<<<<<<
@@ -4848,7 +4902,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_portReadyTime = 1e9;
 
-              /* "bs_solver.pyx":415
+              /* "bs_solver.pyx":418
  *                         if p == -1:
  *                             portReadyTime = 1e9
  *                             for port_idx in range(1, PORT_COUNT+1):             # <<<<<<<<<<<<<<
@@ -4860,7 +4914,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               for (__pyx_t_12 = 1; __pyx_t_12 < __pyx_t_20; __pyx_t_12+=1) {
                 __pyx_v_port_idx = __pyx_t_12;
 
-                /* "bs_solver.pyx":416
+                /* "bs_solver.pyx":419
  *                             portReadyTime = 1e9
  *                             for port_idx in range(1, PORT_COUNT+1):
  *                                 if node.portsBusyTime[port_idx] < portReadyTime:             # <<<<<<<<<<<<<<
@@ -4870,7 +4924,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 __pyx_t_8 = ((__pyx_v_node.portsBusyTime[__pyx_v_port_idx]) < __pyx_v_portReadyTime);
                 if (__pyx_t_8) {
 
-                  /* "bs_solver.pyx":417
+                  /* "bs_solver.pyx":420
  *                             for port_idx in range(1, PORT_COUNT+1):
  *                                 if node.portsBusyTime[port_idx] < portReadyTime:
  *                                     portReadyTime = node.portsBusyTime[port_idx]             # <<<<<<<<<<<<<<
@@ -4879,7 +4933,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
                   __pyx_v_portReadyTime = (__pyx_v_node.portsBusyTime[__pyx_v_port_idx]);
 
-                  /* "bs_solver.pyx":418
+                  /* "bs_solver.pyx":421
  *                                 if node.portsBusyTime[port_idx] < portReadyTime:
  *                                     portReadyTime = node.portsBusyTime[port_idx]
  *                                     p = port_idx             # <<<<<<<<<<<<<<
@@ -4888,7 +4942,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
                   __pyx_v_p = __pyx_v_port_idx;
 
-                  /* "bs_solver.pyx":416
+                  /* "bs_solver.pyx":419
  *                             portReadyTime = 1e9
  *                             for port_idx in range(1, PORT_COUNT+1):
  *                                 if node.portsBusyTime[port_idx] < portReadyTime:             # <<<<<<<<<<<<<<
@@ -4898,7 +4952,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 }
               }
 
-              /* "bs_solver.pyx":413
+              /* "bs_solver.pyx":416
  *                                 p = port_idx
  *                                 break
  *                         if p == -1:             # <<<<<<<<<<<<<<
@@ -4907,7 +4961,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
             }
 
-            /* "bs_solver.pyx":419
+            /* "bs_solver.pyx":422
  *                                     portReadyTime = node.portsBusyTime[port_idx]
  *                                     p = port_idx
  *                         selectedPortCoord = make_coord(-1, -1, p)             # <<<<<<<<<<<<<<
@@ -4916,17 +4970,17 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
             __pyx_v_selectedPortCoord = make_coord(-1, -1, __pyx_v_p);
 
-            /* "bs_solver.pyx":420
+            /* "bs_solver.pyx":423
  *                                     p = port_idx
  *                         selectedPortCoord = make_coord(-1, -1, p)
  *                         agvArrivalAtPort = start + travel + TIME_HANDLE + getTravelTime(src, selectedPortCoord)             # <<<<<<<<<<<<<<
  *                         processStart = fmax(agvArrivalAtPort, node.portsBusyTime[p])
  * 
 */
-            __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_src, __pyx_v_selectedPortCoord); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 420, __pyx_L1_error)
+            __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_src, __pyx_v_selectedPortCoord); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 423, __pyx_L1_error)
             __pyx_v_agvArrivalAtPort = (((__pyx_v_start + __pyx_v_travel) + __pyx_v_9bs_solver_TIME_HANDLE) + __pyx_t_18);
 
-            /* "bs_solver.pyx":421
+            /* "bs_solver.pyx":424
  *                         selectedPortCoord = make_coord(-1, -1, p)
  *                         agvArrivalAtPort = start + travel + TIME_HANDLE + getTravelTime(src, selectedPortCoord)
  *                         processStart = fmax(agvArrivalAtPort, node.portsBusyTime[p])             # <<<<<<<<<<<<<<
@@ -4935,7 +4989,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
             __pyx_v_processStart = fmax(__pyx_v_agvArrivalAtPort, (__pyx_v_node.portsBusyTime[__pyx_v_p]));
 
-            /* "bs_solver.pyx":423
+            /* "bs_solver.pyx":426
  *                         processStart = fmax(agvArrivalAtPort, node.portsBusyTime[p])
  * 
  *                         agvFreeTime = processStart + TIME_HANDLE             # <<<<<<<<<<<<<<
@@ -4944,7 +4998,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
             __pyx_v_agvFreeTime = (__pyx_v_processStart + __pyx_v_9bs_solver_TIME_HANDLE);
 
-            /* "bs_solver.pyx":424
+            /* "bs_solver.pyx":427
  * 
  *                         agvFreeTime = processStart + TIME_HANDLE
  *                         portFinishTime = agvFreeTime + TIME_PROCESS + dynamic_process_time             # <<<<<<<<<<<<<<
@@ -4953,7 +5007,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
             __pyx_v_portFinishTime = ((__pyx_v_agvFreeTime + __pyx_v_9bs_solver_TIME_PROCESS) + __pyx_v_dynamic_process_time);
 
-            /* "bs_solver.pyx":426
+            /* "bs_solver.pyx":429
  *                         portFinishTime = agvFreeTime + TIME_PROCESS + dynamic_process_time
  * 
  *                         if portFinishTime < bestFinishTime:             # <<<<<<<<<<<<<<
@@ -4963,7 +5017,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             __pyx_t_8 = (__pyx_v_portFinishTime < __pyx_v_bestFinishTime);
             if (__pyx_t_8) {
 
-              /* "bs_solver.pyx":427
+              /* "bs_solver.pyx":430
  * 
  *                         if portFinishTime < bestFinishTime:
  *                             bestFinishTime = portFinishTime; bestAGV = i; bestStartTime = start; selectedPort = p; pickupTime = agvFreeTime             # <<<<<<<<<<<<<<
@@ -4976,7 +5030,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_selectedPort = __pyx_v_p;
               __pyx_v_pickupTime = __pyx_v_agvFreeTime;
 
-              /* "bs_solver.pyx":426
+              /* "bs_solver.pyx":429
  *                         portFinishTime = agvFreeTime + TIME_PROCESS + dynamic_process_time
  * 
  *                         if portFinishTime < bestFinishTime:             # <<<<<<<<<<<<<<
@@ -4986,7 +5040,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             }
           }
 
-          /* "bs_solver.pyx":429
+          /* "bs_solver.pyx":432
  *                             bestFinishTime = portFinishTime; bestAGV = i; bestStartTime = start; selectedPort = p; pickupTime = agvFreeTime
  * 
  *                     newNode = node; newNode.yard.moveToPort(targetId, selectedPort)             # <<<<<<<<<<<<<<
@@ -4996,7 +5050,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           __pyx_v_newNode = __pyx_v_node;
           __pyx_v_newNode.yard.moveToPort(__pyx_v_targetId, __pyx_v_selectedPort);
 
-          /* "bs_solver.pyx":430
+          /* "bs_solver.pyx":433
  * 
  *                     newNode = node; newNode.yard.moveToPort(targetId, selectedPort)
  *                     newNode.isCurrentTargetRetrieved = True; selectedPortCoord = make_coord(-1, -1, selectedPort)             # <<<<<<<<<<<<<<
@@ -5006,7 +5060,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           __pyx_v_newNode.isCurrentTargetRetrieved = 1;
           __pyx_v_selectedPortCoord = make_coord(-1, -1, __pyx_v_selectedPort);
 
-          /* "bs_solver.pyx":431
+          /* "bs_solver.pyx":434
  *                     newNode = node; newNode.yard.moveToPort(targetId, selectedPort)
  *                     newNode.isCurrentTargetRetrieved = True; selectedPortCoord = make_coord(-1, -1, selectedPort)
  *                     newNode.agvs[bestAGV].currentPos = selectedPortCoord             # <<<<<<<<<<<<<<
@@ -5015,7 +5069,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           (__pyx_v_newNode.agvs[__pyx_v_bestAGV]).currentPos = __pyx_v_selectedPortCoord;
 
-          /* "bs_solver.pyx":432
+          /* "bs_solver.pyx":435
  *                     newNode.isCurrentTargetRetrieved = True; selectedPortCoord = make_coord(-1, -1, selectedPort)
  *                     newNode.agvs[bestAGV].currentPos = selectedPortCoord
  *                     newNode.agvs[bestAGV].availableTime = pickupTime             # <<<<<<<<<<<<<<
@@ -5024,7 +5078,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           (__pyx_v_newNode.agvs[__pyx_v_bestAGV]).availableTime = __pyx_v_pickupTime;
 
-          /* "bs_solver.pyx":433
+          /* "bs_solver.pyx":436
  *                     newNode.agvs[bestAGV].currentPos = selectedPortCoord
  *                     newNode.agvs[bestAGV].availableTime = pickupTime
  *                     newNode.portsBusyTime[selectedPort] = bestFinishTime             # <<<<<<<<<<<<<<
@@ -5033,17 +5087,17 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           (__pyx_v_newNode.portsBusyTime[__pyx_v_selectedPort]) = __pyx_v_bestFinishTime;
 
-          /* "bs_solver.pyx":434
+          /* "bs_solver.pyx":437
  *                     newNode.agvs[bestAGV].availableTime = pickupTime
  *                     newNode.portsBusyTime[selectedPort] = bestFinishTime
  *                     pickupDoneTime = bestStartTime + getTravelTime(node.agvs[bestAGV].currentPos, src) + TIME_HANDLE             # <<<<<<<<<<<<<<
  *                     newNode.gridBusyTime[src.row][src.bay] = pickupDoneTime
  *                     maxAGV = 0
 */
-          __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_bestAGV]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 434, __pyx_L1_error)
+          __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_bestAGV]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 437, __pyx_L1_error)
           __pyx_v_pickupDoneTime = ((__pyx_v_bestStartTime + __pyx_t_18) + __pyx_v_9bs_solver_TIME_HANDLE);
 
-          /* "bs_solver.pyx":435
+          /* "bs_solver.pyx":438
  *                     newNode.portsBusyTime[selectedPort] = bestFinishTime
  *                     pickupDoneTime = bestStartTime + getTravelTime(node.agvs[bestAGV].currentPos, src) + TIME_HANDLE
  *                     newNode.gridBusyTime[src.row][src.bay] = pickupDoneTime             # <<<<<<<<<<<<<<
@@ -5052,7 +5106,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           ((__pyx_v_newNode.gridBusyTime[__pyx_v_src.row])[__pyx_v_src.bay]) = __pyx_v_pickupDoneTime;
 
-          /* "bs_solver.pyx":436
+          /* "bs_solver.pyx":439
  *                     pickupDoneTime = bestStartTime + getTravelTime(node.agvs[bestAGV].currentPos, src) + TIME_HANDLE
  *                     newNode.gridBusyTime[src.row][src.bay] = pickupDoneTime
  *                     maxAGV = 0             # <<<<<<<<<<<<<<
@@ -5061,7 +5115,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           __pyx_v_maxAGV = 0.0;
 
-          /* "bs_solver.pyx":437
+          /* "bs_solver.pyx":440
  *                     newNode.gridBusyTime[src.row][src.bay] = pickupDoneTime
  *                     maxAGV = 0
  *                     for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)             # <<<<<<<<<<<<<<
@@ -5075,7 +5129,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             __pyx_v_maxAGV = fmax(__pyx_v_maxAGV, (__pyx_v_newNode.agvs[__pyx_v_i]).availableTime);
           }
 
-          /* "bs_solver.pyx":438
+          /* "bs_solver.pyx":441
  *                     maxAGV = 0
  *                     for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
  *                     newNode.g = maxAGV; newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, True)             # <<<<<<<<<<<<<<
@@ -5085,7 +5139,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           __pyx_v_newNode.g = __pyx_v_maxAGV;
           __pyx_v_newNode.h = __pyx_f_9bs_solver_calculate_3D_UBALB(__pyx_v_newNode.yard, __pyx_v_seq, __pyx_v_seqIdx, 1);
 
-          /* "bs_solver.pyx":439
+          /* "bs_solver.pyx":442
  *                     for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
  *                     newNode.g = maxAGV; newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, True)
  *                     newNode.f = newNode.g + newNode.h + (<double>rand()/RAND_MAX)*0.01             # <<<<<<<<<<<<<<
@@ -5094,7 +5148,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           __pyx_v_newNode.f = ((__pyx_v_newNode.g + __pyx_v_newNode.h) + ((((double)rand()) / ((double)RAND_MAX)) * 0.01));
 
-          /* "bs_solver.pyx":440
+          /* "bs_solver.pyx":443
  *                     newNode.g = maxAGV; newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, True)
  *                     newNode.f = newNode.g + newNode.h + (<double>rand()/RAND_MAX)*0.01
  *                     log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 0             # <<<<<<<<<<<<<<
@@ -5105,7 +5159,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           __pyx_v_log.agv_id = __pyx_v_bestAGV;
           __pyx_v_log.type_code = 0;
 
-          /* "bs_solver.pyx":441
+          /* "bs_solver.pyx":444
  *                     newNode.f = newNode.g + newNode.h + (<double>rand()/RAND_MAX)*0.01
  *                     log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 0
  *                     log.container_id = targetId; log.related_target_id = targetId             # <<<<<<<<<<<<<<
@@ -5115,7 +5169,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           __pyx_v_log.container_id = __pyx_v_targetId;
           __pyx_v_log.related_target_id = __pyx_v_targetId;
 
-          /* "bs_solver.pyx":442
+          /* "bs_solver.pyx":445
  *                     log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 0
  *                     log.container_id = targetId; log.related_target_id = targetId
  *                     log.src = src; log.dst = selectedPortCoord             # <<<<<<<<<<<<<<
@@ -5125,7 +5179,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           __pyx_v_log.src = __pyx_v_src;
           __pyx_v_log.dst = __pyx_v_selectedPortCoord;
 
-          /* "bs_solver.pyx":443
+          /* "bs_solver.pyx":446
  *                     log.container_id = targetId; log.related_target_id = targetId
  *                     log.src = src; log.dst = selectedPortCoord
  *                     log.start_time_epoch = <long long>bestStartTime + SIM_START_EPOCH             # <<<<<<<<<<<<<<
@@ -5134,7 +5188,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           __pyx_v_log.start_time_epoch = (((PY_LONG_LONG)__pyx_v_bestStartTime) + __pyx_v_9bs_solver_SIM_START_EPOCH);
 
-          /* "bs_solver.pyx":444
+          /* "bs_solver.pyx":447
  *                     log.src = src; log.dst = selectedPortCoord
  *                     log.start_time_epoch = <long long>bestStartTime + SIM_START_EPOCH
  *                     log.end_time_epoch = <long long>bestFinishTime + SIM_START_EPOCH             # <<<<<<<<<<<<<<
@@ -5143,7 +5197,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
           __pyx_v_log.end_time_epoch = (((PY_LONG_LONG)__pyx_v_bestFinishTime) + __pyx_v_9bs_solver_SIM_START_EPOCH);
 
-          /* "bs_solver.pyx":445
+          /* "bs_solver.pyx":448
  *                     log.start_time_epoch = <long long>bestStartTime + SIM_START_EPOCH
  *                     log.end_time_epoch = <long long>bestFinishTime + SIM_START_EPOCH
  *                     log.makespan_snapshot = newNode.g; newNode.history.push_back(log); nextBeam.push_back(newNode)             # <<<<<<<<<<<<<<
@@ -5158,7 +5212,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
             __Pyx_CppExn2PyErr();
             __Pyx_PyGILState_Release(__pyx_gilstate_save);
-            __PYX_ERR(0, 445, __pyx_L1_error)
+            __PYX_ERR(0, 448, __pyx_L1_error)
           }
           try {
             __pyx_v_nextBeam.push_back(__pyx_v_newNode);
@@ -5166,10 +5220,10 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
             __Pyx_CppExn2PyErr();
             __Pyx_PyGILState_Release(__pyx_gilstate_save);
-            __PYX_ERR(0, 445, __pyx_L1_error)
+            __PYX_ERR(0, 448, __pyx_L1_error)
           }
 
-          /* "bs_solver.pyx":400
+          /* "bs_solver.pyx":403
  *                 # Case C: RETRIEVE
  *                 isTop = node.yard.isTop(targetId)
  *                 if isTop:             # <<<<<<<<<<<<<<
@@ -5179,7 +5233,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           goto __pyx_L27;
         }
 
-        /* "bs_solver.pyx":448
+        /* "bs_solver.pyx":451
  *                 else:
  *                     # Case D: RESHUFFLE
  *                     blockers = node.yard.getBlockingBoxes(targetId)             # <<<<<<<<<<<<<<
@@ -5189,7 +5243,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
         /*else*/ {
           __pyx_v_blockers = __pyx_v_node.yard.getBlockingBoxes(__pyx_v_targetId);
 
-          /* "bs_solver.pyx":449
+          /* "bs_solver.pyx":452
  *                     # Case D: RESHUFFLE
  *                     blockers = node.yard.getBlockingBoxes(targetId)
  *                     if blockers.empty(): continue             # <<<<<<<<<<<<<<
@@ -5201,7 +5255,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             goto __pyx_L11_continue;
           }
 
-          /* "bs_solver.pyx":450
+          /* "bs_solver.pyx":453
  *                     blockers = node.yard.getBlockingBoxes(targetId)
  *                     if blockers.empty(): continue
  *                     blockerId = blockers.back(); movingBoxId = blockerId; src = node.yard.getBoxPosition(blockerId)             # <<<<<<<<<<<<<<
@@ -5212,7 +5266,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           __pyx_v_movingBoxId = __pyx_v_blockerId;
           __pyx_v_src = __pyx_v_node.yard.getBoxPosition(__pyx_v_blockerId);
 
-          /* "bs_solver.pyx":451
+          /* "bs_solver.pyx":454
  *                     if blockers.empty(): continue
  *                     blockerId = blockers.back(); movingBoxId = blockerId; src = node.yard.getBoxPosition(blockerId)
  *                     for r in range(node.yard.MAX_ROWS):             # <<<<<<<<<<<<<<
@@ -5224,7 +5278,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
             __pyx_v_r = __pyx_t_4;
 
-            /* "bs_solver.pyx":452
+            /* "bs_solver.pyx":455
  *                     blockerId = blockers.back(); movingBoxId = blockerId; src = node.yard.getBoxPosition(blockerId)
  *                     for r in range(node.yard.MAX_ROWS):
  *                         for b in range(node.yard.MAX_BAYS):             # <<<<<<<<<<<<<<
@@ -5236,7 +5290,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
             for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
               __pyx_v_b = __pyx_t_14;
 
-              /* "bs_solver.pyx":453
+              /* "bs_solver.pyx":456
  *                     for r in range(node.yard.MAX_ROWS):
  *                         for b in range(node.yard.MAX_BAYS):
  *                             if r == src.row and b == src.bay: continue             # <<<<<<<<<<<<<<
@@ -5256,7 +5310,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 goto __pyx_L43_continue;
               }
 
-              /* "bs_solver.pyx":454
+              /* "bs_solver.pyx":457
  *                         for b in range(node.yard.MAX_BAYS):
  *                             if r == src.row and b == src.bay: continue
  *                             if not node.yard.canReceiveBox(r, b): continue             # <<<<<<<<<<<<<<
@@ -5268,7 +5322,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 goto __pyx_L43_continue;
               }
 
-              /* "bs_solver.pyx":455
+              /* "bs_solver.pyx":458
  *                             if r == src.row and b == src.bay: continue
  *                             if not node.yard.canReceiveBox(r, b): continue
  *                             dst = make_coord(r, b, node.yard.tops[r][b]); penalty = calculateRILPenalty(node.yard, r, b, seq, seqIdx, movingBoxId)             # <<<<<<<<<<<<<<
@@ -5278,7 +5332,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_dst = make_coord(__pyx_v_r, __pyx_v_b, ((__pyx_v_node.yard.tops[__pyx_v_r])[__pyx_v_b]));
               __pyx_v_penalty = __pyx_f_9bs_solver_calculateRILPenalty(__pyx_v_node.yard, __pyx_v_r, __pyx_v_b, __pyx_v_seq, __pyx_v_seqIdx, __pyx_v_movingBoxId);
 
-              /* "bs_solver.pyx":456
+              /* "bs_solver.pyx":459
  *                             if not node.yard.canReceiveBox(r, b): continue
  *                             dst = make_coord(r, b, node.yard.tops[r][b]); penalty = calculateRILPenalty(node.yard, r, b, seq, seqIdx, movingBoxId)
  *                             bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0             # <<<<<<<<<<<<<<
@@ -5289,7 +5343,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_bestFinishTime = 1e9;
               __pyx_v_bestStartTime = 0.0;
 
-              /* "bs_solver.pyx":457
+              /* "bs_solver.pyx":460
  *                             dst = make_coord(r, b, node.yard.tops[r][b]); penalty = calculateRILPenalty(node.yard, r, b, seq, seqIdx, movingBoxId)
  *                             bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0
  *                             for i in range(AGV_COUNT):             # <<<<<<<<<<<<<<
@@ -5301,17 +5355,17 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               for (__pyx_t_17 = 0; __pyx_t_17 < __pyx_t_16; __pyx_t_17+=1) {
                 __pyx_v_i = __pyx_t_17;
 
-                /* "bs_solver.pyx":458
+                /* "bs_solver.pyx":461
  *                             bestAGV = -1; bestFinishTime = 1e9; bestStartTime = 0
  *                             for i in range(AGV_COUNT):
  *                                 travel = getTravelTime(node.agvs[i].currentPos, src)             # <<<<<<<<<<<<<<
  *                                 colReady = fmax(node.gridBusyTime[src.row][src.bay], node.gridBusyTime[r][b])
  *                                 start = fmax(node.agvs[i].availableTime, colReady)
 */
-                __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_i]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 458, __pyx_L1_error)
+                __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_i]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 461, __pyx_L1_error)
                 __pyx_v_travel = __pyx_t_18;
 
-                /* "bs_solver.pyx":459
+                /* "bs_solver.pyx":462
  *                             for i in range(AGV_COUNT):
  *                                 travel = getTravelTime(node.agvs[i].currentPos, src)
  *                                 colReady = fmax(node.gridBusyTime[src.row][src.bay], node.gridBusyTime[r][b])             # <<<<<<<<<<<<<<
@@ -5320,7 +5374,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
                 __pyx_v_colReady = fmax(((__pyx_v_node.gridBusyTime[__pyx_v_src.row])[__pyx_v_src.bay]), ((__pyx_v_node.gridBusyTime[__pyx_v_r])[__pyx_v_b]));
 
-                /* "bs_solver.pyx":460
+                /* "bs_solver.pyx":463
  *                                 travel = getTravelTime(node.agvs[i].currentPos, src)
  *                                 colReady = fmax(node.gridBusyTime[src.row][src.bay], node.gridBusyTime[r][b])
  *                                 start = fmax(node.agvs[i].availableTime, colReady)             # <<<<<<<<<<<<<<
@@ -5329,17 +5383,17 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
                 __pyx_v_start = fmax((__pyx_v_node.agvs[__pyx_v_i]).availableTime, __pyx_v_colReady);
 
-                /* "bs_solver.pyx":461
+                /* "bs_solver.pyx":464
  *                                 colReady = fmax(node.gridBusyTime[src.row][src.bay], node.gridBusyTime[r][b])
  *                                 start = fmax(node.agvs[i].availableTime, colReady)
  *                                 finish = start + travel + TIME_HANDLE + getTravelTime(src, dst) + TIME_HANDLE             # <<<<<<<<<<<<<<
  *                                 if finish < bestFinishTime: bestFinishTime = finish; bestAGV = i; bestStartTime = start
  *                             newNode = node; newNode.yard.moveBox(src.row, src.bay, dst.row, dst.bay)
 */
-                __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_src, __pyx_v_dst); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 461, __pyx_L1_error)
+                __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime(__pyx_v_src, __pyx_v_dst); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 464, __pyx_L1_error)
                 __pyx_v_finish = ((((__pyx_v_start + __pyx_v_travel) + __pyx_v_9bs_solver_TIME_HANDLE) + __pyx_t_18) + __pyx_v_9bs_solver_TIME_HANDLE);
 
-                /* "bs_solver.pyx":462
+                /* "bs_solver.pyx":465
  *                                 start = fmax(node.agvs[i].availableTime, colReady)
  *                                 finish = start + travel + TIME_HANDLE + getTravelTime(src, dst) + TIME_HANDLE
  *                                 if finish < bestFinishTime: bestFinishTime = finish; bestAGV = i; bestStartTime = start             # <<<<<<<<<<<<<<
@@ -5354,7 +5408,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 }
               }
 
-              /* "bs_solver.pyx":463
+              /* "bs_solver.pyx":466
  *                                 finish = start + travel + TIME_HANDLE + getTravelTime(src, dst) + TIME_HANDLE
  *                                 if finish < bestFinishTime: bestFinishTime = finish; bestAGV = i; bestStartTime = start
  *                             newNode = node; newNode.yard.moveBox(src.row, src.bay, dst.row, dst.bay)             # <<<<<<<<<<<<<<
@@ -5364,7 +5418,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_newNode = __pyx_v_node;
               __pyx_v_newNode.yard.moveBox(__pyx_v_src.row, __pyx_v_src.bay, __pyx_v_dst.row, __pyx_v_dst.bay);
 
-              /* "bs_solver.pyx":464
+              /* "bs_solver.pyx":467
  *                                 if finish < bestFinishTime: bestFinishTime = finish; bestAGV = i; bestStartTime = start
  *                             newNode = node; newNode.yard.moveBox(src.row, src.bay, dst.row, dst.bay)
  *                             newNode.agvs[bestAGV].currentPos = dst; newNode.agvs[bestAGV].availableTime = bestFinishTime             # <<<<<<<<<<<<<<
@@ -5374,17 +5428,17 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               (__pyx_v_newNode.agvs[__pyx_v_bestAGV]).currentPos = __pyx_v_dst;
               (__pyx_v_newNode.agvs[__pyx_v_bestAGV]).availableTime = __pyx_v_bestFinishTime;
 
-              /* "bs_solver.pyx":465
+              /* "bs_solver.pyx":468
  *                             newNode = node; newNode.yard.moveBox(src.row, src.bay, dst.row, dst.bay)
  *                             newNode.agvs[bestAGV].currentPos = dst; newNode.agvs[bestAGV].availableTime = bestFinishTime
  *                             pickupTime = bestStartTime + getTravelTime(node.agvs[bestAGV].currentPos, src) + TIME_HANDLE             # <<<<<<<<<<<<<<
  *                             newNode.gridBusyTime[src.row][src.bay] = pickupTime; newNode.gridBusyTime[dst.row][dst.bay] = bestFinishTime
  *                             maxAGV = 0
 */
-              __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_bestAGV]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 465, __pyx_L1_error)
+              __pyx_t_18 = __pyx_f_9bs_solver_getTravelTime((__pyx_v_node.agvs[__pyx_v_bestAGV]).currentPos, __pyx_v_src); if (unlikely(__pyx_t_18 == ((double)-1) && __Pyx_ErrOccurredWithGIL())) __PYX_ERR(0, 468, __pyx_L1_error)
               __pyx_v_pickupTime = ((__pyx_v_bestStartTime + __pyx_t_18) + __pyx_v_9bs_solver_TIME_HANDLE);
 
-              /* "bs_solver.pyx":466
+              /* "bs_solver.pyx":469
  *                             newNode.agvs[bestAGV].currentPos = dst; newNode.agvs[bestAGV].availableTime = bestFinishTime
  *                             pickupTime = bestStartTime + getTravelTime(node.agvs[bestAGV].currentPos, src) + TIME_HANDLE
  *                             newNode.gridBusyTime[src.row][src.bay] = pickupTime; newNode.gridBusyTime[dst.row][dst.bay] = bestFinishTime             # <<<<<<<<<<<<<<
@@ -5394,7 +5448,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               ((__pyx_v_newNode.gridBusyTime[__pyx_v_src.row])[__pyx_v_src.bay]) = __pyx_v_pickupTime;
               ((__pyx_v_newNode.gridBusyTime[__pyx_v_dst.row])[__pyx_v_dst.bay]) = __pyx_v_bestFinishTime;
 
-              /* "bs_solver.pyx":467
+              /* "bs_solver.pyx":470
  *                             pickupTime = bestStartTime + getTravelTime(node.agvs[bestAGV].currentPos, src) + TIME_HANDLE
  *                             newNode.gridBusyTime[src.row][src.bay] = pickupTime; newNode.gridBusyTime[dst.row][dst.bay] = bestFinishTime
  *                             maxAGV = 0             # <<<<<<<<<<<<<<
@@ -5403,7 +5457,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_maxAGV = 0.0;
 
-              /* "bs_solver.pyx":468
+              /* "bs_solver.pyx":471
  *                             newNode.gridBusyTime[src.row][src.bay] = pickupTime; newNode.gridBusyTime[dst.row][dst.bay] = bestFinishTime
  *                             maxAGV = 0
  *                             for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)             # <<<<<<<<<<<<<<
@@ -5417,7 +5471,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 __pyx_v_maxAGV = fmax(__pyx_v_maxAGV, (__pyx_v_newNode.agvs[__pyx_v_i]).availableTime);
               }
 
-              /* "bs_solver.pyx":469
+              /* "bs_solver.pyx":472
  *                             maxAGV = 0
  *                             for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
  *                             newNode.g = maxAGV; newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, False)             # <<<<<<<<<<<<<<
@@ -5427,7 +5481,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_newNode.g = __pyx_v_maxAGV;
               __pyx_v_newNode.h = __pyx_f_9bs_solver_calculate_3D_UBALB(__pyx_v_newNode.yard, __pyx_v_seq, __pyx_v_seqIdx, 0);
 
-              /* "bs_solver.pyx":470
+              /* "bs_solver.pyx":473
  *                             for i in range(AGV_COUNT): maxAGV = fmax(maxAGV, newNode.agvs[i].availableTime)
  *                             newNode.g = maxAGV; newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, False)
  *                             newNode.f = newNode.g + newNode.h + penalty + (<double>rand()/RAND_MAX)*0.01             # <<<<<<<<<<<<<<
@@ -5436,7 +5490,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_newNode.f = (((__pyx_v_newNode.g + __pyx_v_newNode.h) + __pyx_v_penalty) + ((((double)rand()) / ((double)RAND_MAX)) * 0.01));
 
-              /* "bs_solver.pyx":471
+              /* "bs_solver.pyx":474
  *                             newNode.g = maxAGV; newNode.h = calculate_3D_UBALB(newNode.yard, seq, seqIdx, False)
  *                             newNode.f = newNode.g + newNode.h + penalty + (<double>rand()/RAND_MAX)*0.01
  *                             log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 1             # <<<<<<<<<<<<<<
@@ -5447,7 +5501,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_log.agv_id = __pyx_v_bestAGV;
               __pyx_v_log.type_code = 1;
 
-              /* "bs_solver.pyx":472
+              /* "bs_solver.pyx":475
  *                             newNode.f = newNode.g + newNode.h + penalty + (<double>rand()/RAND_MAX)*0.01
  *                             log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 1
  *                             log.container_id = blockerId; log.related_target_id = targetId             # <<<<<<<<<<<<<<
@@ -5457,7 +5511,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_log.container_id = __pyx_v_blockerId;
               __pyx_v_log.related_target_id = __pyx_v_targetId;
 
-              /* "bs_solver.pyx":473
+              /* "bs_solver.pyx":476
  *                             log.mission_no = newNode.history.size()+1; log.agv_id = bestAGV; log.type_code = 1
  *                             log.container_id = blockerId; log.related_target_id = targetId
  *                             log.src = src; log.dst = dst             # <<<<<<<<<<<<<<
@@ -5467,7 +5521,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
               __pyx_v_log.src = __pyx_v_src;
               __pyx_v_log.dst = __pyx_v_dst;
 
-              /* "bs_solver.pyx":474
+              /* "bs_solver.pyx":477
  *                             log.container_id = blockerId; log.related_target_id = targetId
  *                             log.src = src; log.dst = dst
  *                             log.start_time_epoch = <long long>bestStartTime + 1705363200             # <<<<<<<<<<<<<<
@@ -5476,7 +5530,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_log.start_time_epoch = (((PY_LONG_LONG)__pyx_v_bestStartTime) + 0x65A5C700);
 
-              /* "bs_solver.pyx":475
+              /* "bs_solver.pyx":478
  *                             log.src = src; log.dst = dst
  *                             log.start_time_epoch = <long long>bestStartTime + 1705363200
  *                             log.end_time_epoch = <long long>bestFinishTime + 1705363200             # <<<<<<<<<<<<<<
@@ -5485,7 +5539,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
               __pyx_v_log.end_time_epoch = (((PY_LONG_LONG)__pyx_v_bestFinishTime) + 0x65A5C700);
 
-              /* "bs_solver.pyx":476
+              /* "bs_solver.pyx":479
  *                             log.start_time_epoch = <long long>bestStartTime + 1705363200
  *                             log.end_time_epoch = <long long>bestFinishTime + 1705363200
  *                             log.makespan_snapshot = newNode.g; newNode.history.push_back(log); nextBeam.push_back(newNode)             # <<<<<<<<<<<<<<
@@ -5500,7 +5554,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
                 __Pyx_CppExn2PyErr();
                 __Pyx_PyGILState_Release(__pyx_gilstate_save);
-                __PYX_ERR(0, 476, __pyx_L1_error)
+                __PYX_ERR(0, 479, __pyx_L1_error)
               }
               try {
                 __pyx_v_nextBeam.push_back(__pyx_v_newNode);
@@ -5508,7 +5562,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
                 PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
                 __Pyx_CppExn2PyErr();
                 __Pyx_PyGILState_Release(__pyx_gilstate_save);
-                __PYX_ERR(0, 476, __pyx_L1_error)
+                __PYX_ERR(0, 479, __pyx_L1_error)
               }
               __pyx_L43_continue:;
             }
@@ -5516,7 +5570,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
         }
         __pyx_L27:;
 
-        /* "bs_solver.pyx":355
+        /* "bs_solver.pyx":358
  *             expansion_limit += 1
  *             nextBeam.clear()
  *             for node in currentBeam:             # <<<<<<<<<<<<<<
@@ -5526,7 +5580,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
         __pyx_L11_continue:;
       }
 
-      /* "bs_solver.pyx":478
+      /* "bs_solver.pyx":481
  *                             log.makespan_snapshot = newNode.g; newNode.history.push_back(log); nextBeam.push_back(newNode)
  * 
  *             if nextBeam.empty(): break             # <<<<<<<<<<<<<<
@@ -5538,7 +5592,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
         goto __pyx_L8_break;
       }
 
-      /* "bs_solver.pyx":479
+      /* "bs_solver.pyx":482
  * 
  *             if nextBeam.empty(): break
  *             sort(nextBeam.begin(), nextBeam.end())             # <<<<<<<<<<<<<<
@@ -5551,10 +5605,10 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
         PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
         __Pyx_CppExn2PyErr();
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
-        __PYX_ERR(0, 479, __pyx_L1_error)
+        __PYX_ERR(0, 482, __pyx_L1_error)
       }
 
-      /* "bs_solver.pyx":480
+      /* "bs_solver.pyx":483
  *             if nextBeam.empty(): break
  *             sort(nextBeam.begin(), nextBeam.end())
  *             if nextBeam.size() > BEAM_WIDTH: nextBeam.resize(BEAM_WIDTH)             # <<<<<<<<<<<<<<
@@ -5569,11 +5623,11 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
           PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
           __Pyx_CppExn2PyErr();
           __Pyx_PyGILState_Release(__pyx_gilstate_save);
-          __PYX_ERR(0, 480, __pyx_L1_error)
+          __PYX_ERR(0, 483, __pyx_L1_error)
         }
       }
 
-      /* "bs_solver.pyx":481
+      /* "bs_solver.pyx":484
  *             sort(nextBeam.begin(), nextBeam.end())
  *             if nextBeam.size() > BEAM_WIDTH: nextBeam.resize(BEAM_WIDTH)
  *             currentBeam = nextBeam             # <<<<<<<<<<<<<<
@@ -5582,7 +5636,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
       __pyx_v_currentBeam = __pyx_v_nextBeam;
 
-      /* "bs_solver.pyx":482
+      /* "bs_solver.pyx":485
  *             if nextBeam.size() > BEAM_WIDTH: nextBeam.resize(BEAM_WIDTH)
  *             currentBeam = nextBeam
  *             check = currentBeam[0].yard.getBoxPosition(targetId)             # <<<<<<<<<<<<<<
@@ -5591,7 +5645,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
 */
       __pyx_v_check = (__pyx_v_currentBeam[0]).yard.getBoxPosition(__pyx_v_targetId);
 
-      /* "bs_solver.pyx":483
+      /* "bs_solver.pyx":486
  *             currentBeam = nextBeam
  *             check = currentBeam[0].yard.getBoxPosition(targetId)
  *             if check.row != -1 and currentBeam[0].isCurrentTargetRetrieved: targetCycleDone = True             # <<<<<<<<<<<<<<
@@ -5613,7 +5667,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
     }
     __pyx_L8_break:;
 
-    /* "bs_solver.pyx":484
+    /* "bs_solver.pyx":487
  *             check = currentBeam[0].yard.getBoxPosition(targetId)
  *             if check.row != -1 and currentBeam[0].isCurrentTargetRetrieved: targetCycleDone = True
  *         if currentBeam.empty(): return vector[MissionLog]()             # <<<<<<<<<<<<<<
@@ -5628,13 +5682,13 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
         PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
         __Pyx_CppExn2PyErr();
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
-        __PYX_ERR(0, 484, __pyx_L1_error)
+        __PYX_ERR(0, 487, __pyx_L1_error)
       }
       __pyx_r = __pyx_t_21;
       goto __pyx_L0;
     }
 
-    /* "bs_solver.pyx":485
+    /* "bs_solver.pyx":488
  *             if check.row != -1 and currentBeam[0].isCurrentTargetRetrieved: targetCycleDone = True
  *         if currentBeam.empty(): return vector[MissionLog]()
  *         for i in range(currentBeam.size()): currentBeam[i].isCurrentTargetRetrieved = False             # <<<<<<<<<<<<<<
@@ -5649,7 +5703,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
     }
   }
 
-  /* "bs_solver.pyx":486
+  /* "bs_solver.pyx":489
  *         if currentBeam.empty(): return vector[MissionLog]()
  *         for i in range(currentBeam.size()): currentBeam[i].isCurrentTargetRetrieved = False
  *     return currentBeam[0].history             # <<<<<<<<<<<<<<
@@ -5659,7 +5713,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
   __pyx_r = (__pyx_v_currentBeam[0]).history;
   goto __pyx_L0;
 
-  /* "bs_solver.pyx":321
+  /* "bs_solver.pyx":324
  * # 4. BBS Solver ( 1 )
  * # ==========================================
  * cdef vector[MissionLog] solveAndRecord(YardSystem& initialYard, vector[int]& seq, unordered_map[int, int]& sku_map) noexcept nogil:             # <<<<<<<<<<<<<<
@@ -5677,7 +5731,7 @@ static std::vector<struct MissionLog>  __pyx_f_9bs_solver_solveAndRecord(YardSys
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":492
+/* "bs_solver.pyx":495
  * # ==========================================
  * cdef class PyMissionLog:
  *     cdef public int mission_no, agv_id, container_id, related_target_id             # <<<<<<<<<<<<<<
@@ -5709,7 +5763,7 @@ static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_10mission_no___get__(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_self->mission_no); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_self->mission_no); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5747,7 +5801,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_10mission_no_2__set__(struct __pyx
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __pyx_t_1 = __Pyx_PyLong_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 495, __pyx_L1_error)
   __pyx_v_self->mission_no = __pyx_t_1;
 
   /* function exit code */
@@ -5784,7 +5838,7 @@ static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_6agv_id___get__(struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_self->agv_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_self->agv_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5822,7 +5876,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_6agv_id_2__set__(struct __pyx_obj_
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __pyx_t_1 = __Pyx_PyLong_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 495, __pyx_L1_error)
   __pyx_v_self->agv_id = __pyx_t_1;
 
   /* function exit code */
@@ -5859,7 +5913,7 @@ static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_12container_id___get__(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_self->container_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_self->container_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5897,7 +5951,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_12container_id_2__set__(struct __p
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __pyx_t_1 = __Pyx_PyLong_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 495, __pyx_L1_error)
   __pyx_v_self->container_id = __pyx_t_1;
 
   /* function exit code */
@@ -5934,7 +5988,7 @@ static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_17related_target_id___get__(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_self->related_target_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_self->related_target_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5972,7 +6026,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_17related_target_id_2__set__(struc
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __pyx_t_1 = __Pyx_PyLong_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 495, __pyx_L1_error)
   __pyx_v_self->related_target_id = __pyx_t_1;
 
   /* function exit code */
@@ -5985,7 +6039,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_17related_target_id_2__set__(struc
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":493
+/* "bs_solver.pyx":496
  * cdef class PyMissionLog:
  *     cdef public int mission_no, agv_id, container_id, related_target_id
  *     cdef public str mission_type             # <<<<<<<<<<<<<<
@@ -6049,7 +6103,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_12mission_type_2__set__(struct __p
   __Pyx_RefNannySetupContext("__set__", 0);
   __pyx_t_1 = __pyx_v_value;
   __Pyx_INCREF(__pyx_t_1);
-  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_1))) __PYX_ERR(0, 493, __pyx_L1_error)
+  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_1))) __PYX_ERR(0, 496, __pyx_L1_error)
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->mission_type);
   __Pyx_DECREF(__pyx_v_self->mission_type);
@@ -6099,7 +6153,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_12mission_type_4__del__(struct __p
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":494
+/* "bs_solver.pyx":497
  *     cdef public int mission_no, agv_id, container_id, related_target_id
  *     cdef public str mission_type
  *     cdef public tuple src, dst             # <<<<<<<<<<<<<<
@@ -6163,7 +6217,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_3src_2__set__(struct __pyx_obj_9bs
   __Pyx_RefNannySetupContext("__set__", 0);
   __pyx_t_1 = __pyx_v_value;
   __Pyx_INCREF(__pyx_t_1);
-  if (!(likely(PyTuple_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_t_1))) __PYX_ERR(0, 494, __pyx_L1_error)
+  if (!(likely(PyTuple_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_t_1))) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->src);
   __Pyx_DECREF(__pyx_v_self->src);
@@ -6269,7 +6323,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_3dst_2__set__(struct __pyx_obj_9bs
   __Pyx_RefNannySetupContext("__set__", 0);
   __pyx_t_1 = __pyx_v_value;
   __Pyx_INCREF(__pyx_t_1);
-  if (!(likely(PyTuple_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_t_1))) __PYX_ERR(0, 494, __pyx_L1_error)
+  if (!(likely(PyTuple_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_t_1))) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->dst);
   __Pyx_DECREF(__pyx_v_self->dst);
@@ -6319,7 +6373,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_3dst_4__del__(struct __pyx_obj_9bs
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":495
+/* "bs_solver.pyx":498
  *     cdef public str mission_type
  *     cdef public tuple src, dst
  *     cdef public long long start_time, end_time             # <<<<<<<<<<<<<<
@@ -6351,7 +6405,7 @@ static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_10start_time___get__(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyLong_From_PY_LONG_LONG(__pyx_v_self->start_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_From_PY_LONG_LONG(__pyx_v_self->start_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 498, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6389,7 +6443,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_10start_time_2__set__(struct __pyx
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __pyx_t_1 = __Pyx_PyLong_As_PY_LONG_LONG(__pyx_v_value); if (unlikely((__pyx_t_1 == (PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_As_PY_LONG_LONG(__pyx_v_value); if (unlikely((__pyx_t_1 == (PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 498, __pyx_L1_error)
   __pyx_v_self->start_time = __pyx_t_1;
 
   /* function exit code */
@@ -6426,7 +6480,7 @@ static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_8end_time___get__(struct __p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyLong_From_PY_LONG_LONG(__pyx_v_self->end_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_From_PY_LONG_LONG(__pyx_v_self->end_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 498, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6464,7 +6518,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_8end_time_2__set__(struct __pyx_ob
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __pyx_t_1 = __Pyx_PyLong_As_PY_LONG_LONG(__pyx_v_value); if (unlikely((__pyx_t_1 == (PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyLong_As_PY_LONG_LONG(__pyx_v_value); if (unlikely((__pyx_t_1 == (PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 498, __pyx_L1_error)
   __pyx_v_self->end_time = __pyx_t_1;
 
   /* function exit code */
@@ -6477,7 +6531,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_8end_time_2__set__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":496
+/* "bs_solver.pyx":499
  *     cdef public tuple src, dst
  *     cdef public long long start_time, end_time
  *     cdef public double makespan             # <<<<<<<<<<<<<<
@@ -6509,7 +6563,7 @@ static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_8makespan___get__(struct __p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->makespan); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 496, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->makespan); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6547,7 +6601,7 @@ static int __pyx_pf_9bs_solver_12PyMissionLog_8makespan_2__set__(struct __pyx_ob
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __pyx_t_1 = __Pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 496, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 499, __pyx_L1_error)
   __pyx_v_self->makespan = __pyx_t_1;
 
   /* function exit code */
@@ -7034,7 +7088,7 @@ static PyObject *__pyx_pf_9bs_solver_12PyMissionLog_2__setstate_cython__(struct 
   return __pyx_r;
 }
 
-/* "bs_solver.pyx":498
+/* "bs_solver.pyx":501
  *     cdef public double makespan
  * 
  * def run_fixed_solver(dict config, list boxes, list commands, list fixed_seq_ids, dict sku_map):             # <<<<<<<<<<<<<<
@@ -7085,50 +7139,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_config,&__pyx_mstate_global->__pyx_n_u_boxes,&__pyx_mstate_global->__pyx_n_u_commands,&__pyx_mstate_global->__pyx_n_u_fixed_seq_ids,&__pyx_mstate_global->__pyx_n_u_sku_map,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 498, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 501, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 498, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 501, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 498, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 501, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 498, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 501, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 498, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 501, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 498, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 501, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "run_fixed_solver", 0) < (0)) __PYX_ERR(0, 498, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "run_fixed_solver", 0) < (0)) __PYX_ERR(0, 501, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("run_fixed_solver", 1, 5, 5, i); __PYX_ERR(0, 498, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("run_fixed_solver", 1, 5, 5, i); __PYX_ERR(0, 501, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 498, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 501, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 498, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 501, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 498, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 501, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 498, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 501, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 498, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 501, __pyx_L3_error)
     }
     __pyx_v_config = ((PyObject*)values[0]);
     __pyx_v_boxes = ((PyObject*)values[1]);
@@ -7138,7 +7192,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("run_fixed_solver", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 498, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("run_fixed_solver", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 501, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7149,11 +7203,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_config), (&PyDict_Type), 1, "config", 1))) __PYX_ERR(0, 498, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_boxes), (&PyList_Type), 1, "boxes", 1))) __PYX_ERR(0, 498, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_commands), (&PyList_Type), 1, "commands", 1))) __PYX_ERR(0, 498, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_fixed_seq_ids), (&PyList_Type), 1, "fixed_seq_ids", 1))) __PYX_ERR(0, 498, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_sku_map), (&PyDict_Type), 1, "sku_map", 1))) __PYX_ERR(0, 498, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_config), (&PyDict_Type), 1, "config", 1))) __PYX_ERR(0, 501, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_boxes), (&PyList_Type), 1, "boxes", 1))) __PYX_ERR(0, 501, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_commands), (&PyList_Type), 1, "commands", 1))) __PYX_ERR(0, 501, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_fixed_seq_ids), (&PyList_Type), 1, "fixed_seq_ids", 1))) __PYX_ERR(0, 501, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_sku_map), (&PyDict_Type), 1, "sku_map", 1))) __PYX_ERR(0, 501, __pyx_L1_error)
   __pyx_r = __pyx_pf_9bs_solver_2run_fixed_solver(__pyx_self, __pyx_v_config, __pyx_v_boxes, __pyx_v_commands, __pyx_v_fixed_seq_ids, __pyx_v_sku_map);
 
   /* function exit code */
@@ -7208,7 +7262,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("run_fixed_solver", 0);
 
-  /* "bs_solver.pyx":500
+  /* "bs_solver.pyx":503
  * def run_fixed_solver(dict config, list boxes, list commands, list fixed_seq_ids, dict sku_map):
  *     cdef YardSystem initialYard
  *     initialYard.init(config['max_row'], config['max_bay'], config['max_level'], config['total_boxes'])             # <<<<<<<<<<<<<<
@@ -7217,39 +7271,39 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
 */
   if (unlikely(__pyx_v_config == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 500, __pyx_L1_error)
+    __PYX_ERR(0, 503, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_config, __pyx_mstate_global->__pyx_n_u_max_row); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 500, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_config, __pyx_mstate_global->__pyx_n_u_max_row); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyLong_As_int(__pyx_t_1); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 500, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyLong_As_int(__pyx_t_1); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (unlikely(__pyx_v_config == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 500, __pyx_L1_error)
+    __PYX_ERR(0, 503, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_config, __pyx_mstate_global->__pyx_n_u_max_bay); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 500, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_config, __pyx_mstate_global->__pyx_n_u_max_bay); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyLong_As_int(__pyx_t_1); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 500, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyLong_As_int(__pyx_t_1); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (unlikely(__pyx_v_config == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 500, __pyx_L1_error)
+    __PYX_ERR(0, 503, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_config, __pyx_mstate_global->__pyx_n_u_max_level); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 500, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_config, __pyx_mstate_global->__pyx_n_u_max_level); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyLong_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 500, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyLong_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (unlikely(__pyx_v_config == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 500, __pyx_L1_error)
+    __PYX_ERR(0, 503, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_config, __pyx_mstate_global->__pyx_n_u_total_boxes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 500, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_config, __pyx_mstate_global->__pyx_n_u_total_boxes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyLong_As_int(__pyx_t_1); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 500, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyLong_As_int(__pyx_t_1); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_initialYard.init(__pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5);
 
-  /* "bs_solver.pyx":501
+  /* "bs_solver.pyx":504
  *     cdef YardSystem initialYard
  *     initialYard.init(config['max_row'], config['max_bay'], config['max_level'], config['total_boxes'])
  *     for box in boxes: initialYard.initBox(box['id'], box['row'], box['bay'], box['level'])             # <<<<<<<<<<<<<<
@@ -7258,7 +7312,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
 */
   if (unlikely(__pyx_v_boxes == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-    __PYX_ERR(0, 501, __pyx_L1_error)
+    __PYX_ERR(0, 504, __pyx_L1_error)
   }
   __pyx_t_1 = __pyx_v_boxes; __Pyx_INCREF(__pyx_t_1);
   __pyx_t_6 = 0;
@@ -7266,37 +7320,37 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
     {
       Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
       #if !CYTHON_ASSUME_SAFE_SIZE
-      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 501, __pyx_L1_error)
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 504, __pyx_L1_error)
       #endif
       if (__pyx_t_6 >= __pyx_temp) break;
     }
     __pyx_t_7 = __Pyx_PyList_GetItemRefFast(__pyx_t_1, __pyx_t_6, __Pyx_ReferenceSharing_OwnStrongReference);
     ++__pyx_t_6;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 501, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_XDECREF_SET(__pyx_v_box, __pyx_t_7);
     __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_v_box, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_v_box, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_5 = __Pyx_PyLong_As_int(__pyx_t_7); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyLong_As_int(__pyx_t_7); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_v_box, __pyx_mstate_global->__pyx_n_u_row); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_v_box, __pyx_mstate_global->__pyx_n_u_row); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_4 = __Pyx_PyLong_As_int(__pyx_t_7); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyLong_As_int(__pyx_t_7); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_v_box, __pyx_mstate_global->__pyx_n_u_bay); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_v_box, __pyx_mstate_global->__pyx_n_u_bay); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = __Pyx_PyLong_As_int(__pyx_t_7); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyLong_As_int(__pyx_t_7); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_v_box, __pyx_mstate_global->__pyx_n_u_level); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Dict_GetItem(__pyx_v_box, __pyx_mstate_global->__pyx_n_u_level); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = __Pyx_PyLong_As_int(__pyx_t_7); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyLong_As_int(__pyx_t_7); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_initialYard.initBox(__pyx_t_5, __pyx_t_4, __pyx_t_3, __pyx_t_2);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "bs_solver.pyx":503
+  /* "bs_solver.pyx":506
  *     for box in boxes: initialYard.initBox(box['id'], box['row'], box['bay'], box['level'])
  *     cdef vector[int] sequence
  *     for pid in fixed_seq_ids: sequence.push_back(pid)             # <<<<<<<<<<<<<<
@@ -7305,7 +7359,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
 */
   if (unlikely(__pyx_v_fixed_seq_ids == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-    __PYX_ERR(0, 503, __pyx_L1_error)
+    __PYX_ERR(0, 506, __pyx_L1_error)
   }
   __pyx_t_1 = __pyx_v_fixed_seq_ids; __Pyx_INCREF(__pyx_t_1);
   __pyx_t_6 = 0;
@@ -7313,27 +7367,27 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
     {
       Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
       #if !CYTHON_ASSUME_SAFE_SIZE
-      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 503, __pyx_L1_error)
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 506, __pyx_L1_error)
       #endif
       if (__pyx_t_6 >= __pyx_temp) break;
     }
     __pyx_t_7 = __Pyx_PyList_GetItemRefFast(__pyx_t_1, __pyx_t_6, __Pyx_ReferenceSharing_OwnStrongReference);
     ++__pyx_t_6;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 503, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 506, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_XDECREF_SET(__pyx_v_pid, __pyx_t_7);
     __pyx_t_7 = 0;
-    __pyx_t_2 = __Pyx_PyLong_As_int(__pyx_v_pid); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 503, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyLong_As_int(__pyx_v_pid); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 506, __pyx_L1_error)
     try {
       __pyx_v_sequence.push_back(__pyx_t_2);
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(0, 503, __pyx_L1_error)
+      __PYX_ERR(0, 506, __pyx_L1_error)
     }
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "bs_solver.pyx":505
+  /* "bs_solver.pyx":508
  *     for pid in fixed_seq_ids: sequence.push_back(pid)
  *     cdef unordered_map[int, int] c_sku_map
  *     for k, v in sku_map.items(): c_sku_map[k] = v             # <<<<<<<<<<<<<<
@@ -7343,9 +7397,9 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
   __pyx_t_6 = 0;
   if (unlikely(__pyx_v_sku_map == Py_None)) {
     PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "items");
-    __PYX_ERR(0, 505, __pyx_L1_error)
+    __PYX_ERR(0, 508, __pyx_L1_error)
   }
-  __pyx_t_7 = __Pyx_dict_iterator(__pyx_v_sku_map, 1, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_8), (&__pyx_t_2)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 505, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_dict_iterator(__pyx_v_sku_map, 1, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_8), (&__pyx_t_2)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 508, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_1);
   __pyx_t_1 = __pyx_t_7;
@@ -7353,20 +7407,20 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
   while (1) {
     __pyx_t_3 = __Pyx_dict_iter_next(__pyx_t_1, __pyx_t_8, &__pyx_t_6, &__pyx_t_7, &__pyx_t_9, NULL, __pyx_t_2);
     if (unlikely(__pyx_t_3 == 0)) break;
-    if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 505, __pyx_L1_error)
+    if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 508, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_7);
     __pyx_t_7 = 0;
     __Pyx_XDECREF_SET(__pyx_v_v, __pyx_t_9);
     __pyx_t_9 = 0;
-    __pyx_t_3 = __Pyx_PyLong_As_int(__pyx_v_v); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 505, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyLong_As_int(__pyx_v_k); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 505, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyLong_As_int(__pyx_v_v); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 508, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyLong_As_int(__pyx_v_k); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 508, __pyx_L1_error)
     (__pyx_v_c_sku_map[__pyx_t_4]) = __pyx_t_3;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "bs_solver.pyx":506
+  /* "bs_solver.pyx":509
  *     cdef unordered_map[int, int] c_sku_map
  *     for k, v in sku_map.items(): c_sku_map[k] = v
  *     cdef vector[MissionLog] finalLogs = solveAndRecord(initialYard, sequence, c_sku_map)             # <<<<<<<<<<<<<<
@@ -7375,19 +7429,19 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
 */
   __pyx_v_finalLogs = __pyx_f_9bs_solver_solveAndRecord(__pyx_v_initialYard, __pyx_v_sequence, __pyx_v_c_sku_map);
 
-  /* "bs_solver.pyx":507
+  /* "bs_solver.pyx":510
  *     for k, v in sku_map.items(): c_sku_map[k] = v
  *     cdef vector[MissionLog] finalLogs = solveAndRecord(initialYard, sequence, c_sku_map)
  *     py_logs = []             # <<<<<<<<<<<<<<
  *     for log in finalLogs:
  *         pl = PyMissionLog()
 */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 507, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 510, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_py_logs = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "bs_solver.pyx":508
+  /* "bs_solver.pyx":511
  *     cdef vector[MissionLog] finalLogs = solveAndRecord(initialYard, sequence, c_sku_map)
  *     py_logs = []
  *     for log in finalLogs:             # <<<<<<<<<<<<<<
@@ -7399,7 +7453,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
     __pyx_t_11 = *__pyx_t_10;
     __pyx_v_log = __pyx_t_11;
 
-    /* "bs_solver.pyx":509
+    /* "bs_solver.pyx":512
  *     py_logs = []
  *     for log in finalLogs:
  *         pl = PyMissionLog()             # <<<<<<<<<<<<<<
@@ -7412,13 +7466,13 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
       PyObject *__pyx_callargs[2] = {__pyx_t_9, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_mstate_global->__pyx_ptype_9bs_solver_PyMissionLog, __pyx_callargs+__pyx_t_12, (1-__pyx_t_12) | (__pyx_t_12*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 509, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 512, __pyx_L1_error)
       __Pyx_GOTREF((PyObject *)__pyx_t_1);
     }
     __Pyx_XDECREF_SET(__pyx_v_pl, ((struct __pyx_obj_9bs_solver_PyMissionLog *)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "bs_solver.pyx":510
+    /* "bs_solver.pyx":513
  *     for log in finalLogs:
  *         pl = PyMissionLog()
  *         pl.mission_no = log.mission_no; pl.agv_id = log.agv_id; pl.container_id = log.container_id; pl.related_target_id = log.related_target_id             # <<<<<<<<<<<<<<
@@ -7434,7 +7488,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
     __pyx_t_2 = __pyx_v_log.related_target_id;
     __pyx_v_pl->related_target_id = __pyx_t_2;
 
-    /* "bs_solver.pyx":511
+    /* "bs_solver.pyx":514
  *         pl = PyMissionLog()
  *         pl.mission_no = log.mission_no; pl.agv_id = log.agv_id; pl.container_id = log.container_id; pl.related_target_id = log.related_target_id
  *         if log.type_code == 0: pl.mission_type = "target"             # <<<<<<<<<<<<<<
@@ -7451,7 +7505,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
       break;
       case 1:
 
-      /* "bs_solver.pyx":512
+      /* "bs_solver.pyx":515
  *         pl.mission_no = log.mission_no; pl.agv_id = log.agv_id; pl.container_id = log.container_id; pl.related_target_id = log.related_target_id
  *         if log.type_code == 0: pl.mission_type = "target"
  *         elif log.type_code == 1: pl.mission_type = "reshuffle"             # <<<<<<<<<<<<<<
@@ -7466,7 +7520,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
       break;
       default:
 
-      /* "bs_solver.pyx":513
+      /* "bs_solver.pyx":516
  *         if log.type_code == 0: pl.mission_type = "target"
  *         elif log.type_code == 1: pl.mission_type = "reshuffle"
  *         else: pl.mission_type = "return"             # <<<<<<<<<<<<<<
@@ -7481,27 +7535,27 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
       break;
     }
 
-    /* "bs_solver.pyx":514
+    /* "bs_solver.pyx":517
  *         elif log.type_code == 1: pl.mission_type = "reshuffle"
  *         else: pl.mission_type = "return"
  *         pl.src = (log.src.row, log.src.bay, log.src.tier); pl.dst = (log.dst.row, log.dst.bay, log.dst.tier)             # <<<<<<<<<<<<<<
  *         pl.start_time = log.start_time_epoch; pl.end_time = log.end_time_epoch; pl.makespan = log.makespan_snapshot
  *         py_logs.append(pl)
 */
-    __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_log.src.row); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 514, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_log.src.row); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_log.src.bay); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 514, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_log.src.bay); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_log.src.tier); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 514, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_log.src.tier); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_13 = PyTuple_New(3); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 514, __pyx_L1_error)
+    __pyx_t_13 = PyTuple_New(3); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
     __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 514, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 517, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 514, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 517, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 2, __pyx_t_7) != (0)) __PYX_ERR(0, 514, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 2, __pyx_t_7) != (0)) __PYX_ERR(0, 517, __pyx_L1_error);
     __pyx_t_1 = 0;
     __pyx_t_9 = 0;
     __pyx_t_7 = 0;
@@ -7510,20 +7564,20 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_v_pl->src);
     __pyx_v_pl->src = ((PyObject*)__pyx_t_13);
     __pyx_t_13 = 0;
-    __pyx_t_13 = __Pyx_PyLong_From_int(__pyx_v_log.dst.row); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 514, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyLong_From_int(__pyx_v_log.dst.row); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
-    __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_log.dst.bay); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 514, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_log.dst.bay); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_log.dst.tier); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 514, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_log.dst.tier); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 514, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_GIVEREF(__pyx_t_13);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_13) != (0)) __PYX_ERR(0, 514, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_13) != (0)) __PYX_ERR(0, 517, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 514, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 517, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_t_9) != (0)) __PYX_ERR(0, 514, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_t_9) != (0)) __PYX_ERR(0, 517, __pyx_L1_error);
     __pyx_t_13 = 0;
     __pyx_t_7 = 0;
     __pyx_t_9 = 0;
@@ -7533,7 +7587,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
     __pyx_v_pl->dst = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "bs_solver.pyx":515
+    /* "bs_solver.pyx":518
  *         else: pl.mission_type = "return"
  *         pl.src = (log.src.row, log.src.bay, log.src.tier); pl.dst = (log.dst.row, log.dst.bay, log.dst.tier)
  *         pl.start_time = log.start_time_epoch; pl.end_time = log.end_time_epoch; pl.makespan = log.makespan_snapshot             # <<<<<<<<<<<<<<
@@ -7547,15 +7601,15 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
     __pyx_t_15 = __pyx_v_log.makespan_snapshot;
     __pyx_v_pl->makespan = __pyx_t_15;
 
-    /* "bs_solver.pyx":516
+    /* "bs_solver.pyx":519
  *         pl.src = (log.src.row, log.src.bay, log.src.tier); pl.dst = (log.dst.row, log.dst.bay, log.dst.tier)
  *         pl.start_time = log.start_time_epoch; pl.end_time = log.end_time_epoch; pl.makespan = log.makespan_snapshot
  *         py_logs.append(pl)             # <<<<<<<<<<<<<<
  *     return py_logs
 */
-    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_py_logs, ((PyObject *)__pyx_v_pl)); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 516, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_py_logs, ((PyObject *)__pyx_v_pl)); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 519, __pyx_L1_error)
 
-    /* "bs_solver.pyx":508
+    /* "bs_solver.pyx":511
  *     cdef vector[MissionLog] finalLogs = solveAndRecord(initialYard, sequence, c_sku_map)
  *     py_logs = []
  *     for log in finalLogs:             # <<<<<<<<<<<<<<
@@ -7564,7 +7618,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
 */
   }
 
-  /* "bs_solver.pyx":517
+  /* "bs_solver.pyx":520
  *         pl.start_time = log.start_time_epoch; pl.end_time = log.end_time_epoch; pl.makespan = log.makespan_snapshot
  *         py_logs.append(pl)
  *     return py_logs             # <<<<<<<<<<<<<<
@@ -7574,7 +7628,7 @@ static PyObject *__pyx_pf_9bs_solver_2run_fixed_solver(CYTHON_UNUSED PyObject *_
   __pyx_r = __pyx_v_py_logs;
   goto __pyx_L0;
 
-  /* "bs_solver.pyx":498
+  /* "bs_solver.pyx":501
  *     cdef public double makespan
  * 
  * def run_fixed_solver(dict config, list boxes, list commands, list fixed_seq_ids, dict sku_map):             # <<<<<<<<<<<<<<
@@ -8294,15 +8348,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9bs_solver_PyMissionLog_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog)) __PYX_ERR(0, 491, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9bs_solver_PyMissionLog_spec, __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog) < (0)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_9bs_solver_PyMissionLog_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog)) __PYX_ERR(0, 494, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_9bs_solver_PyMissionLog_spec, __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog) < (0)) __PYX_ERR(0, 494, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog = &__pyx_type_9bs_solver_PyMissionLog;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog) < (0)) __PYX_ERR(0, 491, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog) < (0)) __PYX_ERR(0, 494, __pyx_L1_error)
   #endif
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog);
@@ -8312,8 +8366,8 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
     __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog->tp_getattro = PyObject_GenericGetAttr;
   }
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_PyMissionLog, (PyObject *) __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog) < (0)) __PYX_ERR(0, 491, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog) < (0)) __PYX_ERR(0, 491, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_PyMissionLog, (PyObject *) __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog) < (0)) __PYX_ERR(0, 494, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_9bs_solver_PyMissionLog) < (0)) __PYX_ERR(0, 494, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -8720,8 +8774,8 @@ __Pyx_RefNannySetupContext("PyInit_bs_solver", 0);
   /* "bs_solver.pyx":245
  * 
  * # bs_solver.pyx
- * def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start):             # <<<<<<<<<<<<<<
- *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH
+ * def set_config(double t_travel, double t_handle, double t_process, double t_pick, int agv_cnt, int beam_w, long long sim_start, double w_blocking, double w_lookahead,int port_cnt):             # <<<<<<<<<<<<<<
+ *     global TIME_TRAVEL_UNIT, TIME_HANDLE, TIME_PROCESS, TIME_PICK, AGV_COUNT, BEAM_WIDTH, SIM_START_EPOCH, W_PENALTY_BLOCKING, W_PENALTY_LOOKAHEAD, PORT_COUNT
  *     TIME_TRAVEL_UNIT = t_travel
 */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9bs_solver_1set_config, 0, __pyx_mstate_global->__pyx_n_u_set_config, NULL, __pyx_mstate_global->__pyx_n_u_bs_solver, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 245, __pyx_L1_error)
@@ -8759,19 +8813,19 @@ __Pyx_RefNannySetupContext("PyInit_bs_solver", 0);
   if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_9bs_solver_PyMissionLog, __pyx_mstate_global->__pyx_n_u_setstate_cython, __pyx_t_2) < (0)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "bs_solver.pyx":498
+  /* "bs_solver.pyx":501
  *     cdef public double makespan
  * 
  * def run_fixed_solver(dict config, list boxes, list commands, list fixed_seq_ids, dict sku_map):             # <<<<<<<<<<<<<<
  *     cdef YardSystem initialYard
  *     initialYard.init(config['max_row'], config['max_bay'], config['max_level'], config['total_boxes'])
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9bs_solver_3run_fixed_solver, 0, __pyx_mstate_global->__pyx_n_u_run_fixed_solver, NULL, __pyx_mstate_global->__pyx_n_u_bs_solver, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 498, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9bs_solver_3run_fixed_solver, 0, __pyx_mstate_global->__pyx_n_u_run_fixed_solver, NULL, __pyx_mstate_global->__pyx_n_u_bs_solver, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 501, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_run_fixed_solver, __pyx_t_2) < (0)) __PYX_ERR(0, 498, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_run_fixed_solver, __pyx_t_2) < (0)) __PYX_ERR(0, 501, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "(tree fragment)":4
@@ -8859,31 +8913,31 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 9; } index[] = {{1},{179},{8},{13},{7},{6},{2},{9},{14},{12},{30},{32},{20},{7},{18},{3},{6},{3},{5},{9},{9},{18},{8},{6},{8},{5},{9},{13},{8},{12},{2},{11},{13},{5},{1},{5},{3},{8},{7},{9},{7},{10},{8},{7},{3},{2},{3},{7},{14},{12},{11},{10},{27},{12},{10},{17},{13},{9},{6},{3},{16},{4},{8},{10},{12},{10},{12},{19},{9},{7},{5},{8},{6},{9},{8},{6},{8},{4},{11},{6},{12},{1},{6},{11},{187},{55},{40},{321}};
-    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (1174 bytes) */
-const char* const cstring = "BZh91AY&SYN\307\324\345\000\000~\377\377\377\337\375\350\354\337\177\317\277\267\177\345\377\377\377\357\300@@@@@@@@@@@@\000@\000P\003\276z\024\002\201\3341\024\324\232\032mA\352\036\204\320yC\324\014\215\242=M\036\204\332F\236\243M2=!\2654h\323\324b<\241\372\231M\242i\372\241J\000\000\000\r\t\200\000\000\000\023\000\000\000\000\000\001\030\034\000\000\000\320\000\000\003@\r\000\000\320\000\003@\000\000\001\021\204j(\000\032\r\000\000\000\031\000\000\000\000\000\00044\036\240\rOP\023\020\004\302\236\246\010L\325<\247\246S\324z\215\003\324\320\032\001\240h\000\003\324\003i<j\214\236$\007\373\312\000\241\007\371\352\353\350\353\351\013WYG\271\335\370\373\322k\371\232\326\267\257X\360\201\342 \220\t\000\022<5\235\211\212\034\212\251\272@\207\224\022\320.A\005\266(\255g\025\303\304\022\304$B\262\265I\302\024p\317\020$\023b\006\346\213PP\r#<f\010\035\322R\345b\312\313\355\227\210~\344\357\325z\326:f\225Ika\311=\342\301z\222\245d\3769\266\006\233\303\266\244\373\371Ep\025\335lFnl\364\254W7m5\323\241\255\364\373\276\312\327hk\366\240\241\231m\261\236\336\315M4*\251%\022GN0q}\021Y\320\007D\257\003\312\357}2R\002\363\037\224\361\271\202\312\242\316\323\021\253\347o\342/\262\320\353n\226d=\210\363\004\376z\234\304\311\332\306^v\014O?9\226X2k\300\026\353N\222\000\320@\007\372P\tjGKs$\210\017\341\356\007`\302$f\242\t?41\034*\0012\rQ6\304vkd\230@C\230RH\001\201I\001\246\250\005\322\326\010\310\244\225\367\356\272\225%\260+\362|\031<\3507\246j\377k\2625\035<E\374\304W\001\257d%\245\002\243\201\024\252DV5\017\030x\375]\316\336\357\025\271t\3426\362\347\366\221\275\270\347\2775Kv{\204\300)^\223\023\251s\304\3363\273\\\351\035\206\200\340\2409\"\241>\204\210K\242\273`\"\254\221P/\002\276.\035\270\357Y\301\272;\001,EjR\2112\267\005-\366\353\2425\005\201\005voJ\227*\350DDW\014\251\013d\346\005b\230\315D\305\351T\035\224\260\300\324VP\3460\027\337\325w\202\241..\022E\353\337\212\225\273\223\202\370N\214\244\031\352\342Xf\215\312*\240\214\010E{I\263\021\321U\005\3530\027A\342f2\013\016{""\345x\014V\333\322\316\240,\251\322\205a\202\234\"A\033\375\235\332\320\301\253&T>\225\3258q\022Z\273U\000\315\225b\20237U\265\226\220\033\021QL\204\305\214kTD\200c\275\356EV>\225\240\260\000\260\343=\370\317\313\210\221tK\324\212I;\010~\364\200\020\nE\204B}\303d\223\001\2024\317en\022X\023\205v\255\324\245\003\203\004\234\363f\031\376\024\260ZI\2467\345\211\026$5\216\016\236\200\333\034\356\032%\\/H\311\251\227\202\260\273\250\301\223\351\200\255\353\002\303*\222\3003\246r\206T\210\000\340\3464\0222\030w\310n\321y\261)\337\320,\n\224\200\344\340\264\340P\2050\310\200M\022P\244&P3\2401\220\2709\316\017h\200]\313\010[\016:\207$\364\217.#d\004\321\271\231l\244\321\232uGb\244\215;Y\270ph\226\224'n\350*d\304b\271\022I(YxHX\204\340\004\n\010\200\322Ca\354 \000@\200\002\304F\342\320\236N8\342\301\377\347\307\332\224l\347|W\303L\000\300\034!\301\346\276\267{\301\343.\002\n\301pY\024X\006\235\263\200I\255\016\276w\277\030h|\025\231<-\316\257\233w\345z\332\262P\202kHj\020c\225\016\224\315\211\220\240\242\341ti\235J\375M\266\317r;\r\004\370\350\262\035.F\013G\204\200\240u\325\357\036\021YxhDD!U\235\024\3030\026\310\rB\344\253}.\270\032\343\200\334\241\020\212\377\001\252\372\364{:\372\361\026\005\250K\267Q\004\314\260-\345R\247p$6A-U\262\235e\324\245\351\362\224\244f,&\370\004$\016\211\242\365L@\316\346\034z\230\204\363r\272\303\235\341\2600xSe\003\215\177\370\273\222)\302\204\202v>\247(";
-    PyObject *data = __Pyx_DecompressString(cstring, 1174, 2);
+    const struct { const unsigned int length: 9; } index[] = {{1},{179},{8},{13},{7},{6},{2},{9},{14},{12},{30},{32},{20},{7},{18},{3},{6},{3},{5},{9},{9},{18},{8},{6},{8},{5},{9},{13},{8},{12},{2},{11},{13},{5},{1},{5},{3},{8},{7},{9},{7},{10},{8},{7},{3},{2},{3},{8},{7},{14},{12},{11},{10},{27},{12},{10},{17},{13},{9},{6},{3},{16},{4},{8},{10},{12},{10},{12},{19},{9},{7},{5},{8},{6},{9},{8},{6},{8},{4},{11},{6},{12},{1},{6},{10},{11},{11},{187},{55},{55},{321}};
+    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (1202 bytes) */
+const char* const cstring = "BZh91AY&SY\214}\3128\000\000\203\177\377\377\337\375\370\354\337\177\317\277\267\177\345\377\377\377\357\300@@@@@@@@@@@@\000@\000P\003\336{\215\246m\242*\340\304D\241\350\215\007\250z\032\201\265\017D\323j\031\250\320f\246\010\315C\324zLC\312\031\032i\243G\224=4\233D\323\320j\236\200\214\223hh\232M\036B\236F\243\324\3656\247\250\320\006M\000\000\000\000\000\001\240\000p\000\000\000\000\000\006@\000\000\000\000\000\000\000d\000\032\251\354(\010C\324\r\r\000\000\000\006\200\000\000\000\000\000\017P\007\250\003M@\nzS4M\251\204\324\310\032m@\000\323C@\000\000\000\000\032\000h\361FM\204\021\354\254\002\210~\330\261\376\261\377\003\027\214\247_\267\337\360\303'\215\316s\261\344\032\340l\020H\004\242\002F\275\223v\202\217JlU\000\221(K\200\251\010.\264\262\306\033\314\226\300SQD*j\235u\003d(\022p\030Wd\220F\230LRP\213)\0332}\001t\037\2648\220\345v}x\250\373\035~\324~\220>\366\2439\224\246g\222\241U\000\216c\236\217\206\306\200\277P^\010|\332\302v\t\355\322\321^\305\222\240Okd\323\313yJ\343\365y\310E!Q`a\305hS\323\320\321\231D\343\315\014b\026\337\272\305\224Nj\n\360\033Q\304\006\367\267\340\206P\021Yw\0132\322\0373S\300L\030\373\312\364\n\237H]\272\247BE\251\305\031\\u\275\252\206\225\351\352\264^:\272\246s\223h\314\000[\310\254\362\000\316 \006B`\023\026\225m\020\326 \237\r\264\032\276x\215\021\302\n\344\022\016%\017\272\004p\307I\031\221\2320\334M\332@\2108\250\220\003\202\324\003\3155\203)sD\340\265\026~j\252\225\251\322,\340\353[\257\247\216p\305^\327\322\344\\\230\267\306<\242-Hd\300\024\342\202\311\272E+\202Z\0328F_\3177gS2\351\257\005\321\213J\367>\004\351\3424QW:\027e\261h\003\237\214\223m\320\211\032U\013!\030d0\304\240\026\016\006x\316$\274`\313W\247\245\201\247\241\247\005\020\023E\253\227m\036\243\362i\214@\2264\006f\3062CNJE9\370\246\337\200 \017\035\255\t\032GI\250\317\207\321\351d\021d\261\342\301b\265\025\3501R\344\374\322\323#IaG\265\240\306\346,\315jD\357\274B\264Y\206\262\327\241FJ\231$\025\220)&\325@M\205\205\3238\202n\030A>\003>\350\332\231\304\304\023E""\266D#Kd\300\370\355\245D\200r\366\262Sq\001\227e\364\005\335\272\273pI\220F\347\016\206Z4So5%K,\327\017\"\017\251\242\246H:\372\354\"\330\306;<\246\030\261\033\006\301\213S\024\210L\024\245\205`{\334\330A\037t\210D(\006\\\214oW\034;\302\014\312\257F$Y&\213\251-\010\200@\021\202\236`Mv\022|R\001L\027\335C\326!\240\032\343\244\2350\270\320\014\227\014VIX\263\254d\210H\212VU\244\322\0170RV\026\347\005=g^WF\226TaF4\324\t\001\026\335q.\276\301<H\001\345\031\314\220,4\205\002f\201\200,-*\004B\202g\320\202\260\020\215\242\2549\302\320\\\354\250\010/1\252\270Q\026\323\024\004\330\215\205\242\250\003d\201\255\225A\353X\211\253\r\t\264\221\002\024Wq\214\356\224o\2324@4\270kBf'W!\333\2411\205\374\025\356\356\270N\302+iT\2278\320\311\213\356\222\211%\030k\005\006`\236\232\014\370\t\337\262\237\274\000:t\002?Q\002\014|n6|\"\177\237\023\335<\332\327G\342* \025EXU|\225\330X\206q\325\001\207x[\036P'\350\0147g\000\344\3222\251\223m\016/\300\263\271A{S\253\026\305\322V\360;\206\013\367\254A\327q\226Q\321RT9F?\227q\347M\023T\277Sm\243n!a\200\240\204e\301K\221C\334\320\335\004\340]Z\361\240z\344\026\021\"\203\365g\036QX\036.\014\315y\300\225\370\364\336\302e\353RF\343\211\177\201iRN\313n\3579L)\363\243j\241\322\n\256=\352\021\324\266\0104\340\351*\320\233]\270\350\352\317\024\315\313\025\344;\001\214\350\0214\361f\023\3142H247D\022!\313\326\205\345c\002\232M\210\035Q\201\231\037\361w$S\205\t\010\307\334\243\200";
+    PyObject *data = __Pyx_DecompressString(cstring, 1202, 2);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (1064 bytes) */
-const char* const cstring = "x\332mS\317o\3336\024\216]e1\2266\211\233!m\321\303\024\244@\212n5\346\245\351\n\254k\221eM\261\241+\034\307\371\005\004e(\211\262\031\313\224-R\216\215\266I\216:\352\250\243\217:\352\350\243\217>\362\250c\376\204\376\t{\264\235\264\335\006\330\357=\223\217\357\373\370}\364\313\267\256 \272\250a\241ovE\315e:\345\272E\034j\020\017\013\342tu.<j\n\342\251&\246\227^\225\036?y\366D\307\314\322=rBL\301u\356\033\246\2039'\\wm\335\360\251#(\323E\267IxA\377\323\326\273\256\2573B,]\270z\023\372\276< j\204\351\234\010U\350\253\2301W`A]\206\3408e\325U\335\242\036\200\3206Q\247\267\260\303I\001[\026\202>bp\304]\247M\274B\263\333\261(\307\206C\010S\261jR>\256\254\347\212?\253r\327\367L\362\242\324\375\233r\016\363\337\270\325/\353\002B\036\261|\223 s\244\002B\377\332\005\212\034\230}\336W\035\035\370\376\001\342\240\267\244#\312\304\306\32562\231\300\274\313L\352\026L\327s}\220\202p\003w\r\202\033\350\324p;\360\201\205+\352&\342u\0375p\323t\240\021Q\270\270\207Mb`\263n\272\215\006\310\314M\227\331\264\212\220\245\220\306\311\246\014;@\214\333\264C, \327B\324\342\010\331>3\025\265\352\025[X\246\214\n\212\235C\354Y\210rtM\212\n\322\340u\207\264\211\343\2700\276\201\001\034b\007\001[\225F[\252\360\334S\330p-\337!j8\303\215q&\260\334\244V\323i\272\315f\027\301\024\240\000V \263F\314:\367\033\343_\036\341\276#\306\365\204\225*\325\373\030W>kR\023\230|\2459B-\037;WX\023s\320\177l\272^ \035U\362\232o\333\016\361\210\360=\006\274=\237\241\211F#\2719qlP\313'\314$`)\272\322V\325c,\250,pr\304\370\332t\364?\017\200\323\206\272\216'&\006\216v\005\202?\211\345@VW\202\350\271\000\304\205r\025\324\204v\260\006!A\270\212\264A\004\274w\007\215\336\204\337\264`\202\317\3115V\273\215\035\237\360\213L\252=\212\227\343\247I\376\"\363)75=\027T\302{\321\203\310\215+\311R\"\372\277\016\254\341\017r\367P\036\332\322>\221']\331\375\370ij\352,S\316B*g\367T\332\313\036\251t\224=V\3518\213\263\251v3x\035\026\303\255\350\307\036N\265\231\213v\260\037\276\212\276\213\266\323\334\355p9\315\335\t[\227\020D\264""\336\233\351\371\361f,\222\027\203;\303\351\341\216,Ud\005\360\216\345\361\350d+\315\315\313\371\307\300'\237\254\366\357\017^\017\213\227_\257l\\d.\265\357\243\226\324\177Jf\201q]n\227Sm1|\036uz\2558\243\206|\010\177\211\000\265\020\343\370\274\317\206\033\2516\033\024\325\345\247S\r\250\244\232\"\005G\212\251\266\020f&!\037\346Sm)\304j\374|\340\207\033\341^T\214\336\304\337\300\224\017\375\247\203\374\240 K{ro_\356\037\244Z.\230\tN\303z\357n\234\217W\342\355\270\232\354\3643\375\273\203\305\301\306\340@]k\033h]\216\332\316\243Z\357$\311$y\365\363F\260\036\316\204\355\250\322\273\007F\254'\000\3740\236Kp\362q\360\327\020\024\230\013\360x8\010q+8\212\362i\356\333\240\020\335\210~\213\263\361\243d3\351\016\262\362\367\262,\357\312]KZ`\323{\371\376L\236\235\247\271\331`-\250G\213\321f\344\311\345b\222Oo-\204\263\321Zd\366n\313\225\265\244\230\316-\310\005\275\227Q\023\037\206+a%Z\212x\357A\317\036\371\361\254\377s\377`\2603\324\206[\243\341\340\t\222\310\220\006@T'$\344\375Bl$7\373\233\362eI\226\200\304;\371\016Kl\200g \006V\312\202\320\377\0002uo\311";
-    PyObject *data = __Pyx_DecompressString(cstring, 1064, 1);
+    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (1092 bytes) */
+const char* const cstring = "x\332m\223\317O\033G\024\307\261\263\024\253$\004\207\212\204\346\320ED\"J\033\253.!\215\3244\021\245!j\225F\306\230_\022\3120\273;k\017^\357\330;\263\306V\022\340\270\307=\356\321\307=\356\321G\037}\234\343\036\371\023\362'\364\215mh\322V\262\347=\317\217\367>\363\375\216_\276e\202\350\242\206\205\276\331\0255\346\352\224\353\026q\250A<,\210\323\325\271\360\250)\210\2476\271z\351U\351\361\223gOt\354Z\272GN\210)\270\316}\303t0\347\204\353\314\326\r\237:\202\272\272\3506\t/\350\177\330z\227\371\272K\210\245\013\2467a\337\347\007D\215\270:'B%\372*v]&\260\240\314Ep\234\272\325U\335\242\0364\241m\242Noa\207\223\002\266,\004\373\210\301\021gN\233x\205f\267cQ\216\r\207\020W\215U\223\362qf=W\374n\2253\3373\311\213R\367/\3129\324\177\303\252\237\347\005\204<b\371&A\346H\005\204\376\265\n\210\034\310\376YW;:\360\375\035\304AoIG\224\211\215\253md\272\002\363\256kRV0\231\307|\220\202p\003w\r\202\033\350\324`\035\370\300\304\025\272\211x\335G\r\3344\035\330\210(\\\334\303&1\260Y7Y\243\0012s\223\2716\255\"d\251N\343`S\027;\000\306m\332!\026\300\265\020\2658B\266\357\232\n\255zE\013\323\324\245\202b\347\020{\026\242\034]CQA\032\274\356\2206q\034\006\345\033\030\232\303\330A@\253\302hI%\036;\205\005f\371\016Q\305]\334\030G\002\323Mj5\235&k6\231'\324\335\233]\004\325\000\005,Af\215\230u\3567\306\277<\302}G\214\363\t\235J\325;\031g\276\333\244&\020}\241=B-\037;W='&\241\377\330u=A:*\3455\337\266\035\342\021\341{.\360{\276\213&Z\215d\347\304\261A5\237\270&\001k\321\225\306*\037\367\202\314\002GG\304\327\346\243\377y\010\2346\324u<11r\264*\020\374Y,\007\242\272\022\214\036\203F\\(wAU\330\016\026!$\010W#m\020\001\357\336A\243\267\3417-\250\340sr\335\253\335\306\216O\370)2\034f\326\3415\237\202\310\254\216k\004[\027\231T{\024/\307O\223\374E\346Snjz.\250\204K\321\203\210\305\225d1\021\375_\006\326\360{\271{(\017mi\237\310\223\256\354~\37445u\226)g!\224\263{*\354e\217T8\312\036\253p\234\305\331T\273\031\274\016\213\341V\364C\017\247\332\314E;\330\017_E\337D\333i\356N\270\234\346\356\206""\255K\030D\264\336\233\351\371\361f,\222\027\203\273\303\351\341\216,Ud\005\372\035\313\343\321\311V\232\273-o?\006\236|\262\332\277?x=,^~9\263q\221\271\324\276\213ZR\3771\231\005\342\272\334.\247\332B\370<\352\364ZqF\025\371\020\376\034A\327B\214\343\363\276;\334H\265\331\240\250.?\235j\200\222j\n\n\216\024Sm>\314L\206|\230O\265\305\020(\226\"\310\276\205\njNu\273\035\370\341F\270\027\025\2437\361WP\364C\377\351 ?(\310\322\236\334\333\227\373\007\251\226\013f\202\323\260\336\273\027\347\343\225x;\256&;\375L\377\336`a\26018P\267\334\006\312\313\321\266\363\250\326;I2I^\375\274\021\254\2073a;\252\364\226\300\227\365\0048\036\306s\tN>\016\376\034\002\312\\\200\307\305A\227[\301\021\200\345\276\016\n\321\215\350\3278\033?J6\223\356 +\177+\313\362\256\334\265\244\005\256\275\227\357\317\344\331y\232\233\r\326\202z\264\020mF\236\\.&\371\364\326|8\033\255Ef\357\216\\YK\212\351\334\274\234\327{\031U\361a\270\022V\242\305\210\367\036\364\354\221=\317\372?\365\017\006;Cm\2705*\016\026!\211\014i@\213\352\004B\336/\304Fr\263\277)_\226d\t \336\311wXb\003,\0041\260\022\032t\377\033\270$\200\252";
+    PyObject *data = __Pyx_DecompressString(cstring, 1092, 1);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (1546 bytes) */
-const char* const bytes = "?Note that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the 'annotation_typing' directive to False.add_notebs_solver.pyxdisableenablegcisenabled<stringsource>PyMissionLogPyMissionLog.__reduce_cython__PyMissionLog.__setstate_cython____Pyx_PyDict_NextRefagv_cntasyncio.coroutinesbaybeam_wboxboxesbs_solverc_sku_mapcline_in_tracebackcommandsconfig__dict___dictfinalLogsfixed_seq_ids__func____getstate__idinitialYard_is_coroutineitemsklevellog__main__max_baymax_levelmax_row__module____name____new__pidplpoppy_logs__pyx_checksum__pyx_result__pyx_state__pyx_type__pyx_unpickle_PyMissionLog__qualname____reduce____reduce_cython____reduce_ex__reshufflereturnrowrun_fixed_solverselfsequenceset_config__set_name__setdefault__setstate____setstate_cython__sim_startsku_mapstatet_handlet_pickt_processt_traveltarget__test__timetotal_boxesupdateuse_setstatevvalues\200\001\330\004*\250!\2506\260\021\200\001\360\010\000\005\016\210T\220\031\230$\230o\250T\260\026\260t\270;\300d\310+\320UY\320Yf\320fj\320jy\320y}\360\000\000~\001R\002\360\000\000R\002V\002\360\000\000V\002\\\002\360\000\000\\\002`\002\360\000\000`\002a\002\330\004\014\210G\2201\220F\230,\240a\330\004\007\200v\210W\220E\230\024\230Q\330\010\022\220!\330\010\027\220q\340\010\027\220t\2305\240\007\240u\250C\250t\260>\300\027\310\005\310S\320PT\320TY\320Y`\320`a\330\004\007\200q\330\010\017\320\017-\250T\260\021\260'\270\033\300G\3101\340\010\017\320\017-\250T\260\021\260'\270\033\300A\200\001\340\004\037\230q\320 0\260\013\270;\300k\320QR\330\004\023\220<\230x\240q\250\001\330\004\007\200|\2207\230!\330\010.\250a\250\177\270n\310A\330\004\013\2101\200\001\330\004\005\330\004\027\220q\330\004\022\220!\330\004\023\2201\330\004\020\220\001\330\004\020\220\001\330\004\021\220\021\330\004\026\220a\200\001\340\004\017\210u\220A\220V\2301\230L\250\006\250a\250|\2706\300\021\300.\320PV\320VW\320WX\330\004\010\210\007\210w\220k\240\030\250\021\250#\250Q\250g""\260S\270\001\270\030\300\023\300A\300X\310S\320PQ\320QR\340\004\010\210\007\210\177\230h\240j\260\001\260\021\340\004\010\210\003\2105\220\007\220v\230T\240\031\250!\2505\260\001\330\004(\250\016\260a\260}\300J\310a\330\004\016\210a\330\004\010\210\007\210q\330\010\r\210\\\230\021\330\010\n\210.\230\003\230=\250\002\250*\260C\260y\300\002\320BR\320RU\320Ud\320df\320f{\320{~\320~\177\330\010\013\2103\210k\230\023\230C\230r\320!1\260\021\330\r\020\220\013\2303\230c\240\022\320#3\2601\330\016\020\320\020 \240\001\330\010\n\210(\220#\220T\230\026\230s\240$\240f\250C\250t\2608\2702\270X\300S\310\004\310F\320RU\320UY\320Y_\320_b\320bf\320fg\330\010\n\210.\230\003\320\033.\250b\260\014\270C\320?P\320PR\320R^\320^a\320ab\330\010\017\210w\220a\220q\330\004\013\2101";
+    #else /* compression: none (1590 bytes) */
+const char* const bytes = "?Note that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the 'annotation_typing' directive to False.add_notebs_solver.pyxdisableenablegcisenabled<stringsource>PyMissionLogPyMissionLog.__reduce_cython__PyMissionLog.__setstate_cython____Pyx_PyDict_NextRefagv_cntasyncio.coroutinesbaybeam_wboxboxesbs_solverc_sku_mapcline_in_tracebackcommandsconfig__dict___dictfinalLogsfixed_seq_ids__func____getstate__idinitialYard_is_coroutineitemsklevellog__main__max_baymax_levelmax_row__module____name____new__pidplpopport_cntpy_logs__pyx_checksum__pyx_result__pyx_state__pyx_type__pyx_unpickle_PyMissionLog__qualname____reduce____reduce_cython____reduce_ex__reshufflereturnrowrun_fixed_solverselfsequenceset_config__set_name__setdefault__setstate____setstate_cython__sim_startsku_mapstatet_handlet_pickt_processt_traveltarget__test__timetotal_boxesupdateuse_setstatevvaluesw_blockingw_lookahead\200\001\330\004*\250!\2506\260\021\200\001\360\010\000\005\016\210T\220\031\230$\230o\250T\260\026\260t\270;\300d\310+\320UY\320Yf\320fj\320jy\320y}\360\000\000~\001R\002\360\000\000R\002V\002\360\000\000V\002\\\002\360\000\000\\\002`\002\360\000\000`\002a\002\330\004\014\210G\2201\220F\230,\240a\330\004\007\200v\210W\220E\230\024\230Q\330\010\022\220!\330\010\027\220q\340\010\027\220t\2305\240\007\240u\250C\250t\260>\300\027\310\005\310S\320PT\320TY\320Y`\320`a\330\004\007\200q\330\010\017\320\017-\250T\260\021\260'\270\033\300G\3101\340\010\017\320\017-\250T\260\021\260'\270\033\300A\200\001\340\004\037\230q\320 0\260\013\270;\300k\320QR\330\004\023\220<\230x\240q\250\001\330\004\007\200|\2207\230!\330\010.\250a\250\177\270n\310A\330\004\013\2101\200\001\330\004\005\330\004\027\220q\330\004\022\220!\330\004\023\2201\330\004\020\220\001\330\004\020\220\001\330\004\021\220\021\330\004\026\220a\330\004\031\230\021\330\004\032\230!\330\004\021\220\021\200\001\340\004\017\210u\220A\220V\2301\230L\250\006\250a\250|\2706\300""\021\300.\320PV\320VW\320WX\330\004\010\210\007\210w\220k\240\030\250\021\250#\250Q\250g\260S\270\001\270\030\300\023\300A\300X\310S\320PQ\320QR\340\004\010\210\007\210\177\230h\240j\260\001\260\021\340\004\010\210\003\2105\220\007\220v\230T\240\031\250!\2505\260\001\330\004(\250\016\260a\260}\300J\310a\330\004\016\210a\330\004\010\210\007\210q\330\010\r\210\\\230\021\330\010\n\210.\230\003\230=\250\002\250*\260C\260y\300\002\320BR\320RU\320Ud\320df\320f{\320{~\320~\177\330\010\013\2103\210k\230\023\230C\230r\320!1\260\021\330\r\020\220\013\2303\230c\240\022\320#3\2601\330\016\020\320\020 \240\001\330\010\n\210(\220#\220T\230\026\230s\240$\240f\250C\250t\2608\2702\270X\300S\310\004\310F\320RU\320UY\320Y_\320_b\320bf\320fg\330\010\n\210.\230\003\320\033.\250b\260\014\270C\320?P\320PR\320R^\320^a\320ab\330\010\017\210w\220a\220q\330\004\013\2101";
     PyObject *data = NULL;
     CYTHON_UNUSED_VAR(__Pyx_DecompressString);
     #endif
     PyObject **stringtab = __pyx_mstate->__pyx_string_tab;
     Py_ssize_t pos = 0;
-    for (int i = 0; i < 83; i++) {
+    for (int i = 0; i < 86; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyUnicode_DecodeUTF8(bytes + pos, bytes_length, NULL);
       if (likely(string) && i >= 9) PyUnicode_InternInPlace(&string);
@@ -8894,7 +8948,7 @@ const char* const bytes = "?Note that Cython is deliberately stricter than PEP-4
       stringtab[i] = string;
       pos += bytes_length;
     }
-    for (int i = 83; i < 88; i++) {
+    for (int i = 86; i < 91; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyBytes_FromStringAndSize(bytes + pos, bytes_length);
       stringtab[i] = string;
@@ -8905,14 +8959,14 @@ const char* const bytes = "?Note that Cython is deliberately stricter than PEP-4
       }
     }
     Py_XDECREF(data);
-    for (Py_ssize_t i = 0; i < 88; i++) {
+    for (Py_ssize_t i = 0; i < 91; i++) {
       if (unlikely(PyObject_Hash(stringtab[i]) == -1)) {
         __PYX_ERR(0, 1, __pyx_L1_error)
       }
     }
     #if CYTHON_IMMORTAL_CONSTANTS
     {
-      PyObject **table = stringtab + 83;
+      PyObject **table = stringtab + 86;
       for (Py_ssize_t i=0; i<5; ++i) {
         #if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
         #if PY_VERSION_HEX < 0x030E0000
@@ -8963,7 +9017,7 @@ const char* const bytes = "?Note that Cython is deliberately stricter than PEP-4
 }
 /* #### Code section: init_codeobjects ### */
 typedef struct {
-    unsigned int argcount : 3;
+    unsigned int argcount : 4;
     unsigned int num_posonly_args : 1;
     unsigned int num_kwonly_args : 1;
     unsigned int nlocals : 5;
@@ -8985,8 +9039,8 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {7, 0, 0, 7, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 245};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_t_travel, __pyx_mstate->__pyx_n_u_t_handle, __pyx_mstate->__pyx_n_u_t_process, __pyx_mstate->__pyx_n_u_t_pick, __pyx_mstate->__pyx_n_u_agv_cnt, __pyx_mstate->__pyx_n_u_beam_w, __pyx_mstate->__pyx_n_u_sim_start};
+    const __Pyx_PyCode_New_function_description descr = {10, 0, 0, 10, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 245};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_t_travel, __pyx_mstate->__pyx_n_u_t_handle, __pyx_mstate->__pyx_n_u_t_process, __pyx_mstate->__pyx_n_u_t_pick, __pyx_mstate->__pyx_n_u_agv_cnt, __pyx_mstate->__pyx_n_u_beam_w, __pyx_mstate->__pyx_n_u_sim_start, __pyx_mstate->__pyx_n_u_w_blocking, __pyx_mstate->__pyx_n_u_w_lookahead, __pyx_mstate->__pyx_n_u_port_cnt};
     __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_bs_solver_pyx, __pyx_mstate->__pyx_n_u_set_config, __pyx_mstate->__pyx_kp_b_iso88591_q_1_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   {
@@ -9000,7 +9054,7 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
     __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_setstate_cython, __pyx_mstate->__pyx_kp_b_iso88591_6, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 16, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 498};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 16, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 501};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_config, __pyx_mstate->__pyx_n_u_boxes, __pyx_mstate->__pyx_n_u_commands, __pyx_mstate->__pyx_n_u_fixed_seq_ids, __pyx_mstate->__pyx_n_u_sku_map, __pyx_mstate->__pyx_n_u_initialYard, __pyx_mstate->__pyx_n_u_box, __pyx_mstate->__pyx_n_u_sequence, __pyx_mstate->__pyx_n_u_pid, __pyx_mstate->__pyx_n_u_c_sku_map, __pyx_mstate->__pyx_n_u_k, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_finalLogs, __pyx_mstate->__pyx_n_u_py_logs, __pyx_mstate->__pyx_n_u_log, __pyx_mstate->__pyx_n_u_pl};
     __pyx_mstate_global->__pyx_codeobj_tab[3] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_bs_solver_pyx, __pyx_mstate->__pyx_n_u_run_fixed_solver, __pyx_mstate->__pyx_kp_b_iso88591_uAV1L_a_6_PVVWWX_wk_QgS_AXSPQQR, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[3])) goto bad;
   }
