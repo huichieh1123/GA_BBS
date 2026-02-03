@@ -11,13 +11,12 @@ extensions = [
         language="c++",
         extra_compile_args=["-std=c++11", "-O3"],
     ),
-    # # 新的 MCTS Solver
-    # Extension(
-    #     "mcts_solver",
-    #     sources=["mcts_solver.pyx"],
-    #     language="c++",
-    #     extra_compile_args=["-std=c++11", "-O3"],
-    # )
+    Extension(
+        "rb_solver",
+        sources=["rb_solver.pyx"],
+        language="c++",
+        extra_compile_args=["-std=c++11", "-O3"],
+    )
 ]
 
 setup(

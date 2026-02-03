@@ -2,6 +2,7 @@ import csv
 import time
 import bs_solver # Beam Search
 # import mcts_solver # Monte Carlo Tree Search
+import rb_solver # Rule_based
 import gen_yard
 import gen_sequence
 
@@ -14,7 +15,7 @@ GLOBAL_CONFIG = {
     'max_level': 8,
     'total_boxes': 400,
     'mission_count': 50,
-    'agv_count': 10,
+    'agv_count': 3,
     'beam_width': 200,
     't_travel': 5.0,
     't_handle': 30.0,
@@ -23,7 +24,7 @@ GLOBAL_CONFIG = {
     'sim_start_epoch': 1705363200,
     'w_penalty_blocking': 2000.0,  
     'w_penalty_lookahead': 500.0,
-    'port_count': 2
+    'port_count': 5
 }
 
 def load_csv_data():
@@ -78,31 +79,33 @@ def load_csv_data():
 
 def main():
 
-    gen_yard.generate_yard_with_config(GLOBAL_CONFIG)
-    job_sequence = gen_sequence.generate_sequence_with_config(GLOBAL_CONFIG)
+    # gen_yard.generate_yard_with_config(GLOBAL_CONFIG)
+    # job_sequence = gen_sequence.generate_sequence_with_config(GLOBAL_CONFIG)
 
-    start_t = time.time()
+    start_t = time.perf_counter()
     
     boxes, commands, sku_map = load_csv_data()
     
-    # job_sequence = [cmd['id'] for cmd in commands if cmd['type'] == 'target']
-
-    bs_solver.set_config(
-        GLOBAL_CONFIG['t_travel'], 
-        GLOBAL_CONFIG['t_handle'], 
-        GLOBAL_CONFIG['t_process'],
-        GLOBAL_CONFIG['t_pick'],
-        GLOBAL_CONFIG['agv_count'], 
-        GLOBAL_CONFIG['beam_width'],
-        GLOBAL_CONFIG['sim_start_epoch'],
-        GLOBAL_CONFIG['w_penalty_blocking'], 
-        GLOBAL_CONFIG['w_penalty_lookahead'],
-        GLOBAL_CONFIG['port_count']
-    )
-
-    # 4. 執行求解
-    print(f"Starting Solver with {len(job_sequence)} jobs (Ports: {GLOBAL_CONFIG['port_count']})...")
-    logs = bs_solver.run_fixed_solver(GLOBAL_CONFIG, boxes, commands, job_sequence, sku_map)
+    job_sequence = [cmd['id'] for cmd in commands if cmd['type'] == 'target']
+    
+    USE_RULE_BASED = True
+    
+    if USE_RULE_BASED:
+        logs = rb_solver.run_rb_solver(GLOBAL_CONFIG, boxes, job_sequence, sku_map)
+    else :
+        bs_solver.set_config(
+            GLOBAL_CONFIG['t_travel'], 
+            GLOBAL_CONFIG['t_handle'], 
+            GLOBAL_CONFIG['t_process'],
+            GLOBAL_CONFIG['t_pick'],
+            GLOBAL_CONFIG['agv_count'], 
+            GLOBAL_CONFIG['beam_width'],
+            GLOBAL_CONFIG['sim_start_epoch'],
+            GLOBAL_CONFIG['w_penalty_blocking'], 
+            GLOBAL_CONFIG['w_penalty_lookahead'],
+            GLOBAL_CONFIG['port_count']
+        )
+        logs = bs_solver.run_fixed_solver(GLOBAL_CONFIG, boxes, commands, job_sequence, sku_map)
     
     # 5. 輸出任務日誌 (含相對秒數與 SKU 詳情)
     with open('output_missions_python.csv', 'w', newline='') as f:
@@ -142,8 +145,8 @@ def main():
                 log.makespan, current_sku, duration
             ])
 
-    end_t = time.time()
-    print(f"Total Time: {end_t - start_t:.2f}s")
+    end_t = time.perf_counter()
+    print(f"Total Time: {end_t - start_t:.6f}s")
     if logs:
         print(f"Final Makespan: {logs[-1].makespan:.2f}s")
 
