@@ -15,7 +15,7 @@ GLOBAL_CONFIG = {
     'max_level': 8,
     'total_boxes': 400,
     'mission_count': 50,
-    'agv_count': 3,
+    'agv_count': 10,
     'beam_width': 200,
     't_travel': 5.0,
     't_handle': 30.0,
@@ -89,6 +89,7 @@ def main():
     job_sequence = [cmd['id'] for cmd in commands if cmd['type'] == 'target']
     
     USE_RULE_BASED = True
+
     
     if USE_RULE_BASED:
         logs = rb_solver.run_rb_solver(GLOBAL_CONFIG, boxes, job_sequence, sku_map)
